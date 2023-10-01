@@ -22,6 +22,9 @@ Summarized, the application provides the following functions:
 https://spoonacular.com/food-api/docs
 
 ## Screenshot of using a tool to try out the API:
+<img width="1067" alt="find-recipe-by-ingredients-screenshot" src="https://github.com/Nina2811aw/SpoonacularAPITest/assets/77638087/4b221462-83d2-4190-a781-22942808dd15">
+<img width="1062" alt="analyse-recipe-screenshot" src="https://github.com/Nina2811aw/SpoonacularAPITest/assets/77638087/770ea31e-fa19-4b93-aed7-c8b9f5128e63">
+
 
 ## Example output of Java code:
 
