@@ -27,7 +27,7 @@ https://spoonacular.com/food-api/docs
 
 
 ## Example output of Java code:
-
+![](/Users/arielkhait/Downloads/Screenshot_2023-10-01_at_18.18.29.png)
 ## List of any technical problems blocking progress:
 Problem: IntelliJ did not recognize when I imported okhttp, and json. 
 Solution: I made my project a Maven project and added dependencies in the pom.xml file.
