@@ -32,3 +32,10 @@ https://spoonacular.com/food-api/docs
 ## List of any technical problems blocking progress:
 Problem: IntelliJ did not recognize when I imported okhttp, and json. 
 Solution: I made my project a Maven project and added dependencies in the pom.xml file.
+
+## Next Steps
+* Currently we have a working program that calls the SPOONACULAR API with the parameter or just having the ingredient pasta, and returning some reciepe names
+* Next steps include taking in user input for ingredients and returning reciepe names
+* Locally some of our members are testing another SPOOACULAR API that takes in the reciepe ID and returns more information about it
+* This information includes dietary specifications like calories, wether it is gluten free, health score, popularity, as well as actual steps to create it
+* Follow week(s) our group will work on combining these two APIs and implementing a User Interface
