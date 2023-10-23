@@ -5,7 +5,8 @@ import use_case.recipe_search.RecipeSearchInputData;
 
 public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface {
 
-
+    // we have to think about what exactly this method will return after having made the API call
+    // the return type void has to be adapted adequately
     @Override
     public void getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
 
