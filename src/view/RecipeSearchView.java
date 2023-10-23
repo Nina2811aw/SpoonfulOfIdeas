@@ -1,4 +1,7 @@
 package view;
+import interface_adapter.recipe_search.RecipeSearchController;
+import interface_adapter.recipe_search.RecipeSearchViewModel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,10 +11,19 @@ import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+
 public class RecipeSearchView extends JPanel implements ActionListener, PropertyChangeListener{
 
     public final String viewName = "Recipe View";
 
+    public final RecipeSearchViewModel recipeSearchViewModel;
+
+    public final RecipeSearchController recipeSearchController;
+
+    public RecipeSearchView(RecipeSearchController controller, RecipeSearchViewModel recipeSearchViewModel){
+        this.recipeSearchController = controller;
+        this.recipeSearchViewModel = recipeSearchViewModel;
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
 
