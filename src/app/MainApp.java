@@ -34,7 +34,7 @@ public class MainApp {
         // be observed by the Views.
         ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
 
-        ChooseRecipeView chooseRecipeView = SignupUseCaseFactory.create(viewManagerModel, loginViewModel, signupViewModel, userDataAccessObject, clearViewModel, userDataAccessObject);
+        ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.create(viewManagerModel, chooseRecipeViewModel);
         views.add(chooseRecipeView, chooseRecipeView.viewName);
 
 
