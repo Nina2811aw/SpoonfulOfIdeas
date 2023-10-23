@@ -1,0 +1,3 @@
+public enum Diet {
+    KETO, VEGETERIAN, GLUTENFREE, VEGAN, PALEO
+}

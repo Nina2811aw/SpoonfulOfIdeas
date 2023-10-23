@@ -1,19 +1,13 @@
 package app;
 
 import interface_adapter.ViewManagerModel;
-import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.recipe_search.RecipeSearchController;
 import interface_adapter.recipe_search.RecipeSearchPresenter;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
-import use_case.recipe_search.RecipeSearchDataAccessInterface;
 import use_case.recipe_search.RecipeSearchInputBoundary;
 import use_case.recipe_search.RecipeSearchInteractor;
 import use_case.recipe_search.RecipeSearchOutputBoundary;
-import view.ChooseRecipeView;
 import view.RecipeSearchView;
-
-import javax.swing.*;
-import java.io.IOException;
 
 public class RecipeViewUseCaseFactory {
 
@@ -29,6 +23,6 @@ public class RecipeViewUseCaseFactory {
 
         RecipeSearchInputBoundary recipeSearchInputBoundary = new RecipeSearchInteractor();
 
-        return new RecipeSearchController();
+        return new RecipeSearchController(recipeSearchInputBoundary);
     }
 }
