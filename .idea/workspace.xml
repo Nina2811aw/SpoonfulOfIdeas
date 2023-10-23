@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchDataAccessInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchOutputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ViewManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeDataAccessInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698075762777</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Use Case Files">
+      <option name="closed" value="true" />
+      <created>1698077958246</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698077958246</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Use Case Files">
+      <option name="closed" value="true" />
+      <created>1698077979529</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698077979529</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +118,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created App directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="created App directory" />
+    <MESSAGE value="Use Case Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use Case Files" />
   </component>
 </project>
