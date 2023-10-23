@@ -20,6 +20,6 @@ public class ViewManager implements PropertyChangeListener{
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        // to impliment later
+        // to implement later
     }
 }
