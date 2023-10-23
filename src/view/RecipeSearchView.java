@@ -22,4 +22,37 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     }
 
+    // should include a textbox for ingredients
+    // should include checkboxes for:
+    /**
+     * Diet:
+     * Keto
+     * Vegetarian
+     * Gluten-Free
+     * Vegan
+     * Paleo
+     *
+     * Allergies
+     * Peanuts
+     * Dairy
+     * Soy
+     *
+     * Cuisine
+     * African
+     * Chinese
+     * German
+     * Mexican
+     * Indian
+     * Italian
+     *
+     * Macronutrients
+     *
+     * High Protein
+     * Low Fat
+     * Low Carbs
+     * High Carbs
+     * Low Calorie
+     * High Calorie
+     */
+
 }
