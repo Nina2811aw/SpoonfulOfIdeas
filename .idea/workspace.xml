@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipePresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/RecipeSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/RecipeSearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
