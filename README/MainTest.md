@@ -10,8 +10,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 public class Main {
-    //private static final String API_TOKEN = System.getenv("API_TOKEN");
-    private static final String API_TOKEN = "b7ab8e72e81f46b4b37717dc8d9ea5b8";
+//private static final String API_TOKEN = System.getenv("API_TOKEN");
+private static final String API_TOKEN = "b7ab8e72e81f46b4b37717dc8d9ea5b8";
 
     public static void main(String[] args) {
         getNumberOfRecipes();
