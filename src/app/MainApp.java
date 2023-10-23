@@ -2,7 +2,9 @@ package app;
 
 import interface_adapter.ViewManagerModel;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
+import interface_adapter.recipe_search.RecipeSearchViewModel;
 import view.ChooseRecipeView;
+import view.RecipeSearchView;
 import view.ViewManager;
 
 import javax.swing.*;
@@ -15,7 +17,7 @@ public class MainApp {
         // various cards, and the layout, and stitch them together.
 
         // The main application window.
-        JFrame application = new JFrame("A Spoonfull of Ideas");
+        JFrame application = new JFrame("A Spoonful of Ideas");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         CardLayout cardLayout = new CardLayout();
@@ -32,13 +34,13 @@ public class MainApp {
         // This information will be changed by a presenter object that is reporting the
         // results from the use case. The ViewModels are observable, and will
         // be observed by the Views.
-        ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
+        RecipeSearchViewModel recipeSearchViewModel = new RecipeSearchViewModel();
 
-        ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.create(viewManagerModel, chooseRecipeViewModel);
-        views.add(chooseRecipeView, chooseRecipeView.viewName);
+        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.create(viewManagerModel, recipeSearchViewModel);
+        views.add(recipeSearchView, recipeSearchView.viewName);
 
 
-        viewManagerModel.setActiveView(chooseRecipeView.viewName);
+        viewManagerModel.setActiveView(recipeSearchView.viewName);
         viewManagerModel.firePropertyChanged();
 
         application.pack();
