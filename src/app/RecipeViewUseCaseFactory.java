@@ -21,7 +21,8 @@ public class RecipeViewUseCaseFactory {
         //throws IOException?
         RecipeSearchOutputBoundary recipeSearchOutputBoundary = new RecipeSearchPresenter();
 
-        RecipeSearchInputBoundary recipeSearchInputBoundary = new RecipeSearchInteractor();
+        // when creating a recipe search interactor, a data access object and a presenter have to be injected
+        RecipeSearchInputBoundary recipeSearchInputBoundary = new RecipeSearchInteractor(null, null); // null has to be replaced by actual objects
 
         return new RecipeSearchController(recipeSearchInputBoundary);
     }
