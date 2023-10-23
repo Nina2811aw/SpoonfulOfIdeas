@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeDataAccessInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeOutputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
-    </list>
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Created a recipe View Use Case Factory" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +104,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698077979529</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created a view model and added to main">
+      <option name="closed" value="true" />
+      <created>1698078784445</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698078784445</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Created a recipe View Use Case Factory">
+      <option name="closed" value="true" />
+      <created>1698079258028</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698079258028</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +129,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created App directory" />
     <MESSAGE value="Use Case Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use Case Files" />
+    <MESSAGE value="Created a view model and added to main" />
+    <MESSAGE value="Created a recipe View Use Case Factory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a recipe View Use Case Factory" />
   </component>
 </project>
