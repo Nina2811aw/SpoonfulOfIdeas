@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipePresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/RecipeSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/RecipeSearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695921924614</updated>
       <workItem from="1696178303630" duration="3674000" />
-      <workItem from="1698075550593" duration="1985000" />
+      <workItem from="1698075550593" duration="802000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -90,39 +97,7 @@
       <option name="project" value="LOCAL" />
       <updated>1698075762777</updated>
     </task>
-    <task id="LOCAL-00002" summary="created Spoonacular DAO">
-      <option name="closed" value="true" />
-      <created>1698076373276</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1698076373277</updated>
-    </task>
-    <task id="LOCAL-00003" summary="created Recipe Search Interactor">
-      <option name="closed" value="true" />
-      <created>1698076503567</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1698076503567</updated>
-    </task>
-    <task id="LOCAL-00004" summary="created Recipe Search View">
-      <option name="closed" value="true" />
-      <created>1698076556826</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1698076556826</updated>
-    </task>
-    <task id="LOCAL-00005" summary="created Recipe Search Controller">
-      <option name="closed" value="true" />
-      <created>1698076610832</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1698076610832</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,10 +105,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created App directory" />
-    <MESSAGE value="created Spoonacular DAO" />
-    <MESSAGE value="created Recipe Search Interactor" />
-    <MESSAGE value="created Recipe Search View" />
-    <MESSAGE value="created Recipe Search Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="created Recipe Search Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="created App directory" />
   </component>
 </project>
