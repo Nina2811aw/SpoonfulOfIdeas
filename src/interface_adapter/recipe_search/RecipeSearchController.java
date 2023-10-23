@@ -12,7 +12,10 @@ public class RecipeSearchController {
         this.recipeSearchInteractor = recipeSearchInteractor;
     }
 
+    // the parameters of this method have to be adapted depending on how the
+    // input data from the user is gathered
     public void execute(){
+        // create input data object and call interactor
         RecipeSearchInputData recipeSearchInputData = null; // has to be replaced by actual input data
         this.recipeSearchInteractor.execute(recipeSearchInputData);
     }
