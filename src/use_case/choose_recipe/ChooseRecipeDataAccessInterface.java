@@ -4,4 +4,5 @@ public interface ChooseRecipeDataAccessInterface {
 
     void getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData);
 
+
 }

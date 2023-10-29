@@ -9,7 +9,7 @@ public class RecipeSearchInputData {
 
     private String ingredients;
     private List<Diet> diets;
-    private List<Cuisine> cuisines;
+    private List<Cuisine> cuisines; // maybe cuisines can just be one enum? More than one cuisine doesn't really make sense
     private List<Allergy> allergies;
     private int minProtein;
     private int maxFat;

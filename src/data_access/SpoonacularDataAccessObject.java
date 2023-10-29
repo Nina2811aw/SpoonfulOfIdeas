@@ -12,6 +12,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
     @Override
     public void getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
 
+
     }
 
     @Override

@@ -14,7 +14,7 @@ import java.beans.PropertyChangeListener;
 
 public class RecipeSearchView extends JPanel implements ActionListener, PropertyChangeListener{
 
-    public final String viewName = "Recipe View";
+    public final String viewName = "Recipe Search View";
 
     public final RecipeSearchViewModel recipeSearchViewModel;
 
