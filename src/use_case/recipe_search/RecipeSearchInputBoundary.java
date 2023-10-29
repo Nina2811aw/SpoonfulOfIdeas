@@ -1,4 +1,7 @@
 package use_case.recipe_search;
 
-public class RecipeSearchInputBoundary {
+public interface RecipeSearchInputBoundary {
+
+    void execute(RecipeSearchInputData searchInputData);
+
 }

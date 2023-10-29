@@ -1,4 +1,7 @@
 package use_case.choose_recipe;
 
-public class ChooseRecipeDataAccessInterface {
+public interface ChooseRecipeDataAccessInterface {
+
+    void getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData);
+
 }

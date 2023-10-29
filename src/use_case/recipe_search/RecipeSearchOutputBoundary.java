@@ -1,4 +1,10 @@
 package use_case.recipe_search;
 
-public class RecipeSearchOutputBoundary {
+public interface RecipeSearchOutputBoundary {
+
+    void prepareChooseRecipeView(RecipeSearchOutputData recipeSearchOutputData);
+
+    void prepareNoRecipeFoundView();
+
+
 }
