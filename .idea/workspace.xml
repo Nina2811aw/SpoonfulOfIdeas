@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="merge commit">
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/ViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/RecipeSearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeSearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +20,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -96,8 +99,6 @@
       <updated>1695921924614</updated>
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
-      <workItem from="1698614082153" duration="71000" />
-      <workItem from="1698680274099" duration="971000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -139,43 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698079258028</updated>
     </task>
-    <task id="LOCAL-00006" summary="created classes">
-      <created>1698085442398</created>
+    <task id="LOCAL-00006" summary="merge commit">
+      <option name="closed" value="true" />
+      <created>1698679249669</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1698085442398</updated>
+      <updated>1698679249669</updated>
     </task>
-    <task id="LOCAL-00007" summary="added enums for user input specification,&#10;set up interactor and more classes">
-      <created>1698093449507</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1698093449507</updated>
-    </task>
-    <task id="LOCAL-00008" summary="specified presenter, output boundary and interactor">
-      <created>1698094845404</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1698094845404</updated>
-    </task>
-    <task id="LOCAL-00009" summary="specified presenter, output boundary and interactor">
-      <created>1698095177299</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1698095177299</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Worked on putting choose recipe into the use case factory.">
-      <option name="closed" value="true" />
-      <created>1698613978427</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1698613978427</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,11 +159,8 @@
     <MESSAGE value="Use Case Files" />
     <MESSAGE value="Created a view model and added to main" />
     <MESSAGE value="Created a recipe View Use Case Factory" />
-    <MESSAGE value="created classes" />
-    <MESSAGE value="added enums for user input specification,&#10;set up interactor and more classes" />
-    <MESSAGE value="specified presenter, output boundary and interactor" />
-    <MESSAGE value="Worked on choose recipe , along with use case factory" />
-    <MESSAGE value="Worked on putting choose recipe into the use case factory." />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked on putting choose recipe into the use case factory." />
+    <MESSAGE value="workspace change" />
+    <MESSAGE value="merge commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge commit" />
   </component>
 </project>
