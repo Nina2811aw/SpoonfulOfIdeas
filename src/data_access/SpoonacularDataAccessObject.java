@@ -19,4 +19,6 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
     public void getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData) {
 
     }
+
+
 }
