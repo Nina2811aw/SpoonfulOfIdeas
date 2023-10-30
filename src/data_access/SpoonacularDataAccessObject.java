@@ -5,6 +5,17 @@ import use_case.choose_recipe.ChooseRecipeInputData;
 import use_case.recipe_search.RecipeSearchDataAccessInterface;
 import use_case.recipe_search.RecipeSearchInputData;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface, ChooseRecipeDataAccessInterface {
     @Override
     public void getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
