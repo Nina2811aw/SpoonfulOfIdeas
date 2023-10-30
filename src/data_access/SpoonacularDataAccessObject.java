@@ -20,11 +20,12 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
     @Override
     public void getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
 
-
     }
 
     @Override
-    public void getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData)     {
+    public List<List<String>> getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData)     {
+        List<List<String>> info_list = new ArrayList<>();
+
         String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
 
         OkHttpClient client = new OkHttpClient().newBuilder()
@@ -44,24 +45,27 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
                 List<String> inner_lst = new ArrayList<>();
 
 
-                // Adding id to nested list
+                // Adding id to nested list [0]
                 inner_lst.add(id);
 
-
-                // Adding title to nested list
+                // Adding title to nested list [1]
                 inner_lst.add(responseBody.get("title").toString());
 
-                // Adding Instructions to the list
+                // Adding Instructions to the list [2]
                 inner_lst.add(responseBody.get("instructions").toString());
                 info_list.add(inner_lst);
-                //System.out.println(responseBody);
-                //System.out.println(responseBody.get("title").toString());
-                //System.out.println("Cooking Time: " + responseBody.get("title").toString() + " min");
-                //System.out.println(responseBody.get("instructions").toString());
 
             } catch (IOException | JSONException e) {
                 throw new RuntimeException(e);
             }
+        }
+        return info_list;
+    }
+    public void ReciepeNutritionLabelBuilder(ChooseRecipeInputData chooseRecipeInputData)     {
+        for (int i = 0; i < recipeId.size(); i++) {
+            String id = String.valueOf(recipeId.get(i));
+            String url = "https://api.spoonacular.com/recipes/" + id + "/nutritionLabel.png";
+            label_list.add(url);
         }
     }
 
