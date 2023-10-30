@@ -72,6 +72,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
         for (int i = 0; i < chooseRecipeInputData.recipeId.size(); i++) {
             String id = String.valueOf(chooseRecipeInputData.recipeId.get(i));
+            List<String> inner_lst = new ArrayList<>();
             // Adding id to nested list [0]
             inner_lst.add(id);
 
