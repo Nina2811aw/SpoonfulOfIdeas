@@ -25,6 +25,9 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
     @Override
     public List<List<String>> getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData)     {
         List<List<String>> info_list = new ArrayList<>();
+        //[['id', 'title', 'instructions'],['id', 'url', 'instructions']]
+        //going to add more details depending on what we need later
+
 
         String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
 
@@ -62,11 +65,22 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         return info_list;
     }
     public List<List<String>> RrecipeNutritionLabelBuilder(ChooseRecipeInputData chooseRecipeInputData) {
+        List<List<String>> info_list = new ArrayList<>();
+
+        //[['id', 'url'],['id', 'url']]
+
+
         for (int i = 0; i < chooseRecipeInputData.recipeId.size(); i++) {
             String id = String.valueOf(chooseRecipeInputData.recipeId.get(i));
+            // Adding id to nested list [0]
+            inner_lst.add(id);
+
+            // Adding image url to nested list [1]
             String url = "https://api.spoonacular.com/recipes/" + id + "/nutritionLabel.png";
-            label_list.add(url);
+            inner_lst.add(url);
+            info_list.add(inner_lst);
         }
+        return info_list;
     }
 
 
