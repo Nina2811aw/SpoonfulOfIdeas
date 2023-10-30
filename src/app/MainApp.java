@@ -7,7 +7,7 @@ import interface_adapter.recipe_search.RecipeSearchViewModel;
 import view.ChooseRecipeView;
 import view.RecipeSearchView;
 import view.ViewManager;
-
+import javax.swing.JFrame;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
@@ -19,6 +19,7 @@ public class MainApp {
 
         // The main application window.
         JFrame application = new JFrame("A Spoonful of Ideas");
+        application.setSize(1000, 1000);
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         CardLayout cardLayout = new CardLayout();
@@ -44,8 +45,6 @@ public class MainApp {
 
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, chooseRecipeViewModel);
         views.add(chooseRecipeView, chooseRecipeView.viewName);
-
-
 
         viewManagerModel.setActiveView(recipeSearchView.viewName);
         viewManagerModel.firePropertyChanged();

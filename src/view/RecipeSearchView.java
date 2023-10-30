@@ -16,6 +16,10 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     public final String viewName = "Recipe Search View";
 
+    private final JTextField usernameInputField = new JTextField(15);
+    private final JPasswordField passwordInputField = new JPasswordField(15);
+    private final JPasswordField repeatPasswordInputField = new JPasswordField(15);
+    private final JButton Search;
     public final RecipeSearchViewModel recipeSearchViewModel;
 
     public final RecipeSearchController recipeSearchController;
@@ -23,6 +27,19 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
     public RecipeSearchView(RecipeSearchController controller, RecipeSearchViewModel recipeSearchViewModel){
         this.recipeSearchController = controller;
         this.recipeSearchViewModel = recipeSearchViewModel;
+        recipeSearchViewModel.addPropertyChangeListener(this);
+
+        JLabel title = new JLabel(RecipeSearchViewModel.TITLE_LABEL);
+        title.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        JPanel buttons = new JPanel();
+        Search = new JButton(RecipeSearchViewModel.SEARCH_BUTTON);
+        buttons.add(Search);
+
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+        this.add(title);
+        this.add(buttons);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
