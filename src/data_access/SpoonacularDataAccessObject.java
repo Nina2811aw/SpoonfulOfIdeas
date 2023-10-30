@@ -64,7 +64,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         }
         return info_list;
     }
-    public List<List<String>> RrecipeNutritionLabelBuilder(ChooseRecipeInputData chooseRecipeInputData) {
+    public List<List<String>> RecipeNutritionLabelBuilder(ChooseRecipeInputData chooseRecipeInputData) {
         List<List<String>> info_list = new ArrayList<>();
 
         //[['id', 'url'],['id', 'url']]

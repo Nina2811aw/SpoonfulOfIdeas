@@ -25,4 +25,4 @@ public class RecipeDetailsView {
         JPanel buttons = new JPanel();
         back = new JButton(recipeViewModel.BACK_BUTTON_LABEL);
         buttons.add(back);
-}
+}}
