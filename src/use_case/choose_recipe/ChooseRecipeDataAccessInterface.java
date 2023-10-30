@@ -1,8 +1,10 @@
 package use_case.choose_recipe;
 
+import java.util.List;
+
 public interface ChooseRecipeDataAccessInterface {
 
-    void getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData);
+    List<List<String>> getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData);
 
 
 }
