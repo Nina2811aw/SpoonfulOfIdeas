@@ -30,8 +30,8 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
-        for (int i = 0; i < recipeId.size(); i++) {
-            String id = String.valueOf(recipeId.get(i));
+        for (int i = 0; i < chooseRecipeInputData.recipeId.size(); i++) {
+            String id = String.valueOf(chooseRecipeInputData.recipeId.get(i));
             String url = "https://api.spoonacular.com/recipes/" + id + "/information?includeNutrition=false";
             Request request = new Request.Builder()
                     .url(url)
@@ -61,9 +61,9 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         }
         return info_list;
     }
-    public void ReciepeNutritionLabelBuilder(ChooseRecipeInputData chooseRecipeInputData)     {
-        for (int i = 0; i < recipeId.size(); i++) {
-            String id = String.valueOf(recipeId.get(i));
+    public void RrecipeNutritionLabelBuilder(ChooseRecipeInputData chooseRecipeInputData)     {
+        for (int i = 0; i < chooseRecipeInputData.recipeId.size(); i++) {
+            String id = String.valueOf(chooseRecipeInputData.recipeId.get(i));
             String url = "https://api.spoonacular.com/recipes/" + id + "/nutritionLabel.png";
             label_list.add(url);
         }
