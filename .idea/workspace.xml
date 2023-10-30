@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="new classes for nutrition detail use case">
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChooseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChoosePresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChooseState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChooseViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseDataAccessInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseInputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseInputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseInteractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseOutputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="new classes for nutrition detail use case" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
