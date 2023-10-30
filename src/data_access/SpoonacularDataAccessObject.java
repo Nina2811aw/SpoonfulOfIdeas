@@ -61,7 +61,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         }
         return info_list;
     }
-    public void RrecipeNutritionLabelBuilder(ChooseRecipeInputData chooseRecipeInputData)     {
+    public List<List<String>> RrecipeNutritionLabelBuilder(ChooseRecipeInputData chooseRecipeInputData) {
         for (int i = 0; i < chooseRecipeInputData.recipeId.size(); i++) {
             String id = String.valueOf(chooseRecipeInputData.recipeId.get(i));
             String url = "https://api.spoonacular.com/recipes/" + id + "/nutritionLabel.png";
