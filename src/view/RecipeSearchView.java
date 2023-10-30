@@ -14,7 +14,7 @@ import java.beans.PropertyChangeListener;
 
 public class RecipeSearchView extends JPanel implements ActionListener, PropertyChangeListener{
 
-    public final String viewName = "Recipe View";
+    public final String viewName = "Recipe Search View";
 
     public final RecipeSearchViewModel recipeSearchViewModel;
 
@@ -37,7 +37,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
     // should include a textbox for ingredients
     // should include checkboxes for:
     /**
-     * Diet:
+     * use_case.recipe_search.Diet:
      * Keto
      * Vegetarian
      * Gluten-Free
@@ -49,7 +49,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
      * Dairy
      * Soy
      *
-     * Cuisine
+     * use_case.recipe_search.Cuisine
      * African
      * Chinese
      * German

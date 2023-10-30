@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Created a Recipe View Use Case Factory" />
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Created a recipe View Use Case Factory" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,15 +120,7 @@
       <option name="project" value="LOCAL" />
       <updated>1698079258028</updated>
     </task>
-    <task id="LOCAL-00006" summary="Created a Recipe View Use Case Factory">
-      <option name="closed" value="true" />
-      <created>1698084261000</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1698084261000</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +131,6 @@
     <MESSAGE value="Use Case Files" />
     <MESSAGE value="Created a view model and added to main" />
     <MESSAGE value="Created a recipe View Use Case Factory" />
-    <MESSAGE value="Created a Recipe View Use Case Factory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a Recipe View Use Case Factory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a recipe View Use Case Factory" />
   </component>
 </project>

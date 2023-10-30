@@ -1,6 +1,7 @@
 package app;
 
 import interface_adapter.ViewManagerModel;
+import interface_adapter.choose_recipe.ChooseRecipePresenter;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
 import view.ChooseRecipeView;
@@ -36,8 +37,14 @@ public class MainApp {
         // be observed by the Views.
         RecipeSearchViewModel recipeSearchViewModel = new RecipeSearchViewModel();
 
-        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.create(viewManagerModel, recipeSearchViewModel);
+        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel);
         views.add(recipeSearchView, recipeSearchView.viewName);
+
+        ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
+
+        ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, chooseRecipeViewModel);
+        views.add(chooseRecipeView, chooseRecipeView.viewName);
+
 
 
         viewManagerModel.setActiveView(recipeSearchView.viewName);
