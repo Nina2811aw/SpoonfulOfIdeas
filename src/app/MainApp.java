@@ -37,11 +37,10 @@ public class MainApp {
         // results from the use case. The ViewModels are observable, and will
         // be observed by the Views.
         RecipeSearchViewModel recipeSearchViewModel = new RecipeSearchViewModel();
+        ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
 
         RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel);
         views.add(recipeSearchView, recipeSearchView.viewName);
-
-        ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
 
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, chooseRecipeViewModel);
         views.add(chooseRecipeView, chooseRecipeView.viewName);
