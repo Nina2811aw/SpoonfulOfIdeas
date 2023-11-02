@@ -1,17 +1,18 @@
 package use_case.recipe_search;
 
 
-import java.util.List;
-
 public class RecipeSearchInputData {
 
     // stores the user input which specifies the search
 
+    // diets and intolerances are initialized as Strings to make the API call easier
     private String ingredients;
-    private List<Diet> diets;
-    private List<Cuisine> cuisines; // maybe cuisines can just be one enum? More than one cuisine doesn't really make sense
-    private List<Allergy> allergies;
+    private String diets;
+    private String cuisine;
+    private String intolerances;
     private int minProtein;
+    private int maxProtein;
+    private int minFat;
     private int maxFat;
     private int minCarbs;
     private int maxCarbs;
@@ -19,12 +20,14 @@ public class RecipeSearchInputData {
     private int maxCalories;
 
 
-    public RecipeSearchInputData(String ingredients, List<Diet> diets, List<Cuisine> cuisines, List<Allergy> allergies, int minProtein, int maxFat, int minCarbs, int maxCarbs, int minCalories, int maxCalories) {
+    public RecipeSearchInputData(String ingredients, String diets, String cuisine, String intolerances, int minProtein, int maxProtein, int minFat, int maxFat, int minCarbs, int maxCarbs, int minCalories, int maxCalories) {
         this.ingredients = ingredients;
         this.diets = diets;
-        this.cuisines = cuisines;
-        this.allergies = allergies;
+        this.cuisine = cuisine;
+        this.intolerances = intolerances;
         this.minProtein = minProtein;
+        this.maxProtein = maxProtein;
+        this.minFat = minFat;
         this.maxFat = maxFat;
         this.minCarbs = minCarbs;
         this.maxCarbs = maxCarbs;
@@ -36,16 +39,16 @@ public class RecipeSearchInputData {
         return ingredients;
     }
 
-    public List<Diet> getDiets() {
+    public String getDiets() {
         return diets;
     }
 
-    public List<Cuisine> getCuisines() {
-        return cuisines;
+    public String getCuisines() {
+        return cuisine;
     }
 
-    public List<Allergy> getAllergies() {
-        return allergies;
+    public String getAllergies() {
+        return intolerances;
     }
 
     public int getMinProtein() {
@@ -70,5 +73,21 @@ public class RecipeSearchInputData {
 
     public int getMaxCalories() {
         return maxCalories;
+    }
+
+    public int getMaxProtein() {
+        return maxProtein;
+    }
+
+    public void setMaxProtein(int maxProtein) {
+        this.maxProtein = maxProtein;
+    }
+
+    public int getMinFat() {
+        return minFat;
+    }
+
+    public void setMinFat(int minFat) {
+        this.minFat = minFat;
     }
 }

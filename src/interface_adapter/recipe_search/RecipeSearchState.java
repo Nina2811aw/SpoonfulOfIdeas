@@ -2,20 +2,54 @@ package interface_adapter.recipe_search;
 
 import use_case.recipe_search.*;
 
+import java.util.Map;
+
 public class RecipeSearchState {
     private String ingredients = "";
-    private boolean glutenFree = false;
+
+    public Map<String, Boolean> getDiets() {
+        return diets;
+    }
+
+    public void setDiets(Map<String, Boolean> diets) {
+        this.diets = diets;
+    }
+
+    public Map<String, Boolean> getIntolerances() {
+        return intolerances;
+    }
+
+    public void setIntolerances(Map<String, Boolean> intolerances) {
+        this.intolerances = intolerances;
+    }
+
+    private Map<String, Boolean> diets;
+    private Map<String, Boolean> intolerances;
+
+    /*private boolean glutenFree = false;
     private boolean vegetarian = false;
     private boolean vegan = false;
     private boolean keto = false;
     private boolean paleo = false;
     private boolean peanutIntolerance = false;
     private boolean dairyIntolerance = false;
-    private boolean soyIntolerance = false;
+    private boolean soyIntolerance = false;*/
     private String cuisine;
     private String protein;
     private String fat;
     private String carbs;
+
+    public void RecipeSearchState(){
+        diets.put("glutenfree", false);
+        diets.put("vegetarian", false);
+        diets.put("vegan", false);
+        diets.put("keto", false);
+        diets.put("paleo", false);
+
+        intolerances.put("peanut", false);
+        intolerances.put("soy", false);
+        intolerances.put("dairy", false);
+    }
 
     public String getCalories() {
         return calories;
@@ -41,67 +75,67 @@ public class RecipeSearchState {
     }
 
     public boolean isGlutenFree() {
-        return glutenFree;
+        return diets.get("glutenfree");
     }
 
     public void setGlutenFree(boolean glutenFree) {
-        this.glutenFree = glutenFree;
+        diets.put("glutenfree", glutenFree);
     }
 
     public boolean isVegan() {
-        return vegan;
+        return diets.get("vegan");
     }
 
     public void setVegan(boolean vegan) {
-        this.vegan = vegan;
+        diets.put("vegan", vegan);
     }
 
     public boolean isKeto() {
-        return keto;
+        return diets.get("keto");
     }
 
     public void setKeto(boolean keto) {
-        this.keto = keto;
+        diets.put("keto", keto);
     }
 
     public boolean isPaleo() {
-        return paleo;
+        return diets.get("paleo");
     }
 
     public void setPaleo(boolean paleo) {
-        this.paleo = paleo;
+        diets.put("paleo", paleo);
     }
 
     public boolean isVegetarian() {
-        return vegetarian;
+        return diets.get("vegetarian");
     }
 
     public void setVegetarian(boolean vegetarian) {
-        this.vegetarian = vegetarian;
+        diets.put("vegetarian", vegetarian);
     }
 
     public boolean isPeanutIntolerance() {
-        return peanutIntolerance;
+        return intolerances.get("peanut");
     }
 
     public void setPeanutIntolerance(boolean peanutIntolerance) {
-        this.peanutIntolerance = peanutIntolerance;
+        intolerances.put("peanut", peanutIntolerance);
     }
 
     public boolean isDairyIntolerance() {
-        return dairyIntolerance;
+        return intolerances.get("dairy");
     }
 
     public void setDairyIntolerance(boolean dairyIntolerance) {
-        this.dairyIntolerance = dairyIntolerance;
+        intolerances.put("dairy", dairyIntolerance);
     }
 
     public boolean isSoyIntolerance() {
-        return soyIntolerance;
+        return intolerances.get("soy");
     }
 
     public void setSoyIntolerance(boolean soyIntolerance) {
-        this.soyIntolerance = soyIntolerance;
+        intolerances.put("soy", soyIntolerance);
     }
 
     public String getCuisine() {

@@ -81,7 +81,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         checkboxesDiet.add(paleo);
 
         JPanel checkboxesAllergies = new JPanel();
-        checkboxesAllergies.add(new JLabel("Allergies:"));
+        checkboxesAllergies.add(new JLabel("Intolerances:"));
         peanuts = new JCheckBox("peanuts");
         soy = new JCheckBox("soy");
         dairy = new JCheckBox("dairy");
@@ -134,7 +134,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                             RecipeSearchState currentState = recipeSearchViewModel.getState();
 
                             // arguments have to be adapted based on attributed of RecipeSearchState
-                            recipeSearchController.execute();
+                            recipeSearchController.execute(currentState.getIngredients(), currentState.getDiets(), currentState.getIntolerances(), currentState.getCuisine(), currentState.getProtein(), currentState.getFat(), currentState.getCarbs(), currentState.getCalories());
                         }
                     }
                 }
