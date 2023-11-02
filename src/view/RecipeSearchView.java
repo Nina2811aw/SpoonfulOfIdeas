@@ -246,6 +246,57 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                 }
         );
 
+        peanuts.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(peanuts.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setPeanutIntolerance(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setPeanutIntolerance(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        dairy.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(dairy.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setDairyIntolerance(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setDairyIntolerance(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        soy.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(soy.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setSoyIntolerance(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setSoyIntolerance(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
     }
     @Override
     public void actionPerformed(ActionEvent e) {
