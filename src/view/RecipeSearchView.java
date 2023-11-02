@@ -98,7 +98,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
         JPanel dropDownMacros = new JPanel();
         dropDownMacros.add(new JLabel("Macro nutrients:"));
-        String[] proteinStrings = {"no protein restriction", "low protein", "highProtein"};
+        String[] proteinStrings = {"no protein restriction", "low protein", "high protein"}; // if these names are changed, the controller has to be adapted
         protein = new JComboBox<>(proteinStrings);
 
         String[] fatStrings = {"no fat restriction", "low fat", "high fat"};

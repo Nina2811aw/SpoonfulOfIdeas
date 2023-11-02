@@ -19,6 +19,12 @@ import java.util.Map;
 public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface, ChooseRecipeDataAccessInterface {
     @Override
     public void getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
+        String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
+
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+
+
+
 
     }
 
