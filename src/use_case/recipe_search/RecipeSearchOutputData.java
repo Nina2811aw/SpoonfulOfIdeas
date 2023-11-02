@@ -4,10 +4,22 @@ import java.util.List;
 
 public class RecipeSearchOutputData {
 
-    List<Integer> recipeIdeasIDList;
 
-    public RecipeSearchOutputData(List<Integer> recipeIdeasIDList) {
-        this.recipeIdeasIDList = recipeIdeasIDList;
+    public List<Integer> getRecipeIDList() {
+        return recipeIDList;
     }
+
+    public void setRecipeIDList(List<Integer> recipeIDList) {
+        this.recipeIDList = recipeIDList;
+    }
+
+    public RecipeSearchOutputData(List<Integer> recipeIDList) {
+        this.recipeIDList = recipeIDList;
+    }
+
+    List<Integer> recipeIDList;
+
+
+
 
 }

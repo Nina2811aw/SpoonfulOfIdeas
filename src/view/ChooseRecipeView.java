@@ -12,7 +12,7 @@ import java.beans.PropertyChangeListener;
 
 public class ChooseRecipeView extends JPanel implements ActionListener, PropertyChangeListener{
 
-    public final String viewName = "Choose Recipe View";
+    public final String viewName = "choose recipe";
 
     public final ChooseRecipeViewModel chooseRecipeViewModel;
 

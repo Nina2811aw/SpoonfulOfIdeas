@@ -39,7 +39,7 @@ public class MainApp {
         RecipeSearchViewModel recipeSearchViewModel = new RecipeSearchViewModel();
         ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
 
-        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel);
+        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
         views.add(recipeSearchView, recipeSearchView.viewName);
 
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, chooseRecipeViewModel);

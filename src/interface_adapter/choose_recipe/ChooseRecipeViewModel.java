@@ -10,7 +10,7 @@ public class ChooseRecipeViewModel extends ViewModel {
     private ChooseRecipeState state = new ChooseRecipeState();
 
     public ChooseRecipeViewModel() {
-        super("Choose Recipe");
+        super("choose recipe");
     }
 
     public void setState(ChooseRecipeState state) {

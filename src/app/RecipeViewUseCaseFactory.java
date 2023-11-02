@@ -21,16 +21,16 @@ import view.RecipeSearchView;
 public class RecipeViewUseCaseFactory {
 
 
-    public static RecipeSearchView createSearchView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel){
-        RecipeSearchController recipeSearchController = createSearchCase(viewManagerModel, recipeSearchViewModel);
+    public static RecipeSearchView createSearchView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel){
+        RecipeSearchController recipeSearchController = createSearchCase(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
         return new RecipeSearchView(recipeSearchController,recipeSearchViewModel); // delete this line, might want to remove static later
 
     }
 
 
-    public static RecipeSearchController createSearchCase(ViewManagerModel viewManagerModel,RecipeSearchViewModel recipeSearchViewModel){
+    public static RecipeSearchController createSearchCase(ViewManagerModel viewManagerModel,RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel){
         //throws IOException?
-        RecipeSearchOutputBoundary recipeSearchPresenter = new RecipeSearchPresenter(viewManagerModel, recipeSearchViewModel);
+        RecipeSearchOutputBoundary recipeSearchPresenter = new RecipeSearchPresenter(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
 
         RecipeSearchDataAccessInterface spoonacularDataAccessObject = new SpoonacularDataAccessObject();
 

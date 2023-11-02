@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="adapted RecipeSearchController, so that RecipeSearchInputData gets created based on the input from the user">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="added API call to get recipe ideas based on user input">
+      <change afterPath="$PROJECT_DIR$/src/entity/RecipeInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/MainApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/ViewManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/ViewManagerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/RecipeSearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeSearchView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -128,7 +129,7 @@
       <updated>1695921924614</updated>
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
-      <workItem from="1698939094343" duration="15353000" />
+      <workItem from="1698939094343" duration="17916000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -265,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698954386687</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added API call to get recipe ideas based on user input">
+      <option name="closed" value="true" />
+      <created>1698959121160</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1698959121160</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +297,8 @@
     <MESSAGE value="added action listener for the cuisine drop-down and the macro nutrients drop downs" />
     <MESSAGE value="adapted execute method of recipe search controller and attributes of recipe search state" />
     <MESSAGE value="adapted RecipeSearchController, so that RecipeSearchInputData gets created based on the input from the user" />
-    <option name="LAST_COMMIT_MESSAGE" value="adapted RecipeSearchController, so that RecipeSearchInputData gets created based on the input from the user" />
+    <MESSAGE value="added API call to get recipe ideas based on user input" />
+    <option name="LAST_COMMIT_MESSAGE" value="added API call to get recipe ideas based on user input" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
