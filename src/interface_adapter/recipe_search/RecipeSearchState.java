@@ -2,10 +2,29 @@ package interface_adapter.recipe_search;
 
 import use_case.recipe_search.*;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class RecipeSearchState {
     private String ingredients = "";
+
+    private boolean dietChosen = false;
+    private boolean intoleranceChosen = false;
+
+    public RecipeSearchState() {
+        diets = new HashMap<>();
+        intolerances = new HashMap<>();
+
+        diets.put("glutenfree", false);
+        diets.put("vegetarian", false);
+        diets.put("vegan", false);
+        diets.put("keto", false);
+        diets.put("paleo", false);
+
+        intolerances.put("peanut", false);
+        intolerances.put("soy", false);
+        intolerances.put("dairy", false);
+    }
 
     public Map<String, Boolean> getDiets() {
         return diets;
@@ -34,22 +53,11 @@ public class RecipeSearchState {
     private boolean peanutIntolerance = false;
     private boolean dairyIntolerance = false;
     private boolean soyIntolerance = false;*/
-    private String cuisine;
-    private String protein;
-    private String fat;
-    private String carbs;
+    private String cuisine = "";
+    private String protein = "no protein restriction";
+    private String fat = "no fat restriction";
+    private String carbs = "no carbs restriction";
 
-    public void RecipeSearchState(){
-        diets.put("glutenfree", false);
-        diets.put("vegetarian", false);
-        diets.put("vegan", false);
-        diets.put("keto", false);
-        diets.put("paleo", false);
-
-        intolerances.put("peanut", false);
-        intolerances.put("soy", false);
-        intolerances.put("dairy", false);
-    }
 
     public String getCalories() {
         return calories;
@@ -59,12 +67,9 @@ public class RecipeSearchState {
         this.calories = calories;
     }
 
-    private String calories;
+    private String calories = "no calorie restriction";
 
 
-    public RecipeSearchState(){
-
-    }
 
     public String getIngredients() {
         return ingredients;
@@ -168,5 +173,21 @@ public class RecipeSearchState {
 
     public void setCarbs(String carbs) {
         this.carbs = carbs;
+    }
+
+    public boolean isDietChosen() {
+        return dietChosen;
+    }
+
+    public void setDietChosen(boolean dietChosen) {
+        this.dietChosen = dietChosen;
+    }
+
+    public boolean isIntoleranceChosen() {
+        return intoleranceChosen;
+    }
+
+    public void setIntoleranceChosen(boolean intoleranceChosen) {
+        this.intoleranceChosen = intoleranceChosen;
     }
 }

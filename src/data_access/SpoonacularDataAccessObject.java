@@ -1,5 +1,6 @@
 package data_access;
 
+import org.json.JSONArray;
 import use_case.choose_recipe.ChooseRecipeDataAccessInterface;
 import use_case.choose_recipe.ChooseRecipeInputData;
 import use_case.recipe_search.RecipeSearchDataAccessInterface;
@@ -17,14 +18,52 @@ import java.util.List;
 import java.util.Map;
 
 public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface, ChooseRecipeDataAccessInterface {
+
+    private static String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
     @Override
-    public void getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
-        String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
+    public List<Integer> getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
+
+        List<Integer> recipeIDList = new ArrayList<>();
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
 
+        // getting the user information which specifies the complex search
 
+        String ingredients = recipeSearchInputData.getIngredients();
+        String diets = recipeSearchInputData.getDiets();
+        String intolerances = recipeSearchInputData.getAllergies();
+        String cuisine = recipeSearchInputData.getCuisines();
+        int minProtein = recipeSearchInputData.getMinProtein();
+        int maxProtein = recipeSearchInputData.getMaxProtein();
+        int minFat = recipeSearchInputData.getMinFat();
+        int maxFat = recipeSearchInputData.getMaxFat();
+        int minCarbs = recipeSearchInputData.getMinCarbs();
+        int maxCarbs = recipeSearchInputData.getMaxCarbs();
+        int minCalories = recipeSearchInputData.getMinCalories();
+        int maxCalories = recipeSearchInputData.getMaxCalories();
 
+        String url = String.format("https://api.spoonacular.com/recipes/complexSearch?query=%s&diet=%s&intolerances=%s&cuisine=%s&minProtein=%d&maxProtein=%d&minFat=%d&maxFat=%d&minCarbs=%d&maxCarbs=%d&minCalories=%d&maxCalories=%d&number=10",ingredients, diets,intolerances,cuisine, minProtein, maxProtein, minFat, maxFat, minCarbs, maxCarbs, minCalories, maxCalories);
+
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("x-api-key", API_TOKEN)
+                .addHeader("Content-Type", "application/json")
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            System.out.println(response);
+            JSONObject responseBody = new JSONObject(response.body().string());
+            JSONArray responseArray = responseBody.getJSONArray("results");
+            for(int i = 0; i < responseArray.length(); i++){
+                JSONObject currentObject = responseArray.getJSONObject(i);
+                recipeIDList.add((Integer)currentObject.get("id"));
+            }
+
+        } catch (IOException | JSONException e) {
+            throw new RuntimeException(e);
+        }
+
+        return recipeIDList;
 
     }
 

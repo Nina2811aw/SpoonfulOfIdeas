@@ -133,6 +133,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                         if(evt.getSource().equals(search)){
                             RecipeSearchState currentState = recipeSearchViewModel.getState();
 
+                            System.out.println("search button pressed");
                             // arguments have to be adapted based on attributed of RecipeSearchState
                             recipeSearchController.execute(currentState.getIngredients(), currentState.getDiets(), currentState.getIntolerances(), currentState.getCuisine(), currentState.getProtein(), currentState.getFat(), currentState.getCarbs(), currentState.getCalories());
                         }

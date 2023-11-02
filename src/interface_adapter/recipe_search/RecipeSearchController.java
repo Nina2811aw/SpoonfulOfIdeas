@@ -27,74 +27,106 @@ public class RecipeSearchController {
         int minCalories = 0;
         int maxCalories = 0;
 
-        StringBuilder userDiets = new StringBuilder();
-        boolean firstDietAppended = false;
-        for(String diet : diets.keySet()){
-            if(diets.get(diet)){
-                if (!firstDietAppended){
-                    userDiets.append(diet);
-                    firstDietAppended = true;
-                } else{
-                    userDiets.append(",");
-                    userDiets.append(diet);
-                }
-            }
-        }
-        String dietsString = new String(userDiets);
+        String dietsString = "";
+        String intolerancesString = "";
 
-        StringBuilder userIntolerances = new StringBuilder();
-        boolean firstIntoleranceAppended = false;
-        for(String intolerance : intolerances.keySet()){
-            if(diets.get(intolerance)){
-                if (!firstIntoleranceAppended){
-                    userIntolerances.append(intolerance);
-                    firstIntoleranceAppended = true;
-                } else{
-                    userDiets.append(",");
-                    userIntolerances.append(intolerance);
-                }
+        boolean dietChosen = false;
+        for(Boolean checked : diets.values()){
+            if (checked) {
+                dietChosen = true;
+                break;
             }
         }
-        String intolerancesString = new String(userIntolerances);
+
+        boolean intoleranceChosen = false;
+        for(Boolean checked : intolerances.values()){
+            if(checked){
+                intoleranceChosen = true;
+                break;
+            }
+        }
+
+        if(dietChosen){
+            StringBuilder userDiets = new StringBuilder();
+            boolean firstDietAppended = false;
+            for(String diet : diets.keySet()){
+                if(diets.get(diet)){
+                    if (!firstDietAppended){
+                        userDiets.append(diet);
+                        firstDietAppended = true;
+                    } else{
+                        userDiets.append(",");
+                        userDiets.append(diet);
+                    }
+                }
+            }
+            dietsString = new String(userDiets);
+        }
+
+        if(intoleranceChosen){
+            StringBuilder userIntolerances = new StringBuilder();
+            boolean firstIntoleranceAppended = false;
+            for(String intolerance : intolerances.keySet()){
+                if(intolerances.get(intolerance)){
+                    if (!firstIntoleranceAppended){
+                        userIntolerances.append(intolerance);
+                        firstIntoleranceAppended = true;
+                    } else{
+                        userIntolerances.append(",");
+                        userIntolerances.append(intolerance);
+                    }
+                }
+            }
+            intolerancesString = new String(userIntolerances);
+        }
 
         switch(protein) {
             case "high protein":
-                minProtein = 50;
+                minProtein = 20;
+                maxProtein = 100;
                 break;
             case "low protein":
-                maxProtein = 50;
+                maxProtein = 40;
                 break;
             default:
+                maxProtein = 100;
         }
 
         switch (fat){
             case "high fat":
-                minFat = 50;
+                minFat = 30;
+                maxFat = 100;
                 break;
             case "low fat":
-                maxFat = 50;
+                maxFat = 35;
                 break;
             default:
+                maxFat = 100;
         }
 
         switch (carbs){
             case "high carbs":
                 minCarbs = 50;
+                maxCarbs = 200;
                 break;
             case "low carbs":
-                maxCarbs = 50;
+                maxCarbs = 80;
                 break;
             default:
+                maxCarbs = 200;
         }
 
         switch (calories){
             case "high calorie":
-                minCalories = 500;
+                minCalories = 700;
+                maxCalories = 2000;
                 break;
             case "low calorie":
-                maxCalories = 500;
+                maxCalories = 700;
                 break;
             default:
+                maxCalories = 2000;
+
         }
 
         RecipeSearchInputData recipeSearchInputData = new RecipeSearchInputData(ingredients, dietsString, cuisine, intolerancesString, minProtein, maxProtein, minFat, maxFat, minCarbs, maxCarbs, minCalories, maxCalories); // has to be replaced by actual input data

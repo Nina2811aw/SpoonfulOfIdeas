@@ -1,11 +1,13 @@
 package use_case.recipe_search;
 
+import java.util.List;
+
 public class RecipeSearchOutputData {
-    private String recipeid;
 
-    private String name;
+    List<Integer> recipeIdeasIDList;
 
-    private String description;
+    public RecipeSearchOutputData(List<Integer> recipeIdeasIDList) {
+        this.recipeIdeasIDList = recipeIdeasIDList;
+    }
 
-    // will return an id, name, and description to choose recipe.
 }
