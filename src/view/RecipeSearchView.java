@@ -173,7 +173,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     // should include a textbox for ingredients
     // should include checkboxes for:
-    /**
+    /*
      * use_case.recipe_search.Diet:
      * Keto
      * Vegetarian

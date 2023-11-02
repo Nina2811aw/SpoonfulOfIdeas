@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="added text field for user input (ingredients) to the RecipeSearchView">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView">
       <change beforePath="$PROJECT_DIR$/src/view/RecipeSearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeSearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +119,7 @@
       <updated>1695921924614</updated>
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
-      <workItem from="1698939094343" duration="4809000" />
+      <workItem from="1698939094343" duration="4890000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -201,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698941284046</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView">
+      <option name="closed" value="true" />
+      <created>1698944191264</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698944191264</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +225,8 @@
     <MESSAGE value="recipe entity" />
     <MESSAGE value="adapted classes of the nutrition detail use case to remove errors" />
     <MESSAGE value="added text field for user input (ingredients) to the RecipeSearchView" />
-    <option name="LAST_COMMIT_MESSAGE" value="added text field for user input (ingredients) to the RecipeSearchView" />
+    <MESSAGE value="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
