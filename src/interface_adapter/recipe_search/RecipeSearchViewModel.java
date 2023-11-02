@@ -8,6 +8,8 @@ import java.beans.PropertyChangeSupport;
 public class RecipeSearchViewModel extends ViewModel {
     public static final String TITLE_LABEL = "Recipe Search View";
 
+    public static final String INGREDIENTS_LABEL = "Type in your ingredients";
+
     public static final String SEARCH_BUTTON = "Search";
 
     private RecipeSearchState state = new RecipeSearchState();

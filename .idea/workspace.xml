@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="new classes for nutrition detail use case">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="adapted classes of the nutrition detail use case to remove errors">
+      <change afterPath="$PROJECT_DIR$/src/view/LabelTextPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/nutrition_detail/NutritionDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/nutrition_detail/NutritionDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/nutrition_detail/NutritionDetailPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/nutrition_detail/NutritionDetailPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/nutrition_detail/NutritionDetailInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/nutrition_detail/NutritionDetailInputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/nutrition_detail/NutritionDetailInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/nutrition_detail/NutritionDetailInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/nutrition_detail/NutritionDetailOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/nutrition_detail/NutritionDetailOutputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/RecipeDetailsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeDetailsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/RecipeSearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeSearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +123,7 @@
       <updated>1695921924614</updated>
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
-      <workItem from="1698939094343" duration="850000" />
+      <workItem from="1698939094343" duration="2116000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -190,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698683466179</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="adapted classes of the nutrition detail use case to remove errors">
+      <option name="closed" value="true" />
+      <created>1698940025799</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698940025799</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +211,22 @@
     <MESSAGE value="merge commit" />
     <MESSAGE value="new classes for nutrition detail use case" />
     <MESSAGE value="recipe entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="recipe entity" />
+    <MESSAGE value="adapted classes of the nutrition detail use case to remove errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="adapted classes of the nutrition detail use case to remove errors" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/app/MainApp.java</url>
+          <line>15</line>
+          <properties class="app.MainApp" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
