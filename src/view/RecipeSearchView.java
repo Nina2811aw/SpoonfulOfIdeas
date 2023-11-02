@@ -2,6 +2,7 @@ package view;
 import interface_adapter.recipe_search.RecipeSearchController;
 import interface_adapter.recipe_search.RecipeSearchState;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
+import use_case.recipe_search.Cuisine;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,6 +36,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     // drop down for cuisines
     private final JComboBox<String> cuisines;
+    //private final JComboBox<Cuisine> cuisines;
 
     // drop down for protein
     private final JComboBox<String> protein;
@@ -90,6 +92,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         JPanel dropDownCuisines = new JPanel();
         dropDownCuisines.add(new JLabel("Cuisine:"));
         String[] cuisineStrings = {"no restriction", "Chinese", "Italien", "Indian", "Mexican", "African", "German"};
+        //Cuisine[] cuisineStrings = {Cuisine.NORESTRICTION, Cuisine.ITALIEN};
         cuisines = new JComboBox<>(cuisineStrings);
         dropDownCuisines.add(cuisines);
 
@@ -296,6 +299,68 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                     }
                 }
         );
+
+        cuisines.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String selectedCuisine = cuisines.getSelectedItem().toString();
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        currentState.setCuisine(selectedCuisine);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+        protein.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String selectedProtein = protein.getSelectedItem().toString();
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        currentState.setProtein(selectedProtein);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+        fat.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String selectedFat = fat.getSelectedItem().toString();
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        currentState.setFat(selectedFat);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+        carbs.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String selectedCarb = carbs.getSelectedItem().toString();
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        currentState.setCarbs(selectedCarb);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+        calories.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String selectedCalories = calories.getSelectedItem().toString();
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        currentState.setCalories(selectedCalories);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+
 
     }
     @Override

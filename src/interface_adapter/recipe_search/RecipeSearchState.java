@@ -3,7 +3,6 @@ package interface_adapter.recipe_search;
 import use_case.recipe_search.*;
 
 public class RecipeSearchState {
-
     private String ingredients = "";
     private boolean glutenFree = false;
     private boolean vegetarian = false;
@@ -13,11 +12,20 @@ public class RecipeSearchState {
     private boolean peanutIntolerance = false;
     private boolean dairyIntolerance = false;
     private boolean soyIntolerance = false;
-    private Cuisine cuisine;
-    private Protein protein;
-    private Fat fat;
-    private Carbs carbs;
-    private Calories calories;
+    private String cuisine;
+    private String protein;
+    private String fat;
+    private String carbs;
+
+    public String getCalories() {
+        return calories;
+    }
+
+    public void setCalories(String calories) {
+        this.calories = calories;
+    }
+
+    private String calories;
 
 
     public RecipeSearchState(){
@@ -96,43 +104,35 @@ public class RecipeSearchState {
         this.soyIntolerance = soyIntolerance;
     }
 
-    public Cuisine getCuisine() {
+    public String getCuisine() {
         return cuisine;
     }
 
-    public void setCuisine(Cuisine cuisine) {
+    public void setCuisine(String cuisine) {
         this.cuisine = cuisine;
     }
 
-    public Protein getProtein() {
+    public String getProtein() {
         return protein;
     }
 
-    public void setProtein(Protein protein) {
+    public void setProtein(String protein) {
         this.protein = protein;
     }
 
-    public Fat getFat() {
+    public String getFat() {
         return fat;
     }
 
-    public void setFat(Fat fat) {
+    public void setFat(String fat) {
         this.fat = fat;
     }
 
-    public Carbs getCarbs() {
+    public String getCarbs() {
         return carbs;
     }
 
-    public void setCarbs(Carbs carbs) {
+    public void setCarbs(String carbs) {
         this.carbs = carbs;
-    }
-
-    public Calories getCalories() {
-        return calories;
-    }
-
-    public void setCalories(Calories calories) {
-        this.calories = calories;
     }
 }
