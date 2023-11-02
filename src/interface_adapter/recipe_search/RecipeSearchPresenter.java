@@ -28,7 +28,7 @@ public class RecipeSearchPresenter implements  RecipeSearchOutputBoundary{
 
         System.out.println("prepare choose recipe view for recipe search presenter");
         ChooseRecipeState chooseRecipeState = chooseRecipeViewModel.getState();
-        chooseRecipeState.setRecipeIdeasIDList(recipeSearchOutputData.getRecipeIDList());
+        chooseRecipeState.setRecipeIdeasList(recipeSearchOutputData.getRecipeIDList());
         this.chooseRecipeViewModel.setState(chooseRecipeState);
         chooseRecipeViewModel.firePropertyChanged();
 

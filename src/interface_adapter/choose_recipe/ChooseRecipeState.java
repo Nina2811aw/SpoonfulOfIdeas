@@ -1,17 +1,29 @@
 package interface_adapter.choose_recipe;
 
+import entity.RecipeInformation;
+
 import java.util.List;
 
 public class ChooseRecipeState {
 
-    List<Integer> recipeIdeasIDList;
-    public List<Integer> getRecipeIdeasIDList() {
-        return recipeIdeasIDList;
+    public ChooseRecipeState(List<RecipeInformation> recipeIdeasList) {
+        this.recipeIdeasList = recipeIdeasList;
     }
 
-    public void setRecipeIdeasIDList(List<Integer> recipeIdeasIDList) {
-        this.recipeIdeasIDList = recipeIdeasIDList;
+    public ChooseRecipeState(){
+
     }
+
+    public List<RecipeInformation> getRecipeIdeasList() {
+        return recipeIdeasList;
+    }
+
+    public void setRecipeIdeasList(List<RecipeInformation> recipeIdeasList) {
+        this.recipeIdeasList = recipeIdeasList;
+    }
+
+    List<RecipeInformation> recipeIdeasList;
+
 
 
 }

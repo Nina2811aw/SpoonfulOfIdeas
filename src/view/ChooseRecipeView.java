@@ -1,6 +1,8 @@
 package view;
 
+import entity.RecipeInformation;
 import interface_adapter.choose_recipe.ChooseRecipeController;
+import interface_adapter.choose_recipe.ChooseRecipeState;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 
 import javax.swing.*;
@@ -9,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.List;
 
 public class ChooseRecipeView extends JPanel implements ActionListener, PropertyChangeListener{
 
@@ -31,6 +34,8 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         JPanel buttons = new JPanel();
         select = new JButton(chooseRecipeViewModel.SELECT_BUTTON);
         buttons.add(select);
+
+        this.add(buttons);
     }
 
 
@@ -42,6 +47,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+
 
     }
 }

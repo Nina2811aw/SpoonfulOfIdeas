@@ -1,5 +1,6 @@
 package data_access;
 
+import entity.RecipeInformation;
 import org.json.JSONArray;
 import use_case.choose_recipe.ChooseRecipeDataAccessInterface;
 import use_case.choose_recipe.ChooseRecipeInputData;
@@ -21,9 +22,9 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
     private static String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
     @Override
-    public List<Integer> getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
+    public List<RecipeInformation> getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
 
-        List<Integer> recipeIDList = new ArrayList<>();
+        List<RecipeInformation> recipeList = new ArrayList<>();
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
 
@@ -56,14 +57,15 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
             JSONArray responseArray = responseBody.getJSONArray("results");
             for(int i = 0; i < responseArray.length(); i++){
                 JSONObject currentObject = responseArray.getJSONObject(i);
-                recipeIDList.add((Integer)currentObject.get("id"));
+                RecipeInformation recipeInformation = new RecipeInformation((Integer)currentObject.get("id"), (String)currentObject.get("title"));
+                recipeList.add(recipeInformation);
             }
 
         } catch (IOException | JSONException e) {
             throw new RuntimeException(e);
         }
 
-        return recipeIDList;
+        return recipeList;
 
     }
 
