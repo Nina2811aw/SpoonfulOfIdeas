@@ -17,9 +17,35 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     public final String viewName = "Recipe Search View";
 
-    private final JTextField ingredientsInputField = new JTextField(15);
+    private final JTextField ingredientsInputField = new JTextField(30);
 
     private final JButton search;
+
+    // checkboxes for diets
+    private final JCheckBox vegan;
+    private final JCheckBox vegetarian;
+    private final JCheckBox keto;
+    private final JCheckBox glutenFree;
+    private final JCheckBox paleo;
+
+    // checkboxes for allergies
+    private final JCheckBox peanuts;
+    private final JCheckBox dairy;
+    private final JCheckBox soy;
+
+    // drop down for cuisines
+    private final JComboBox<String> cuisines;
+
+    // drop down for protein
+    private final JComboBox<String> protein;
+    // drop down for fat
+    private final JComboBox<String> fat;
+
+    private final JComboBox<String> carbs;
+
+    private final JComboBox<String> calories;
+
+
     public final RecipeSearchViewModel recipeSearchViewModel;
 
     public final RecipeSearchController recipeSearchController;
@@ -39,11 +65,62 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         search = new JButton(RecipeSearchViewModel.SEARCH_BUTTON);
         buttons.add(search);
 
+        JPanel checkboxesDiet = new JPanel();
+        checkboxesDiet.add(new JLabel("Diets:"));
+        glutenFree = new JCheckBox("gluten-free");
+        vegetarian = new JCheckBox("vegetarian");
+        vegan = new JCheckBox("vegan");
+        keto = new JCheckBox("keto");
+        paleo = new JCheckBox("paleo");
+        checkboxesDiet.add(glutenFree);
+        checkboxesDiet.add(vegetarian);
+        checkboxesDiet.add(vegan);
+        checkboxesDiet.add(keto);
+        checkboxesDiet.add(paleo);
+
+        JPanel checkboxesAllergies = new JPanel();
+        checkboxesAllergies.add(new JLabel("Allergies:"));
+        peanuts = new JCheckBox("peanuts");
+        soy = new JCheckBox("soy");
+        dairy = new JCheckBox("dairy");
+        checkboxesAllergies.add(peanuts);
+        checkboxesAllergies.add(soy);
+        checkboxesAllergies.add(dairy);
+
+        JPanel dropDownCuisines = new JPanel();
+        dropDownCuisines.add(new JLabel("Cuisine:"));
+        String[] cuisineStrings = {"no restriction", "Chinese", "Italien", "Indian", "Mexican", "German"};
+        cuisines = new JComboBox<>(cuisineStrings);
+        dropDownCuisines.add(cuisines);
+
+        JPanel dropDownMacros = new JPanel();
+        dropDownMacros.add(new JLabel("Macro nutrients:"));
+        String[] proteinStrings = {"no protein restriction", "low protein", "highProtein"};
+        protein = new JComboBox<>(proteinStrings);
+
+        String[] fatStrings = {"no fat restriction", "low fat", "high fat"};
+        fat = new JComboBox<>(fatStrings);
+
+        String[] carbsStrings = {"no carbs restriction", "low carbs", "high carbs"};
+        carbs = new JComboBox<>(carbsStrings);
+
+        String[] caloriesStrings = {"no calorie restrictions", "low calorie", "high calorie"};
+        calories = new JComboBox<>(caloriesStrings);
+
+        dropDownMacros.add(protein);
+        dropDownMacros.add(fat);
+        dropDownMacros.add(carbs);
+        dropDownMacros.add(calories);
+
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         this.add(title);
-        this.add(buttons);
         this.add(ingredientsInfo);
+        this.add(checkboxesDiet);
+        this.add(checkboxesAllergies);
+        this.add(dropDownCuisines);
+        this.add(dropDownMacros);
+        this.add(buttons);
 
         // action listener when search button gets pressed
         search.addActionListener(

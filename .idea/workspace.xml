@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="adapted classes of the nutrition detail use case to remove errors">
-      <change afterPath="$PROJECT_DIR$/src/view/LabelTextPanel.java" afterDir="false" />
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="added text field for user input (ingredients) to the RecipeSearchView">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/RecipeSearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeSearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +120,7 @@
       <updated>1695921924614</updated>
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
-      <workItem from="1698939094343" duration="2116000" />
+      <workItem from="1698939094343" duration="4809000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -196,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698940025799</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added text field for user input (ingredients) to the RecipeSearchView">
+      <option name="closed" value="true" />
+      <created>1698941284046</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1698941284046</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +217,8 @@
     <MESSAGE value="new classes for nutrition detail use case" />
     <MESSAGE value="recipe entity" />
     <MESSAGE value="adapted classes of the nutrition detail use case to remove errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="adapted classes of the nutrition detail use case to remove errors" />
+    <MESSAGE value="added text field for user input (ingredients) to the RecipeSearchView" />
+    <option name="LAST_COMMIT_MESSAGE" value="added text field for user input (ingredients) to the RecipeSearchView" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
