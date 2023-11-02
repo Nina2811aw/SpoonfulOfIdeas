@@ -89,7 +89,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
         JPanel dropDownCuisines = new JPanel();
         dropDownCuisines.add(new JLabel("Cuisine:"));
-        String[] cuisineStrings = {"no restriction", "Chinese", "Italien", "Indian", "Mexican", "German"};
+        String[] cuisineStrings = {"no restriction", "Chinese", "Italien", "Indian", "Mexican", "African", "German"};
         cuisines = new JComboBox<>(cuisineStrings);
         dropDownCuisines.add(cuisines);
 
@@ -156,6 +156,92 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                     @Override
                     public void keyReleased(KeyEvent e) {
 
+                    }
+                }
+        );
+
+        glutenFree.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(glutenFree.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setGlutenFree(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setGlutenFree(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        vegetarian.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(vegetarian.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setVegetarian(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setVegetarian(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+
+        );
+
+        vegan.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(vegan.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setVegan(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setVegan(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        paleo.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(paleo.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setPaleo(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setPaleo(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        keto.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(keto.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setKeto(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setKeto(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
                     }
                 }
         );

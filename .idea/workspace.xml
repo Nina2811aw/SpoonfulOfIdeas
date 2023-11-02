@@ -5,6 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView">
+      <change afterPath="$PROJECT_DIR$/src/use_case/recipe_search/Calories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/recipe_search/Carbs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/recipe_search/Fat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/recipe_search/Protein.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/Cuisine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/Cuisine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/RecipeSearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeSearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +24,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -119,7 +127,7 @@
       <updated>1695921924614</updated>
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
-      <workItem from="1698939094343" duration="4890000" />
+      <workItem from="1698939094343" duration="6066000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -208,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698944191264</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView">
+      <option name="closed" value="true" />
+      <created>1698944243572</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698944243572</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
