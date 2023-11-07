@@ -4,10 +4,6 @@ import use_case.recipe_search.RecipeSearchInputData;
 
 interface RecipeSpec {
 
-    // User specification bundled data
-    RecipeSearchInputData getSpecification();
-    void setSpecification(RecipeSearchInputData recipeSearchInputData);
-
     // Ingredients
     String getIngredients();
     void setIngredients(String ingredients);
