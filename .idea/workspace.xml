@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="added switch from Recipe Search View to Choose Recipe View after user clicks on search button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/RecipeInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/RecipeInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_access/RecipeSpecificationDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/RecipeSpecificationDataAccessObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -58,21 +51,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "back__to__search",
+    "last_opened_file_path": "/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/README/API_Files_Test-hamza" />
@@ -287,6 +280,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created App directory" />
     <MESSAGE value="Use Case Files" />
@@ -307,20 +311,5 @@
     <MESSAGE value="added API call to get recipe ideas based on user input" />
     <MESSAGE value="added switch from Recipe Search View to Choose Recipe View after user clicks on search button" />
     <option name="LAST_COMMIT_MESSAGE" value="added switch from Recipe Search View to Choose Recipe View after user clicks on search button" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/app/MainApp.java</url>
-          <line>15</line>
-          <properties class="app.MainApp" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
