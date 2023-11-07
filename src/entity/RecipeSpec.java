@@ -17,8 +17,8 @@ interface RecipeSpec {
     void setCuisines(String cuisines);
 
     // Allergies
-    String getAllergies();
-    void setAllergies(String allergies);
+    String getIntolerances();
+    void setIntolerances(String intolerances);
 
     // Protein
     int getMinProtein();
