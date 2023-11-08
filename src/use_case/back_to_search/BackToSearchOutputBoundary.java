@@ -2,5 +2,5 @@ package use_case.back_to_search;
 
 public interface BackToSearchOutputBoundary {
 
-    void prepareFilledRecipeSearchView(BackToSearchOutputData previousSpecification);
+    void prepareRecipeSearchView(BackToSearchOutputData previousSpecification);
 }

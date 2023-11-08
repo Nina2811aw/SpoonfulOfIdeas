@@ -23,6 +23,6 @@ public class BackToSearchInteractor implements BackToSearchInputBoundary {
                                                                         recipeSpec.getMinFat(), recipeSpec.getMaxFat(),
                                                                         recipeSpec.getMinCarbs(), recipeSpec.getMaxCarbs(),
                                                                         recipeSpec.getMinCalories(), recipeSpec.getMaxCalories());
-        backToSearchPresenter.prepareFilledRecipeSearchView(outputData);
+        backToSearchPresenter.prepareRecipeSearchView(outputData);
     }
 }
