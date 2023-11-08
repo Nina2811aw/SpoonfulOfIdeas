@@ -1,6 +1,8 @@
 package view;
 import interface_adapter.recipe_search.RecipeSearchController;
+import interface_adapter.recipe_search.RecipeSearchState;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
+import use_case.recipe_search.Cuisine;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,15 +18,42 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     public final String viewName = "Recipe Search View";
 
-    private final JTextField usernameInputField = new JTextField(15);
-    private final JPasswordField passwordInputField = new JPasswordField(15);
-    private final JPasswordField repeatPasswordInputField = new JPasswordField(15);
-    private final JButton Search;
+    private final JTextField ingredientsInputField = new JTextField(30);
+
+    private final JButton search;
+
+    // checkboxes for diets
+    private final JCheckBox vegan;
+    private final JCheckBox vegetarian;
+    private final JCheckBox keto;
+    private final JCheckBox glutenFree;
+    private final JCheckBox paleo;
+
+    // checkboxes for allergies
+    private final JCheckBox peanuts;
+    private final JCheckBox dairy;
+    private final JCheckBox soy;
+
+    // drop down for cuisines
+    private final JComboBox<String> cuisines;
+    //private final JComboBox<Cuisine> cuisines;
+
+    // drop down for protein
+    private final JComboBox<String> protein;
+    // drop down for fat
+    private final JComboBox<String> fat;
+
+    private final JComboBox<String> carbs;
+
+    private final JComboBox<String> calories;
+
+
     public final RecipeSearchViewModel recipeSearchViewModel;
 
     public final RecipeSearchController recipeSearchController;
 
     public RecipeSearchView(RecipeSearchController controller, RecipeSearchViewModel recipeSearchViewModel){
+
         this.recipeSearchController = controller;
         this.recipeSearchViewModel = recipeSearchViewModel;
         recipeSearchViewModel.addPropertyChangeListener(this);
@@ -32,14 +61,308 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         JLabel title = new JLabel(RecipeSearchViewModel.TITLE_LABEL);
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        LabelTextPanel ingredientsInfo = new LabelTextPanel(new JLabel(RecipeSearchViewModel.INGREDIENTS_LABEL), ingredientsInputField);
+
         JPanel buttons = new JPanel();
-        Search = new JButton(RecipeSearchViewModel.SEARCH_BUTTON);
-        buttons.add(Search);
+        search = new JButton(RecipeSearchViewModel.SEARCH_BUTTON);
+        buttons.add(search);
+
+        JPanel checkboxesDiet = new JPanel();
+        checkboxesDiet.add(new JLabel("Diets:"));
+        glutenFree = new JCheckBox("gluten-free");
+        vegetarian = new JCheckBox("vegetarian");
+        vegan = new JCheckBox("vegan");
+        keto = new JCheckBox("keto");
+        paleo = new JCheckBox("paleo");
+        checkboxesDiet.add(glutenFree);
+        checkboxesDiet.add(vegetarian);
+        checkboxesDiet.add(vegan);
+        checkboxesDiet.add(keto);
+        checkboxesDiet.add(paleo);
+
+        JPanel checkboxesAllergies = new JPanel();
+        checkboxesAllergies.add(new JLabel("Intolerances:"));
+        peanuts = new JCheckBox("peanuts");
+        soy = new JCheckBox("soy");
+        dairy = new JCheckBox("dairy");
+        checkboxesAllergies.add(peanuts);
+        checkboxesAllergies.add(soy);
+        checkboxesAllergies.add(dairy);
+
+        JPanel dropDownCuisines = new JPanel();
+        dropDownCuisines.add(new JLabel("Cuisine:"));
+        String[] cuisineStrings = {"no restriction", "Chinese", "Italien", "Indian", "Mexican", "African", "German"};
+        //Cuisine[] cuisineStrings = {Cuisine.NORESTRICTION, Cuisine.ITALIEN};
+        cuisines = new JComboBox<>(cuisineStrings);
+        dropDownCuisines.add(cuisines);
+
+        JPanel dropDownMacros = new JPanel();
+        dropDownMacros.add(new JLabel("Macro nutrients:"));
+        String[] proteinStrings = {"no protein restriction", "low protein", "high protein"}; // if these names are changed, the controller has to be adapted
+        protein = new JComboBox<>(proteinStrings);
+
+        String[] fatStrings = {"no fat restriction", "low fat", "high fat"};
+        fat = new JComboBox<>(fatStrings);
+
+        String[] carbsStrings = {"no carbs restriction", "low carbs", "high carbs"};
+        carbs = new JComboBox<>(carbsStrings);
+
+        String[] caloriesStrings = {"no calorie restrictions", "low calorie", "high calorie"};
+        calories = new JComboBox<>(caloriesStrings);
+
+        dropDownMacros.add(protein);
+        dropDownMacros.add(fat);
+        dropDownMacros.add(carbs);
+        dropDownMacros.add(calories);
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         this.add(title);
+        this.add(ingredientsInfo);
+        this.add(checkboxesDiet);
+        this.add(checkboxesAllergies);
+        this.add(dropDownCuisines);
+        this.add(dropDownMacros);
         this.add(buttons);
+
+        // action listener when search button gets pressed
+        search.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if(evt.getSource().equals(search)){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+
+                            System.out.println("search button pressed");
+                            // arguments have to be adapted based on attributed of RecipeSearchState
+                            recipeSearchController.execute(currentState.getIngredients(), currentState.getDiets(), currentState.getIntolerances(), currentState.getCuisine(), currentState.getProtein(), currentState.getFat(), currentState.getCarbs(), currentState.getCalories());
+                        }
+                    }
+                }
+        );
+
+        // user types in ingredients
+        ingredientsInputField.addKeyListener(
+                new KeyListener() {
+                    @Override
+                    public void keyTyped(KeyEvent e) {
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        String text = ingredientsInputField.getText() + e.getKeyChar();
+                        currentState.setIngredients(text);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+
+                    @Override
+                    public void keyPressed(KeyEvent e) {
+
+                    }
+
+                    @Override
+                    public void keyReleased(KeyEvent e) {
+
+                    }
+                }
+        );
+
+        glutenFree.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(glutenFree.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setGlutenFree(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setGlutenFree(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        vegetarian.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(vegetarian.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setVegetarian(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setVegetarian(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+
+        );
+
+        vegan.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(vegan.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setVegan(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setVegan(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        paleo.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(paleo.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setPaleo(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setPaleo(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        keto.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(keto.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setKeto(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setKeto(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        peanuts.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(peanuts.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setPeanutIntolerance(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setPeanutIntolerance(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        dairy.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(dairy.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setDairyIntolerance(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setDairyIntolerance(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        soy.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(soy.isSelected()){
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setSoyIntolerance(true);
+                            recipeSearchViewModel.setState(currentState);
+                        } else{
+                            RecipeSearchState currentState = recipeSearchViewModel.getState();
+                            currentState.setSoyIntolerance(false);
+                            recipeSearchViewModel.setState(currentState);
+                        }
+                    }
+                }
+        );
+
+        cuisines.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String selectedCuisine = cuisines.getSelectedItem().toString();
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        currentState.setCuisine(selectedCuisine);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+        protein.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String selectedProtein = protein.getSelectedItem().toString();
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        currentState.setProtein(selectedProtein);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+        fat.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String selectedFat = fat.getSelectedItem().toString();
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        currentState.setFat(selectedFat);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+        carbs.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String selectedCarb = carbs.getSelectedItem().toString();
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        currentState.setCarbs(selectedCarb);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+        calories.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String selectedCalories = calories.getSelectedItem().toString();
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        currentState.setCalories(selectedCalories);
+                        recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+
+
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -53,7 +376,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     // should include a textbox for ingredients
     // should include checkboxes for:
-    /**
+    /*
      * use_case.recipe_search.Diet:
      * Keto
      * Vegetarian

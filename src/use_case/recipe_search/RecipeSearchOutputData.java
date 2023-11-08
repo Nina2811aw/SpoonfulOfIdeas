@@ -1,11 +1,27 @@
 package use_case.recipe_search;
 
+import entity.RecipeInformation;
+
+import java.util.List;
+
 public class RecipeSearchOutputData {
-    private String recipeid;
 
-    private String name;
 
-    private String description;
+    public RecipeSearchOutputData(List<RecipeInformation> recipeIDList) {
+        this.recipeIDList = recipeIDList;
+    }
 
-    // will return an id, name, and description to choose recipe.
+    public List<RecipeInformation> getRecipeIDList() {
+        return recipeIDList;
+    }
+
+    public void setRecipeIDList(List<RecipeInformation> recipeIDList) {
+        this.recipeIDList = recipeIDList;
+    }
+
+    List<RecipeInformation> recipeIDList;
+
+
+
+
 }

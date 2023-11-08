@@ -1,5 +1,9 @@
 package use_case.recipe_search;
 
+import entity.RecipeInformation;
+
+import java.util.List;
+
 public class RecipeSearchInteractor implements RecipeSearchInputBoundary{
 
     final RecipeSearchDataAccessInterface recipeSearchDataAccessObject;
@@ -14,14 +18,19 @@ public class RecipeSearchInteractor implements RecipeSearchInputBoundary{
     @Override
     public void execute(RecipeSearchInputData searchInputData) {
         // execute use case
-        recipeSearchDataAccessObject.getRecipeIdeas(searchInputData);
+        List<RecipeInformation> recipeIdeasList = recipeSearchDataAccessObject.getRecipeIdeas(searchInputData);
 
-        // call presenter with output data
-        RecipeSearchOutputData recipeSearchOutputData = new RecipeSearchOutputData(); // create actual output data
-        recipeSearchPresenter.prepareChooseRecipeView(recipeSearchOutputData);
+        for(RecipeInformation recipe : recipeIdeasList){
+            System.out.println(recipe.getID() + " : " + recipe.getTitle());
+        }
 
         // if no recipes are found, this will be displayed to the user
-        recipeSearchPresenter.prepareNoRecipeFoundView();
+        if(recipeIdeasList.isEmpty()){
+            recipeSearchPresenter.prepareNoRecipeFoundView();
+        }
+        // call presenter with output data
+        RecipeSearchOutputData recipeSearchOutputData = new RecipeSearchOutputData(recipeIdeasList);
+        recipeSearchPresenter.prepareChooseRecipeView(recipeSearchOutputData);
 
     }
 

@@ -1,5 +1,5 @@
 package use_case.recipe_search;
 
 public enum Cuisine {
-    African, Chinese, German, Mexican, Indian, Italian
+    NORESTRICTION, AFRICAN, CHINESE, GERMAN, MEXICAN, INDIAN, ITALIEN
 }
