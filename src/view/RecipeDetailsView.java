@@ -1,13 +1,18 @@
 package view;
 
 import interface_adapter.back_to_choose.BackToChooseController;
+import interface_adapter.back_to_choose.BackToChooseState;
+import interface_adapter.back_to_choose.BackToChooseViewModel;
 import interface_adapter.nutrition_detail.NutritionDetailController;
+import interface_adapter.nutrition_detail.NutritionDetailState;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -32,17 +37,37 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         back = new JButton(nutritionDetailViewModel.BACK_BUTTON_LABEL);
         buttons.add(back);
 
+        back.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getSource().equals(back)){
+                            NutritionDetailState currentState = NutritionDetailViewModel.getState();
+
+                            backToChooseController.execute();
+                        }
+                    }
+                }
+        );
+
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.add(title);
+        this.add(buttons);
+        // add the recipe info later
+
 
 
 }
 
+
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void propertyChange(PropertyChangeEvent evt) {
+        NutritionDetailState state = (NutritionDetailState) evt.getNewValue();
 
     }
 
     @Override
-    public void propertyChange(PropertyChangeEvent evt) {
-
+    public void actionPerformed(ActionEvent e) {
+        JOptionPane.showConfirmDialog(this, "done");
     }
 }
