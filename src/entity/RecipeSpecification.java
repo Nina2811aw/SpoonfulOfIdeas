@@ -18,7 +18,7 @@ public class RecipeSpecification implements RecipeSpec {
     private int minCalories;
     private int maxCalories;
 
-    RecipeSpecification(){}; // object should not contain meaningful data on instantiation
+    public RecipeSpecification(){}; // object should not contain meaningful data on instantiation
 
     @Override
     public String getIngredients() {

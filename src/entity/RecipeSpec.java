@@ -2,7 +2,7 @@ package entity;
 
 import use_case.recipe_search.RecipeSearchInputData;
 
-interface RecipeSpec {
+public interface RecipeSpec {
 
     // Ingredients
     String getIngredients();
