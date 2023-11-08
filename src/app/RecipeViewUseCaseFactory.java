@@ -2,12 +2,19 @@ package app;
 
 import data_access.SpoonacularDataAccessObject;
 import interface_adapter.ViewManagerModel;
+import interface_adapter.back_to_choose.BackToChooseController;
+import interface_adapter.back_to_choose.BackToChoosePresenter;
+import interface_adapter.back_to_choose.BackToChooseViewModel;
 import interface_adapter.choose_recipe.ChooseRecipeController;
 import interface_adapter.choose_recipe.ChooseRecipePresenter;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.recipe_search.RecipeSearchController;
 import interface_adapter.recipe_search.RecipeSearchPresenter;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
+import use_case.back_to_choose.BackToChooseDataAccessInterface;
+import use_case.back_to_choose.BackToChooseInputBoundary;
+import use_case.back_to_choose.BackToChooseInteractor;
+import use_case.back_to_choose.BackToChooseOutputBoundary;
 import use_case.choose_recipe.ChooseRecipeInputBoundary;
 import use_case.choose_recipe.ChooseRecipeInteractor;
 import use_case.choose_recipe.ChooseRecipeOutputBoundary;
@@ -17,6 +24,8 @@ import use_case.recipe_search.RecipeSearchInteractor;
 import use_case.recipe_search.RecipeSearchOutputBoundary;
 import view.ChooseRecipeView;
 import view.RecipeSearchView;
+
+import java.io.IOException;
 
 public class RecipeViewUseCaseFactory {
 
@@ -49,6 +58,17 @@ public class RecipeViewUseCaseFactory {
         ChooseRecipeInputBoundary chooseRecipeInteractor = new ChooseRecipeInteractor(null, null);
 
         return new ChooseRecipeController(chooseRecipeInteractor);
+
+
+    }
+
+    private static BackToChooseController createBackToChooseCase(ViewManagerModel viewManagerModel, BackToChooseViewModel backToChooseViewModel,
+                                                                 ChooseRecipeViewModel chooseRecipeViewModel, BackToChooseDataAccessInterface backtochooseDataAccessObject) throws IOException {
+        BackToChooseOutputBoundary backToChooseOutputBoundary = new BackToChoosePresenter(chooseRecipeViewModel, viewManagerModel, backToChooseViewModel);
+        BackToChooseInputBoundary backToChooseInteractor = new BackToChooseInteractor(backtochooseDataAccessObject, backToChooseOutputBoundary);
+
+        return new BackToChooseController(backToChooseInteractor);
+
 
 
     }
