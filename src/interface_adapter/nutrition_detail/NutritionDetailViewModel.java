@@ -13,7 +13,7 @@ public class NutritionDetailViewModel extends ViewModel {
 
     public static final String BACK_BUTTON_LABEL = "Back";
 
-    private NutritionDetailState state = new NutritionDetailState();
+    private static NutritionDetailState state = new NutritionDetailState();
 
     public NutritionDetailViewModel() {
         super("Recipe Details");
