@@ -5,20 +5,24 @@ import entity.RecipeSpec;
 
 public class BackToSearchInteractor implements BackToSearchInputBoundary {
 
-    private BackToSearchDataAccessInterface recipeSpecificationDAO;
-    private BackToSearchOutputBoundary backToSearchOutputBoundary;
-
-    //    private BackToSearchOutputData backToSearchOutputData;
-    //    private RecipeSpec recipeSpecification;
+    private final BackToSearchDataAccessInterface recipeSpecificationDAO;
+    private final BackToSearchOutputBoundary backToSearchPresenter;
 
     public BackToSearchInteractor(BackToSearchDataAccessInterface backToSearchDataAccessInterface,
                                   BackToSearchOutputBoundary backToSearchOutputBoundary){
         this.recipeSpecificationDAO = backToSearchDataAccessInterface;
-        this.backToSearchOutputBoundary = backToSearchOutputBoundary;
+        this.backToSearchPresenter = backToSearchOutputBoundary;
     }
 
     @Override
     public void execute() {
-
+        RecipeSpec recipeSpec = recipeSpecificationDAO.getSpecification();
+        BackToSearchOutputData outputData = new BackToSearchOutputData(recipeSpec.getIngredients(), recipeSpec.getDiets(),
+                                                                        recipeSpec.getCuisines(), recipeSpec.getIntolerances(),
+                                                                        recipeSpec.getMinProtein(), recipeSpec.getMaxProtein(),
+                                                                        recipeSpec.getMinFat(), recipeSpec.getMaxFat(),
+                                                                        recipeSpec.getMinCarbs(), recipeSpec.getMaxCarbs(),
+                                                                        recipeSpec.getMinCalories(), recipeSpec.getMaxCalories());
+        backToSearchPresenter.prepareFilledRecipeSearchView(outputData);
     }
 }
