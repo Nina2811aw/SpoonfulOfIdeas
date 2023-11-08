@@ -11,6 +11,8 @@ public class NutritionDetailViewModel extends ViewModel {
 
     public static final String SEARCH_BUTTON = "Search";
 
+    public static final String BACK_BUTTON_LABEL = "Back";
+
     private RecipeSearchState state = new RecipeSearchState();
 
     public NutritionDetailViewModel() {
