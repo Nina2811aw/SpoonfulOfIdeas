@@ -9,14 +9,14 @@ import use_case.back_to_choose.BackToChooseOutputData;
 
 public class BackToChoosePresenter implements BackToChooseOutputBoundary {
 
-    private final BackToChooseViewModel backToChooseViewModel;
+
 
     private final ChooseRecipeViewModel chooseRecipeViewModel;
 
     private ViewManagerModel viewManagerModel;
 
-    public BackToChoosePresenter(ChooseRecipeViewModel chooseRecipeViewModel, ViewManagerModel viewManagerModel, BackToChooseViewModel backToChooseViewModel){
-        this.backToChooseViewModel = backToChooseViewModel;
+    public BackToChoosePresenter(ChooseRecipeViewModel chooseRecipeViewModel, ViewManagerModel viewManagerModel){
+
         this.viewManagerModel = viewManagerModel;
         this.chooseRecipeViewModel = chooseRecipeViewModel;
     }

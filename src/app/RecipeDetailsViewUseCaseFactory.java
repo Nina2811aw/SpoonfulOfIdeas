@@ -22,10 +22,10 @@ import java.io.IOException;
 
 public class RecipeDetailsViewUseCaseFactory {
 
-    public static RecipeDetailsView createRecipeDetailsView(ViewManagerModel viewManagerModel, BackToChooseViewModel backToChooseViewModel, ChooseRecipeViewModel chooseRecipeViewModel,
+    public static RecipeDetailsView createRecipeDetailsView(ViewManagerModel viewManagerModel,  ChooseRecipeViewModel chooseRecipeViewModel,
                                                             NutritionDetailViewModel recipeDetailViewModel, NutritionDetailDataAccessInterface nutritionDetailDataAccessObject, BackToChooseDataAccessInterface backToChooseDataAccessObject) throws IOException {
         NutritionDetailController nutritionDetailController = createRecipeDetailsCase(viewManagerModel, chooseRecipeViewModel, recipeDetailViewModel, nutritionDetailDataAccessObject);
-        BackToChooseController backToChooseController = createBackToChooseCase(viewManagerModel, backToChooseViewModel, chooseRecipeViewModel, backToChooseDataAccessObject);
+        BackToChooseController backToChooseController = createBackToChooseCase(viewManagerModel, chooseRecipeViewModel, backToChooseDataAccessObject);
 
         return null;
     }
@@ -37,9 +37,9 @@ public class RecipeDetailsViewUseCaseFactory {
         return new NutritionDetailController(nutritionDetailInteractor);
 
     }
-    private static BackToChooseController createBackToChooseCase(ViewManagerModel viewManagerModel, BackToChooseViewModel backToChooseViewModel,
+    private static BackToChooseController createBackToChooseCase(ViewManagerModel viewManagerModel,
                                                                  ChooseRecipeViewModel chooseRecipeViewModel, BackToChooseDataAccessInterface recipeDataAccessObject) throws IOException {
-        BackToChooseOutputBoundary backToChooseOutputBoundary = new BackToChoosePresenter(chooseRecipeViewModel, viewManagerModel, backToChooseViewModel);
+        BackToChooseOutputBoundary backToChooseOutputBoundary = new BackToChoosePresenter(chooseRecipeViewModel, viewManagerModel);
         BackToChooseInputBoundary backToChooseInteractor = new BackToChooseInteractor(recipeDataAccessObject, backToChooseOutputBoundary);
 
         return new BackToChooseController(backToChooseInteractor);

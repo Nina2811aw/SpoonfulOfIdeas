@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="linked select button in choose recipe view to choose recipe use case">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="added recipe buttons to choose recipe view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/RecipeDetailsViewUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/RecipeDetailsViewUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChoosePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChoosePresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseInteractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/RecipeDetailsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeDetailsView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,16 +65,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "backtochoosebutton",
-    "last_opened_file_path": "/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza",
+    "last_opened_file_path": "C:/Users/shreya/OneDrive - University of Toronto/Classes/Second Year/CSC207/SpoonfulOfIdeas/lib/flatlaf-3.2.5.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.17701149",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -97,6 +111,9 @@
       </method>
     </configuration>
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="API_TOKEN" value=" 0da9eca0f0cf4ca89f7f120b64802115" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="app.MainApp" />
       <module name="SpoonacularAPITest" />
       <extension name="coverage">
@@ -120,6 +137,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MainApp" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainApp" />
@@ -138,7 +159,8 @@
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
       <workItem from="1698939094343" duration="19626000" />
-      <workItem from="1699469004900" duration="15525000" />
+      <workItem from="1699469004900" duration="16553000" />
+      <workItem from="1699540643430" duration="4864000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -323,7 +345,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699484198994</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added recipe buttons to choose recipe view">
+      <option name="closed" value="true" />
+      <created>1699485692246</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1699485692246</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +382,8 @@
     <MESSAGE value="added the back button to recipedetailsview" />
     <MESSAGE value="Made another Use Case Factory for Recipe Details View and injected back to choose inside it, I had to add some things to the nutrition detail use case for this.  Also updated the main app to include back to choose and nutrition details stuff." />
     <MESSAGE value="linked select button in choose recipe view to choose recipe use case" />
-    <option name="LAST_COMMIT_MESSAGE" value="linked select button in choose recipe view to choose recipe use case" />
+    <MESSAGE value="added recipe buttons to choose recipe view" />
+    <option name="LAST_COMMIT_MESSAGE" value="added recipe buttons to choose recipe view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

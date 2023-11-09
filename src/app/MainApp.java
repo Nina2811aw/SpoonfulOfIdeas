@@ -42,7 +42,6 @@ public class MainApp {
         // be observed by the Views.
         RecipeSearchViewModel recipeSearchViewModel = new RecipeSearchViewModel();
         ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
-        BackToChooseViewModel backToChooseViewModel = new BackToChooseViewModel();
         NutritionDetailViewModel nutritionDetailViewModel = new NutritionDetailViewModel();
         SpoonacularDataAccessObject nutritionDetailDataAccessObject;
         nutritionDetailDataAccessObject = new SpoonacularDataAccessObject();
@@ -57,7 +56,7 @@ public class MainApp {
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, chooseRecipeViewModel);
         views.add(chooseRecipeView, chooseRecipeView.viewName);
 
-        RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, backToChooseViewModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject);
+        RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject);
 
         viewManagerModel.setActiveView(recipeSearchView.viewName);
         viewManagerModel.firePropertyChanged();

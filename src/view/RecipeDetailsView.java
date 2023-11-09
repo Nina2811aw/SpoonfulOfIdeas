@@ -34,7 +34,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JPanel buttons = new JPanel();
-        back = new JButton(nutritionDetailViewModel.BACK_BUTTON_LABEL);
+        back = new JButton(NutritionDetailViewModel.BACK_BUTTON_LABEL);
         buttons.add(back);
 
         back.addActionListener(
