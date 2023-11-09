@@ -56,8 +56,6 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         this.add(buttonsRecipes);
     }
 
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
