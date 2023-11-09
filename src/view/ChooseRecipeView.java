@@ -26,15 +26,6 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
     public final ChooseRecipeController chooseRecipeController;
 
     final JButton select;
-    final JButton recipe1;
-
-    final JButton recipe2;
-
-    final JButton recipe3;
-
-    final JButton recipe4;
-
-    final JButton recipe5;
 
 
     public ChooseRecipeView(ChooseRecipeController chooseRecipeController, ChooseRecipeViewModel chooseRecipeViewModel){
@@ -48,16 +39,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         JPanel buttons = new JPanel();
         select = new JButton(ChooseRecipeViewModel.SELECT_BUTTON);
         buttons.add(select);
-        recipe1 = new JButton("Recipe 1"); //change the titles of these buttons according to the recipes given by recipe search later
-        buttons.add(recipe1);
-        recipe2 = new JButton("Recipe 2");
-        buttons.add(recipe2);
-        recipe3 = new JButton("Recipe 3");
-        buttons.add(recipe3);
-        recipe4 = new JButton("Recipe 4");
-        buttons.add(recipe4);
-        recipe5 = new JButton("Recipe 5");
-        buttons.add(recipe5);
+
 
         this.add(buttons);
 
