@@ -23,18 +23,41 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
 
     final JButton select;
 
+    private JButton recipe1;
+    private JButton recipe2;
+    private JButton recipe3;
+    private JButton recipe4;
+    private JButton recipe5;
+
     public ChooseRecipeView(ChooseRecipeController chooseRecipeController, ChooseRecipeViewModel chooseRecipeViewModel){
         this.chooseRecipeController = chooseRecipeController;
         this.chooseRecipeViewModel = chooseRecipeViewModel;
         this.chooseRecipeViewModel.addPropertyChangeListener(this);
 
-        JLabel title = new JLabel("Choose Recipe Screen");
+        JLabel title = new JLabel(ChooseRecipeViewModel.TITLE_BUTTON);
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JPanel buttons = new JPanel();
         select = new JButton(chooseRecipeViewModel.SELECT_BUTTON);
         buttons.add(select);
 
+        JPanel buttonsRecipes = new JPanel();
+        buttonsRecipes.setLayout(new BoxLayout(buttonsRecipes, BoxLayout.Y_AXIS));
+        buttonsRecipes.add(new JLabel("Recipes:"));
+        buttonsRecipes.setAlignmentX(Component.CENTER_ALIGNMENT);
+        recipe1 = new JButton("");
+        recipe2 = new JButton("");
+        recipe3 = new JButton("");
+        recipe4 = new JButton("");
+        recipe5 = new JButton("");
+        buttonsRecipes.add(recipe1);
+        buttonsRecipes.add(recipe2);
+        buttonsRecipes.add(recipe3);
+        buttonsRecipes.add(recipe4);
+        buttonsRecipes.add(recipe5);
+
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.add(buttonsRecipes);
         this.add(buttons);
     }
 

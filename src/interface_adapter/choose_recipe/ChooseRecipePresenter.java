@@ -10,7 +10,6 @@ public class ChooseRecipePresenter implements ChooseRecipeOutputBoundary {
 
     private final ChooseRecipeViewModel chooseRecipeViewModel;
 
-
     public ChooseRecipePresenter(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel){
         this.chooseRecipeViewModel = chooseRecipeViewModel;
         this.viewManagerModel = viewManagerModel;

@@ -14,7 +14,7 @@ public class ChooseRecipeController {
 
     // parameters have to be specified
     public void execute(){
-        ChooseRecipeInputData chooseRecipeInputData = null; // has to be replaced by actual input data
+        ChooseRecipeInputData chooseRecipeInputData = new ChooseRecipeInputData();
         this.chooseRecipeInteractor.execute(chooseRecipeInputData);
     }
 }
