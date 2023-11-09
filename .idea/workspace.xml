@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Working on Choose Recipe Screen">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="added switch from Recipe Search View to Choose Recipe View after user clicks on search button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/RecipeInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/RecipeInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchDataAccessInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchOutputData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/RecipeSearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeSearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -128,6 +128,7 @@
       <updated>1695921924614</updated>
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
+      <workItem from="1698939094343" duration="19626000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -192,59 +193,133 @@
       <option name="project" value="LOCAL" />
       <updated>1698683466179</updated>
     </task>
-    <task id="LOCAL-00009" summary="merging">
+    <task id="LOCAL-00009" summary="adapted classes of the nutrition detail use case to remove errors">
       <option name="closed" value="true" />
-      <created>1699486776435</created>
+      <created>1698940025799</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1699486776435</updated>
+      <updated>1698940025799</updated>
     </task>
-    <task id="LOCAL-00010" summary="Working on Choose Recipe Screen">
+    <task id="LOCAL-00010" summary="added text field for user input (ingredients) to the RecipeSearchView">
       <option name="closed" value="true" />
-      <created>1699489342287</created>
+      <created>1698941284046</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1699489342287</updated>
+      <updated>1698941284046</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView">
+      <option name="closed" value="true" />
+      <created>1698944191264</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698944191264</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView">
+      <option name="closed" value="true" />
+      <created>1698944243572</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698944243572</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added attributes to RecipeSearchState for all elements of the UI and added enums for macronutrients">
+      <option name="closed" value="true" />
+      <created>1698945607524</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1698945607524</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added action listener for all checkboxes (diets, intolerances of the UI)">
+      <option name="closed" value="true" />
+      <created>1698945734144</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1698945734144</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added action listener for the cuisine drop-down and the macro nutrients drop downs">
+      <option name="closed" value="true" />
+      <created>1698946805700</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1698946805700</updated>
+    </task>
+    <task id="LOCAL-00016" summary="adapted execute method of recipe search controller and attributes of recipe search state">
+      <option name="closed" value="true" />
+      <created>1698948264164</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1698948264164</updated>
+    </task>
+    <task id="LOCAL-00017" summary="adapted RecipeSearchController, so that RecipeSearchInputData gets created based on the input from the user">
+      <option name="closed" value="true" />
+      <created>1698954386687</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1698954386687</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added API call to get recipe ideas based on user input">
+      <option name="closed" value="true" />
+      <created>1698959121160</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1698959121160</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added switch from Recipe Search View to Choose Recipe View after user clicks on search button">
+      <option name="closed" value="true" />
+      <created>1698961585163</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1698961585163</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created App directory" />
     <MESSAGE value="Use Case Files" />
     <MESSAGE value="Created a view model and added to main" />
     <MESSAGE value="Created a recipe View Use Case Factory" />
+    <MESSAGE value="workspace change" />
     <MESSAGE value="merge commit" />
     <MESSAGE value="new classes for nutrition detail use case" />
     <MESSAGE value="recipe entity" />
-    <MESSAGE value="workspace change" />
-    <MESSAGE value="merging" />
-    <MESSAGE value="Working on Choose Recipe Screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on Choose Recipe Screen" />
+    <MESSAGE value="adapted classes of the nutrition detail use case to remove errors" />
+    <MESSAGE value="added text field for user input (ingredients) to the RecipeSearchView" />
+    <MESSAGE value="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView" />
+    <MESSAGE value="added attributes to RecipeSearchState for all elements of the UI and added enums for macronutrients" />
+    <MESSAGE value="added action listener for all checkboxes (diets, intolerances of the UI)" />
+    <MESSAGE value="added action listener for the cuisine drop-down and the macro nutrients drop downs" />
+    <MESSAGE value="adapted execute method of recipe search controller and attributes of recipe search state" />
+    <MESSAGE value="adapted RecipeSearchController, so that RecipeSearchInputData gets created based on the input from the user" />
+    <MESSAGE value="added API call to get recipe ideas based on user input" />
+    <MESSAGE value="added switch from Recipe Search View to Choose Recipe View after user clicks on search button" />
+    <option name="LAST_COMMIT_MESSAGE" value="added switch from Recipe Search View to Choose Recipe View after user clicks on search button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/app/MainApp.java</url>
+          <line>15</line>
+          <properties class="app.MainApp" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
           <option name="timeStamp" value="1" />
-        </breakpoint>
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

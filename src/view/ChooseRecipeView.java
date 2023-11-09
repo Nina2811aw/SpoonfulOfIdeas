@@ -4,7 +4,6 @@ import entity.RecipeInformation;
 import interface_adapter.choose_recipe.ChooseRecipeController;
 import interface_adapter.choose_recipe.ChooseRecipeState;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
-import use_case.choose_recipe.ChooseRecipeInputData;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,19 +21,14 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
 
     public final ChooseRecipeController chooseRecipeController;
 
-    private JButton recipe1;
-    private JButton recipe2;
-    private JButton recipe3;
-    private JButton recipe4;
-    private JButton recipe5;
+    final JButton select;
 
     public ChooseRecipeView(ChooseRecipeController chooseRecipeController, ChooseRecipeViewModel chooseRecipeViewModel){
         this.chooseRecipeController = chooseRecipeController;
         this.chooseRecipeViewModel = chooseRecipeViewModel;
         this.chooseRecipeViewModel.addPropertyChangeListener(this);
 
-        ChooseRecipeState chooseRecipeState = chooseRecipeViewModel.getState();
-        JLabel title = new JLabel(ChooseRecipeViewModel.TITLE_BUTTON);
+        JLabel title = new JLabel("Choose Recipe Screen");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JPanel buttonsRecipes = new JPanel();

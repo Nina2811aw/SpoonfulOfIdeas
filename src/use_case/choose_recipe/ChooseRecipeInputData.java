@@ -4,10 +4,8 @@ import entity.RecipeInformation;
 import interface_adapter.choose_recipe.ChooseRecipePresenter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ChooseRecipeInputData {
-    private final List<RecipeInformation> recipies;
     public ArrayList<Integer> recipeId;
 
     public ChooseRecipeInputData(List<RecipeInformation> recipes) {

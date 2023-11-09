@@ -8,7 +8,9 @@ import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.recipe_search.RecipeSearchController;
 import interface_adapter.recipe_search.RecipeSearchPresenter;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
-import use_case.choose_recipe.*;
+import use_case.choose_recipe.ChooseRecipeInputBoundary;
+import use_case.choose_recipe.ChooseRecipeInteractor;
+import use_case.choose_recipe.ChooseRecipeOutputBoundary;
 import use_case.recipe_search.RecipeSearchDataAccessInterface;
 import use_case.recipe_search.RecipeSearchInputBoundary;
 import use_case.recipe_search.RecipeSearchInteractor;
@@ -42,11 +44,9 @@ public class RecipeViewUseCaseFactory {
         return new ChooseRecipeView(chooseRecipeController, chooseRecipeViewModel);
     }
     public static ChooseRecipeController createChooseCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel){
-        ChooseRecipeOutputBoundary chooseRecipePresenter = new ChooseRecipePresenter(viewManagerModel, chooseRecipeViewModel);
+        ChooseRecipeOutputBoundary chooseRecipeOutputBoundary = new ChooseRecipePresenter(viewManagerModel, chooseRecipeViewModel);
 
-        ChooseRecipeDataAccessInterface spoonacularDataAccessObject = new SpoonacularDataAccessObject();
-
-        ChooseRecipeInputBoundary chooseRecipeInteractor = new ChooseRecipeInteractor(spoonacularDataAccessObject, chooseRecipePresenter);
+        ChooseRecipeInputBoundary chooseRecipeInteractor = new ChooseRecipeInteractor(null, null);
 
         return new ChooseRecipeController(chooseRecipeInteractor);
 
