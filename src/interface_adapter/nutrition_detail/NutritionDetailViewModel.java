@@ -7,17 +7,19 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 public class NutritionDetailViewModel extends ViewModel {
-    public static final String TITLE_LABEL = "Recipe Search View";
+    public static final String TITLE_LABEL = "Recipe Details View";
 
     public static final String SEARCH_BUTTON = "Search";
 
-    private RecipeSearchState state = new RecipeSearchState();
+    public static final String BACK_BUTTON_LABEL = "Back";
+
+    private static NutritionDetailState state = new NutritionDetailState();
 
     public NutritionDetailViewModel() {
-        super("search");
+        super("Recipe Details");
     }
 
-    public void setState(RecipeSearchState state) {
+    public void setState(NutritionDetailState state) {
         this.state = state;
     }
 
@@ -33,7 +35,7 @@ public class NutritionDetailViewModel extends ViewModel {
         support.addPropertyChangeListener(listener);
     }
 
-    public RecipeSearchState getState() {
+    public static NutritionDetailState getState() {
         return state;
     }
 }

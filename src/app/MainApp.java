@@ -1,10 +1,14 @@
 package app;
 
+import data_access.SpoonacularDataAccessObject;
 import interface_adapter.ViewManagerModel;
+import interface_adapter.back_to_choose.BackToChooseViewModel;
 import interface_adapter.choose_recipe.ChooseRecipePresenter;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
+import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
 import view.ChooseRecipeView;
+import view.RecipeDetailsView;
 import view.RecipeSearchView;
 import view.ViewManager;
 import javax.swing.JFrame;
@@ -13,7 +17,7 @@ import java.awt.*;
 import java.io.IOException;
 
 public class MainApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Build the main program window, the main panel containing the
         // various cards, and the layout, and stitch them together.
 
@@ -38,12 +42,21 @@ public class MainApp {
         // be observed by the Views.
         RecipeSearchViewModel recipeSearchViewModel = new RecipeSearchViewModel();
         ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
+        NutritionDetailViewModel nutritionDetailViewModel = new NutritionDetailViewModel();
+        SpoonacularDataAccessObject nutritionDetailDataAccessObject;
+        nutritionDetailDataAccessObject = new SpoonacularDataAccessObject();
+        SpoonacularDataAccessObject backToChooseDataAccessObject;
+        backToChooseDataAccessObject = new SpoonacularDataAccessObject();
+
+
 
         RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
         views.add(recipeSearchView, recipeSearchView.viewName);
 
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, chooseRecipeViewModel);
         views.add(chooseRecipeView, chooseRecipeView.viewName);
+
+        RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject);
 
         viewManagerModel.setActiveView(recipeSearchView.viewName);
         viewManagerModel.firePropertyChanged();

@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="added switch from Recipe Search View to Choose Recipe View after user clicks on search button">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="worked on the back to choose button some more">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/RecipeInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/RecipeInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -60,16 +57,23 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;backtochoosebutton&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shreya/OneDrive - University of Toronto/Classes/Second Year/CSC207/SpoonfulOfIdeas/lib/flatlaf-3.2.5.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.17701149&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -99,6 +103,9 @@
       </method>
     </configuration>
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="API_TOKEN" value=" 0da9eca0f0cf4ca89f7f120b64802115" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="app.MainApp" />
       <module name="SpoonacularAPITest" />
       <extension name="coverage">
@@ -111,6 +118,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MainApp" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainApp" />
@@ -129,6 +151,9 @@
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
       <workItem from="1698939094343" duration="19626000" />
+      <workItem from="1699469004900" duration="16553000" />
+      <workItem from="1699540643430" duration="5586000" />
+      <workItem from="1699560568136" duration="613000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -281,7 +306,55 @@
       <option name="project" value="LOCAL" />
       <updated>1698961585163</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Worked on the back to Choose Button Use case">
+      <option name="closed" value="true" />
+      <created>1699478571380</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699478571380</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added the back button to recipedetailsview">
+      <option name="closed" value="true" />
+      <created>1699479641904</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1699479641904</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Made another Use Case Factory for Recipe Details View and injected back to choose inside it, I had to add some things to the nutrition detail use case for this.  Also updated the main app to include back to choose and nutrition details stuff.">
+      <option name="closed" value="true" />
+      <created>1699482830836</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1699482830836</updated>
+    </task>
+    <task id="LOCAL-00023" summary="linked select button in choose recipe view to choose recipe use case">
+      <option name="closed" value="true" />
+      <created>1699484198994</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1699484198994</updated>
+    </task>
+    <task id="LOCAL-00024" summary="added recipe buttons to choose recipe view">
+      <option name="closed" value="true" />
+      <created>1699485692246</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1699485692246</updated>
+    </task>
+    <task id="LOCAL-00025" summary="worked on the back to choose button some more">
+      <option name="closed" value="true" />
+      <created>1699545616646</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1699545616646</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,14 +379,20 @@
     <MESSAGE value="adapted RecipeSearchController, so that RecipeSearchInputData gets created based on the input from the user" />
     <MESSAGE value="added API call to get recipe ideas based on user input" />
     <MESSAGE value="added switch from Recipe Search View to Choose Recipe View after user clicks on search button" />
-    <option name="LAST_COMMIT_MESSAGE" value="added switch from Recipe Search View to Choose Recipe View after user clicks on search button" />
+    <MESSAGE value="Worked on the back to Choose Button Use case" />
+    <MESSAGE value="added the back button to recipedetailsview" />
+    <MESSAGE value="Made another Use Case Factory for Recipe Details View and injected back to choose inside it, I had to add some things to the nutrition detail use case for this.  Also updated the main app to include back to choose and nutrition details stuff." />
+    <MESSAGE value="linked select button in choose recipe view to choose recipe use case" />
+    <MESSAGE value="added recipe buttons to choose recipe view" />
+    <MESSAGE value="worked on the back to choose button some more" />
+    <option name="LAST_COMMIT_MESSAGE" value="worked on the back to choose button some more" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/app/MainApp.java</url>
-          <line>15</line>
+          <line>19</line>
           <properties class="app.MainApp" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

@@ -9,9 +9,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+
 import java.util.List;
+
 
 public class ChooseRecipeView extends JPanel implements ActionListener, PropertyChangeListener{
 
@@ -23,6 +27,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
 
     final JButton select;
 
+
     public ChooseRecipeView(ChooseRecipeController chooseRecipeController, ChooseRecipeViewModel chooseRecipeViewModel){
         this.chooseRecipeController = chooseRecipeController;
         this.chooseRecipeViewModel = chooseRecipeViewModel;
@@ -32,11 +37,28 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JPanel buttons = new JPanel();
-        select = new JButton(chooseRecipeViewModel.SELECT_BUTTON);
+        select = new JButton(ChooseRecipeViewModel.SELECT_BUTTON);
         buttons.add(select);
 
+
         this.add(buttons);
+
+        /*select.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(e.getSource().equals(select)){
+                            ChooseRecipeState currentState = chooseRecipeViewModel.getState();
+                            List<RecipeInformation> recipeInfo = currentState.getRecipeIdeasList();
+                            chooseRecipeController.execute(recipeInfo);
+                        }
+                    }
+                }
+        );*/
+
+
     }
+
 
 
 
