@@ -1,6 +1,7 @@
 package use_case.recipe_search;
 
 import entity.RecipeInformation;
+import use_case.choose_recipe.ChooseRecipeInputData;
 
 import java.util.List;
 
@@ -30,6 +31,7 @@ public class RecipeSearchInteractor implements RecipeSearchInputBoundary{
         }
         // call presenter with output data
         RecipeSearchOutputData recipeSearchOutputData = new RecipeSearchOutputData(recipeIdeasList);
+        //ChooseRecipeInputData chooseRecipeInputData = new ChooseRecipeInputData(recipeIdeasList);
         recipeSearchPresenter.prepareChooseRecipeView(recipeSearchOutputData);
 
     }

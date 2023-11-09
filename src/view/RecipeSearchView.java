@@ -1,4 +1,5 @@
 package view;
+import interface_adapter.choose_recipe.ChooseRecipeState;
 import interface_adapter.recipe_search.RecipeSearchController;
 import interface_adapter.recipe_search.RecipeSearchState;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
