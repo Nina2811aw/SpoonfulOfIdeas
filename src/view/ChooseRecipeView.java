@@ -21,13 +21,19 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
 
     public final ChooseRecipeController chooseRecipeController;
 
-    final JButton select;
+    final JButton recipe1;
+    final JButton recipe2;
+    final JButton recipe3;
+    final JButton recipe4;
+    final JButton recipe5;
+
 
     public ChooseRecipeView(ChooseRecipeController chooseRecipeController, ChooseRecipeViewModel chooseRecipeViewModel){
         this.chooseRecipeController = chooseRecipeController;
         this.chooseRecipeViewModel = chooseRecipeViewModel;
         this.chooseRecipeViewModel.addPropertyChangeListener(this);
 
+        ChooseRecipeState chooseRecipeState = chooseRecipeViewModel.getState();
         JLabel title = new JLabel("Choose Recipe Screen");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 

@@ -8,7 +8,6 @@ public class ChooseRecipeController {
 
     final ChooseRecipeInputBoundary chooseRecipeInteractor;
 
-
     public ChooseRecipeController(ChooseRecipeInputBoundary chooseRecipeInteractor) {
         this.chooseRecipeInteractor = chooseRecipeInteractor;
     }
