@@ -1,5 +1,10 @@
 package use_case.choose_recipe;
 
+import entity.RecipeInformation;
+import use_case.recipe_search.RecipeSearchOutputData;
+
+import java.util.List;
+
 public class ChooseRecipeInteractor implements ChooseRecipeInputBoundary{
 
     final ChooseRecipeDataAccessInterface chooseRecipeDataAccessObject;
@@ -13,6 +18,11 @@ public class ChooseRecipeInteractor implements ChooseRecipeInputBoundary{
 
     @Override
     public void execute(ChooseRecipeInputData chooseRecipeInputData) {
+        List<List<String>> recipeIdeasList = chooseRecipeDataAccessObject.getRecipeDetails(chooseRecipeInputData);
+        System.out.println(recipeIdeasList);
+
+        ChooseRecipeOutputData chooseRecipeOutputData = new ChooseRecipeOutputData();
+        chooseRecipePresenter.prepareRecipeDetailsView(chooseRecipeOutputData);
 
     }
 }

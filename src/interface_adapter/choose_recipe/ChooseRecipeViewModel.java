@@ -4,9 +4,11 @@ import interface_adapter.ViewModel;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
 
 public class ChooseRecipeViewModel extends ViewModel {
-    public static final String SELECT_BUTTON = "Select";
+
+    public static final String TITLE_BUTTON = "Recipe Choose View";
     private ChooseRecipeState state = new ChooseRecipeState();
 
     public ChooseRecipeViewModel() {

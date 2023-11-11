@@ -9,7 +9,7 @@ The idea is to create a helpful recipe discovery and nutrition application.
 Users can input the ingredients they have, and the app will provide a selection of recipes that can be prepared using those ingredients, reducing food waste and encouraging creativity in the kitchen. Users can select from a variety of meal types, such as breakfast, finger food, main course or snack.
 Furthermore, the app allows users to specify dietary preferences and restrictions, such as vegetarian, gluten-free or vegan. 
 On top of that, users can specify certain intolerances, such as dairy, peanut or soy. It then tailors recipe suggestions accordingly, ensuring that users can easily find recipes that align with their dietary choices or intolerances. 
-Users can set personalized macronutrient goals, such as protein intake between 10g and 30g. The app will recommend recipes that meet these goals, enabling users to achieve their nutritional targets.
+Users can set personalized macronutrient goals, such as high or low protein, fat, and calories. The app will recommend recipes that meet these goals, enabling users to achieve their nutritional targets.
 
 In summary, the application provides the following functions:
 * Search and suggest recipe ideas based on specific ingredients given by the user 
@@ -18,6 +18,7 @@ In summary, the application provides the following functions:
 * Provide basic nutritional content about any recipe or ingredient
 * Optional: keep track of ingredient usage and create a shopping list
 * Recipes will be presented to the user, complete with a list of ingredients and their quantities, and the procedure of preparing the recipes. 
+
 
 ## Link to the documentation for an API:
 https://spoonacular.com/food-api/docs

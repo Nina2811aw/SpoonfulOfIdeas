@@ -2,8 +2,10 @@ package data_access;
 
 import entity.RecipeInformation;
 import org.json.JSONArray;
+import use_case.back_to_choose.BackToChooseDataAccessInterface;
 import use_case.choose_recipe.ChooseRecipeDataAccessInterface;
 import use_case.choose_recipe.ChooseRecipeInputData;
+import use_case.nutrition_detail.NutritionDetailDataAccessInterface;
 import use_case.recipe_search.RecipeSearchDataAccessInterface;
 import use_case.recipe_search.RecipeSearchInputData;
 
@@ -18,9 +20,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface, ChooseRecipeDataAccessInterface {
+public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface, ChooseRecipeDataAccessInterface,
+        BackToChooseDataAccessInterface, NutritionDetailDataAccessInterface {
 
     private static String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
+
+    private List<RecipeInformation> recipeInformationList;
     @Override
     public List<RecipeInformation> getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
 
@@ -64,10 +69,13 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         } catch (IOException | JSONException e) {
             throw new RuntimeException(e);
         }
+        this.recipeInformationList = recipeList;
 
         return recipeList;
 
     }
+
+    public List<RecipeInformation> getRecipeInformationList(){return recipeInformationList;}
 
     @Override
     public List<List<String>> getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData)     {
