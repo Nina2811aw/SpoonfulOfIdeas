@@ -15,7 +15,7 @@ public class RecipeSearchViewModel extends ViewModel {
     private RecipeSearchState state = new RecipeSearchState();
 
     public RecipeSearchViewModel() {
-        super("search");
+        super("Search Search View");
     }
 
     public void setState(RecipeSearchState state) {

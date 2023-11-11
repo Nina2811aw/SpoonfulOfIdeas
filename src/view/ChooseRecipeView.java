@@ -1,6 +1,7 @@
 package view;
 
 import entity.RecipeInformation;
+import interface_adapter.back_to_search.BackToSearchController;
 import interface_adapter.choose_recipe.ChooseRecipeController;
 import interface_adapter.choose_recipe.ChooseRecipeState;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
@@ -27,11 +28,16 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
     final JButton recipe4;
     final JButton recipe5;
 
+    // back button variables
+    private final BackToSearchController backToSearchController;
+    private final JButton back;
 
-    public ChooseRecipeView(ChooseRecipeController chooseRecipeController, ChooseRecipeViewModel chooseRecipeViewModel){
+    public ChooseRecipeView(ChooseRecipeController chooseRecipeController, BackToSearchController backController, ChooseRecipeViewModel chooseRecipeViewModel){
         this.chooseRecipeController = chooseRecipeController;
         this.chooseRecipeViewModel = chooseRecipeViewModel;
         this.chooseRecipeViewModel.addPropertyChangeListener(this);
+
+        this.backToSearchController = backController;
 
         ChooseRecipeState chooseRecipeState = chooseRecipeViewModel.getState();
         JLabel title = new JLabel("Choose Recipe Screen");
@@ -51,6 +57,20 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         buttonsRecipes.add(recipe3);
         buttonsRecipes.add(recipe4);
         buttonsRecipes.add(recipe5);
+
+        back = new JButton("<--"); // Make the text input a variable input from ChooseViewModel rather than hard coded.
+        buttonsRecipes.add(back);
+
+        back.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(back)) {
+                            backToSearchController.execute();
+                        }
+                    }
+                }
+        );
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.add(buttonsRecipes);

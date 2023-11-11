@@ -2,12 +2,17 @@ package app;
 
 import data_access.SpoonacularDataAccessObject;
 import interface_adapter.ViewManagerModel;
+import interface_adapter.back_to_search.BackToSearchController;
+import interface_adapter.back_to_search.BackToSearchPresenter;
 import interface_adapter.choose_recipe.ChooseRecipeController;
 import interface_adapter.choose_recipe.ChooseRecipePresenter;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.recipe_search.RecipeSearchController;
 import interface_adapter.recipe_search.RecipeSearchPresenter;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
+import use_case.back_to_search.BackToSearchDataAccessInterface;
+import use_case.back_to_search.BackToSearchInteractor;
+import use_case.back_to_search.BackToSearchOutputBoundary;
 import use_case.choose_recipe.ChooseRecipeInputBoundary;
 import use_case.choose_recipe.ChooseRecipeInteractor;
 import use_case.choose_recipe.ChooseRecipeOutputBoundary;
@@ -39,9 +44,10 @@ public class RecipeViewUseCaseFactory {
         return new RecipeSearchController(recipeSearchInputBoundary);
     }
 
-    public static ChooseRecipeView createChooseView(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel){
+    public static ChooseRecipeView createChooseView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel, BackToSearchDataAccessInterface backToSearchDAO){
         ChooseRecipeController chooseRecipeController = createChooseCase(viewManagerModel, chooseRecipeViewModel);
-        return new ChooseRecipeView(chooseRecipeController, chooseRecipeViewModel);
+        BackToSearchController backToSearchController = createBackToSearchUseCase(viewManagerModel, recipeSearchViewModel, backToSearchDAO);
+        return new ChooseRecipeView(chooseRecipeController, backToSearchController, chooseRecipeViewModel);
     }
     public static ChooseRecipeController createChooseCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel){
         ChooseRecipeOutputBoundary chooseRecipeOutputBoundary = new ChooseRecipePresenter(viewManagerModel, chooseRecipeViewModel);
@@ -51,6 +57,13 @@ public class RecipeViewUseCaseFactory {
         return new ChooseRecipeController(chooseRecipeInteractor);
 
 
+    }
+
+    // Back button controller to go from ChooseRecipe view back to RecipeSearch view.
+    public static BackToSearchController createBackToSearchUseCase(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, BackToSearchDataAccessInterface backToSearchDAO){
+        BackToSearchOutputBoundary backToSearchPresenter = new BackToSearchPresenter(viewManagerModel, recipeSearchViewModel);
+        BackToSearchInteractor backToSearchInteractor = new BackToSearchInteractor(backToSearchDAO, backToSearchPresenter);
+        return new BackToSearchController(backToSearchInteractor);
     }
 
 
