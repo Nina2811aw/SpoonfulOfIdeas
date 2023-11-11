@@ -17,6 +17,8 @@ public class BackToChooseInteractor implements BackToChooseInputBoundary{
 
     final BackToChooseDataAccessInterface backtochooseDataAccessObject;
 
+    /*Public method that builds an interactor for the back to choose use case, taking in a Data Access Interface, and an Output Boundary.*/
+
     public BackToChooseInteractor(BackToChooseDataAccessInterface backtochooseDataAccessObject, BackToChooseOutputBoundary backtochooseOutputBoundary /*,ChooseRecipeController chooseRecipeController*/){
         this.backToChoosePresenter = backtochooseOutputBoundary;
         this.backtochooseDataAccessObject = backtochooseDataAccessObject;
@@ -24,6 +26,9 @@ public class BackToChooseInteractor implements BackToChooseInputBoundary{
     }
 
 
+    /*A public method that implements the execute method specified in the BacktoChooseInputBoundary. This method gets
+    * a list of RecipeInformation from a DAO. It packages that information into Output Data, and calls the Presenter's prepareSuccessView method
+    * with aforementioned Output Data. */
     @Override
     public void execute() {
         List<RecipeInformation> recipeInfoList = backtochooseDataAccessObject.getRecipeInformationList();
