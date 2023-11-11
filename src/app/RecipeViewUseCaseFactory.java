@@ -44,9 +44,9 @@ public class RecipeViewUseCaseFactory {
         return new RecipeSearchController(recipeSearchInputBoundary);
     }
 
-    public static ChooseRecipeView createChooseView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel, BackToSearchDataAccessInterface backToSearchDAO){
+    public static ChooseRecipeView createChooseView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel){
         ChooseRecipeController chooseRecipeController = createChooseCase(viewManagerModel, chooseRecipeViewModel);
-        BackToSearchController backToSearchController = createBackToSearchUseCase(viewManagerModel, recipeSearchViewModel, backToSearchDAO);
+        BackToSearchController backToSearchController = createBackToSearchUseCase(viewManagerModel, recipeSearchViewModel);
         return new ChooseRecipeView(chooseRecipeController, backToSearchController, chooseRecipeViewModel);
     }
     public static ChooseRecipeController createChooseCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel){
@@ -60,9 +60,9 @@ public class RecipeViewUseCaseFactory {
     }
 
     // Back button controller to go from ChooseRecipe view back to RecipeSearch view.
-    public static BackToSearchController createBackToSearchUseCase(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, BackToSearchDataAccessInterface backToSearchDAO){
+    public static BackToSearchController createBackToSearchUseCase(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel){
         BackToSearchOutputBoundary backToSearchPresenter = new BackToSearchPresenter(viewManagerModel, recipeSearchViewModel);
-        BackToSearchInteractor backToSearchInteractor = new BackToSearchInteractor(backToSearchDAO, backToSearchPresenter);
+        BackToSearchInteractor backToSearchInteractor = new BackToSearchInteractor(backToSearchPresenter);
         return new BackToSearchController(backToSearchInteractor);
     }
 

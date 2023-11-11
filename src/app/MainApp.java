@@ -1,11 +1,7 @@
 package app;
 
-import data_access.RecipeSpecificationDataAccessObject;
 import data_access.SpoonacularDataAccessObject;
-import entity.RecipeSpecification;
 import interface_adapter.ViewManagerModel;
-import interface_adapter.back_to_choose.BackToChooseViewModel;
-import interface_adapter.choose_recipe.ChooseRecipePresenter;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
@@ -50,22 +46,16 @@ public class MainApp {
         SpoonacularDataAccessObject backToChooseDataAccessObject;
         backToChooseDataAccessObject = new SpoonacularDataAccessObject();
 
-        // Delete the below stuff after refactoring out all the entity + DAO stuff from this branch.
-        RecipeSpecification recipeSpecification = new RecipeSpecification();
-        RecipeSpecificationDataAccessObject recipeSpecificationDAO = new RecipeSpecificationDataAccessObject(recipeSpecification);
-
-
 
         RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
         views.add(recipeSearchView, recipeSearchView.viewName);
 
-        ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, recipeSpecificationDAO);
+        ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
         views.add(chooseRecipeView, chooseRecipeView.viewName);
 
         RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject);
 
-//        viewManagerModel.setActiveView(recipeSearchView.viewName);
-        viewManagerModel.setActiveView(chooseRecipeView.viewName);
+        viewManagerModel.setActiveView(recipeSearchView.viewName);
         viewManagerModel.firePropertyChanged();
 
         application.pack();
