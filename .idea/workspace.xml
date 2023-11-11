@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Recipe Search Presenter Changes">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="deleted a space">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -289,7 +297,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699568328636</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="deleted a space">
+      <option name="closed" value="true" />
+      <created>1699568838853</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1699568838853</updated>
+    </task>
+    <task id="LOCAL-00023" summary="deleted a space">
+      <option name="closed" value="true" />
+      <created>1699568842021</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1699568842021</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +341,8 @@
     <MESSAGE value="Still working on displaying the recipe names in the choose recipie presenter" />
     <MESSAGE value="Merge" />
     <MESSAGE value="Recipe Search Presenter Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Recipe Search Presenter Changes" />
+    <MESSAGE value="deleted a space" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted a space" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -333,8 +358,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="4" />
+          <line>27</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

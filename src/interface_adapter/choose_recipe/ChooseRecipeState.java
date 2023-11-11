@@ -9,27 +9,27 @@ import java.util.List;
 import java.util.Objects;
 
 public class ChooseRecipeState {
-    private List<RecipeInformation> recipeInformation;
+    private List<RecipeInformation> recipeIdeasList;
 
     public ChooseRecipeState() {
-        recipeInformation = new ArrayList<RecipeInformation>();
-
-        recipeInformation.add(new RecipeInformation(2,"hello"));
-
+        recipeIdeasList = new ArrayList<>();
+        recipeIdeasList.add(new RecipeInformation(2,"hello"));
     }
+
+    public int get_length(){return recipeIdeasList.size();}
 
     public List<String> getRecipeNames() {
         List<String> recipeNames = new ArrayList<>();
 
-        for (int i = 0; i < (recipeInformation).size(); i++){
-            recipeNames.add(recipeInformation.get(i).getTitle());
+        for (int i = 0; i < (recipeIdeasList).size(); i++){
+            recipeNames.add(recipeIdeasList.get(i).getTitle());
             }
 
         return recipeNames;
     }
 
     public void setRecipeIdeasList(List<RecipeInformation> recipeIdeasList) {
-        this.recipeInformation = recipeIdeasList;
+        this.recipeIdeasList = recipeIdeasList;
     }
 
 
