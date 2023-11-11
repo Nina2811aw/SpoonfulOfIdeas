@@ -59,7 +59,7 @@ public class RecipeViewUseCaseFactory {
 
     }
 
-    // Back button controller to go from ChooseRecipe view back to RecipeSearch view.
+    // Creates and configures a BackToSearchController for handling the transition from the ChooseRecipe view back to the RecipeSearch view.
     public static BackToSearchController createBackToSearchUseCase(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel){
         BackToSearchOutputBoundary backToSearchPresenter = new BackToSearchPresenter(viewManagerModel, recipeSearchViewModel);
         BackToSearchInteractor backToSearchInteractor = new BackToSearchInteractor(backToSearchPresenter);

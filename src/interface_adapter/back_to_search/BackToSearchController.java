@@ -10,6 +10,7 @@ public class BackToSearchController {
         this.backToSearchInputBoundary = backToSearchInteractor;
     }
 
+    // runs the back_to_search use case interactor method
     public void execute(){
         backToSearchInputBoundary.execute();
     }

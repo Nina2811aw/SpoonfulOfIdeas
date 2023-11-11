@@ -13,9 +13,9 @@ public class BackToSearchPresenter implements BackToSearchOutputBoundary {
         this.recipeSearchViewModel = recipeSearchViewModel;
     }
 
+    // Presenter switches from current view to the Search view.
     @Override
     public void prepareRecipeSearchView() {
-
         System.out.println("prepare recipe search view from back to search presenter");
         viewManagerModel.setActiveView(recipeSearchViewModel.getViewName());
         System.out.println("active view: "+ viewManagerModel.getActiveView());

@@ -8,6 +8,8 @@ public class BackToSearchInteractor implements BackToSearchInputBoundary {
         this.backToSearchPresenter = backToSearchOutputBoundary;
     }
 
+    // The execute method just needs to call the presenter because the presenter
+    // should always in context switch to the Search view.
     @Override
     public void execute() {
         backToSearchPresenter.prepareRecipeSearchView();
