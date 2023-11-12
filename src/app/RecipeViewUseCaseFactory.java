@@ -48,16 +48,6 @@ public class RecipeViewUseCaseFactory {
         return new ChooseRecipeView(chooseRecipeController, chooseRecipeViewModel);
     }
 
-    public static ChooseRecipeView createChooseView2(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel) {
-        ChooseRecipeController chooseRecipeController = createChooseCase(viewManagerModel, chooseRecipeViewModel);
-        ChooseRecipeView chooseRecipeView = new ChooseRecipeView(chooseRecipeController,chooseRecipeViewModel);
-        ChooseRecipeState chooseRecipeState = chooseRecipeViewModel.getState();
-        chooseRecipeView.change_buttons(
-                chooseRecipeState.getRecipeNames().get(0),chooseRecipeState.getRecipeNames().get(1),chooseRecipeState.getRecipeNames().get(2),
-                chooseRecipeState.getRecipeNames().get(3),chooseRecipeState.getRecipeNames().get(4));
-        chooseRecipeView.change_view_name("amended choose recipe view");
-        return chooseRecipeView;
-    }
 
     public static ChooseRecipeController createChooseCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel){
         ChooseRecipeOutputBoundary chooseRecipePresenter = new ChooseRecipePresenter(viewManagerModel, chooseRecipeViewModel);

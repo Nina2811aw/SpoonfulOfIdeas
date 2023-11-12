@@ -27,24 +27,7 @@ public class ChooseRecipeState {
 
     }
 
-    public ArrayList<JButton> get_buttons(){
-        ArrayList<JButton> fin = new ArrayList<JButton>();
-        button1 = new JButton(this.getRecipeNames().get(0));
-        button2 = new JButton(this.getRecipeNames().get(1));
-        button3 = new JButton(this.getRecipeNames().get(2));
-        button4 = new JButton(this.getRecipeNames().get(3));
-        button5 = new JButton(this.getRecipeNames().get(4));
-
-        fin.add(button1);
-        fin.add(button2);
-        fin.add(button3);
-        fin.add(button4);
-        fin.add(button5);
-
-        return fin;
-    }
-
-    public int get_length(){return recipeIdeasList.size();}
+    public List<RecipeInformation> get_recipe_info(){return recipeIdeasList;}
 
     public List<String> getRecipeNames() {
         List<String> recipeNames = new ArrayList<>();

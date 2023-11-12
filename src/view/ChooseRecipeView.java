@@ -4,6 +4,7 @@ import interface_adapter.choose_recipe.ChooseRecipeController;
 import interface_adapter.choose_recipe.ChooseRecipeState;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.nutrition_detail.NutritionDetailState;
+import interface_adapter.recipe_search.RecipeSearchState;
 
 import javax.swing.*;
 import java.awt.*;
@@ -54,27 +55,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.add(buttonsRecipes);
-    }
 
-    public void change_view_name(String str){
-        viewName = str;
-    }
-    public void change_buttons(String b1, String b2, String b3, String b4, String b5){
-        buttonsRecipes.remove(recipe1);
-        buttonsRecipes.remove(recipe2);
-        buttonsRecipes.remove(recipe3);
-        buttonsRecipes.remove(recipe4);
-        buttonsRecipes.remove(recipe5);
-        recipe1 = new JButton(b1);
-        recipe2 = new JButton(b2);
-        recipe3 = new JButton(b3);
-        recipe4 = new JButton(b4);
-        recipe5 = new JButton(b5);
-        buttonsRecipes.add(recipe1);
-        buttonsRecipes.add(recipe2);
-        buttonsRecipes.add(recipe3);
-        buttonsRecipes.add(recipe4);
-        buttonsRecipes.add(recipe5);
     }
 
     @Override
@@ -87,8 +68,8 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         ChooseRecipeState chooseRecipeState = (ChooseRecipeState) evt.getNewValue();
         this.remove(buttonsRecipes);
         this.removeAll();
-        JPanel buttonsRecipes2 = new JPanel();
-        buttonsRecipes2.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JPanel buttonsRecipes2 = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        buttonsRecipes2.add(new JLabel("Recipes:"));
         buttonsRecipes2.setLayout(new BoxLayout(buttonsRecipes2, BoxLayout.Y_AXIS));
         recipe1 = new JButton(chooseRecipeState.getRecipeNames().get(1));
         recipe2 = new JButton(chooseRecipeState.getRecipeNames().get(2));
@@ -100,9 +81,79 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         buttonsRecipes2.add(recipe3);
         buttonsRecipes2.add(recipe4);
         buttonsRecipes2.add(recipe5);
+        buttonsRecipes2.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.add(buttonsRecipes2);
 
+        recipe1.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if(evt.getSource().equals(recipe1)){
+                            ChooseRecipeState currentState = chooseRecipeViewModel.getState();
+
+                            System.out.println("recipe 1 button pressed");
+                            chooseRecipeController.execute(currentState.get_recipe_info());
+                        }
+                    }
+                }
+        );
+
+        recipe2.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if(evt.getSource().equals(recipe2)){
+                            ChooseRecipeState currentState = chooseRecipeViewModel.getState();
+
+                            System.out.println("recipe 2 button pressed");
+                            chooseRecipeController.execute(currentState.get_recipe_info());
+                        }
+                    }
+                }
+        );
+
+        recipe3.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if(evt.getSource().equals(recipe3)){
+                            ChooseRecipeState currentState = chooseRecipeViewModel.getState();
+
+                            System.out.println("recipe 3 button pressed");
+                            chooseRecipeController.execute(currentState.get_recipe_info());
+                        }
+                    }
+                }
+        );
+
+        recipe4.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if(evt.getSource().equals(recipe4)){
+                            ChooseRecipeState currentState = chooseRecipeViewModel.getState();
+
+                            System.out.println("recipe 4 button pressed");
+                            chooseRecipeController.execute(currentState.get_recipe_info());
+                        }
+                    }
+                }
+        );
+
+        recipe5.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if(evt.getSource().equals(recipe5)){
+                            ChooseRecipeState currentState = chooseRecipeViewModel.getState();
+
+                            System.out.println("recipe 5 button pressed");
+                            chooseRecipeController.execute(currentState.get_recipe_info());
+                        }
+                    }
+                }
+        );
     }
 
 }
