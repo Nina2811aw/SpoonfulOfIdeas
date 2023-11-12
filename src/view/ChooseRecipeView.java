@@ -93,7 +93,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
                             ChooseRecipeState currentState = chooseRecipeViewModel.getState();
 
                             System.out.println("recipe 1 button pressed");
-                            chooseRecipeController.execute(currentState.get_recipe_info());
+                            chooseRecipeController.execute(currentState.get_recipe_info().get(1));
                         }
                     }
                 }
@@ -107,7 +107,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
                             ChooseRecipeState currentState = chooseRecipeViewModel.getState();
 
                             System.out.println("recipe 2 button pressed");
-                            chooseRecipeController.execute(currentState.get_recipe_info());
+                            chooseRecipeController.execute(currentState.get_recipe_info().get(2));
                         }
                     }
                 }
@@ -121,7 +121,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
                             ChooseRecipeState currentState = chooseRecipeViewModel.getState();
 
                             System.out.println("recipe 3 button pressed");
-                            chooseRecipeController.execute(currentState.get_recipe_info());
+                            chooseRecipeController.execute(currentState.get_recipe_info().get(3));
                         }
                     }
                 }
@@ -135,7 +135,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
                             ChooseRecipeState currentState = chooseRecipeViewModel.getState();
 
                             System.out.println("recipe 4 button pressed");
-                            chooseRecipeController.execute(currentState.get_recipe_info());
+                            chooseRecipeController.execute(currentState.get_recipe_info().get(4));
                         }
                     }
                 }
@@ -149,7 +149,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
                             ChooseRecipeState currentState = chooseRecipeViewModel.getState();
 
                             System.out.println("recipe 5 button pressed");
-                            chooseRecipeController.execute(currentState.get_recipe_info());
+                            chooseRecipeController.execute(currentState.get_recipe_info().get(5));
                         }
                     }
                 }
