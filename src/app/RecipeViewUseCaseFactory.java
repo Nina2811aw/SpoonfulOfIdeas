@@ -19,6 +19,10 @@ import use_case.recipe_search.RecipeSearchOutputBoundary;
 import view.ChooseRecipeView;
 import view.RecipeSearchView;
 
+import javax.swing.*;
+import java.lang.reflect.Array;
+import java.util.List;
+
 public class RecipeViewUseCaseFactory {
 
     public static RecipeSearchView createSearchView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel){
