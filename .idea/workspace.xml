@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="wroked on the choose recipe view">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Tried to make buttons in the Choose Recipe View and was not able to change the view from the view model.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/MainApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
     </list>
@@ -317,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699743891643</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Tried to make buttons in the Choose Recipe View and was not able to change the view from the view model.">
+      <option name="closed" value="true" />
+      <created>1699809584242</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1699809584242</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,24 +355,16 @@
     <MESSAGE value="Recipe Search Presenter Changes" />
     <MESSAGE value="deleted a space" />
     <MESSAGE value="wroked on the choose recipe view" />
-    <option name="LAST_COMMIT_MESSAGE" value="wroked on the choose recipe view" />
+    <MESSAGE value="Tried to make buttons in the Choose Recipe View and was not able to change the view from the view model." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried to make buttons in the Choose Recipe View and was not able to change the view from the view model." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/app/MainApp.java</url>
-          <line>15</line>
-          <properties class="app.MainApp">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="8" />
+          <line>28</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

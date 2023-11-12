@@ -1,6 +1,8 @@
 package interface_adapter.recipe_search;
 
+import app.RecipeViewUseCaseFactory;
 import interface_adapter.ViewManagerModel;
+import interface_adapter.choose_recipe.ChooseRecipeController;
 import interface_adapter.choose_recipe.ChooseRecipeState;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import use_case.recipe_search.RecipeSearchOutputBoundary;
@@ -28,7 +30,6 @@ public class RecipeSearchPresenter implements  RecipeSearchOutputBoundary{
         ChooseRecipeState chooseRecipeState = new ChooseRecipeState();
         chooseRecipeState.setRecipeIdeasList(recipeSearchOutputData.getRecipeIDList());
         this.chooseRecipeViewModel.setState(chooseRecipeState);
-
         chooseRecipeViewModel.firePropertyChanged();
 
         viewManagerModel.setActiveView(chooseRecipeViewModel.getViewName());

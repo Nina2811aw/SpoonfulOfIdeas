@@ -48,8 +48,6 @@ public class MainApp {
         SpoonacularDataAccessObject backToChooseDataAccessObject;
         backToChooseDataAccessObject = new SpoonacularDataAccessObject();
 
-
-
         RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
         views.add(recipeSearchView, recipeSearchView.viewName);
 
