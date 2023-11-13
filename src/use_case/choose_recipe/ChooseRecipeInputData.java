@@ -15,4 +15,5 @@ public class ChooseRecipeInputData {
     }
 
     public RecipeInformation getrecipe() {return recipe;}
+
 }
