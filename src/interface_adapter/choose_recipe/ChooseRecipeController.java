@@ -13,8 +13,8 @@ public class ChooseRecipeController {
     }
 
     // parameters have to be specified
-    public void execute(List<RecipeInformation> recipeInfo){
-        ChooseRecipeInputData chooseRecipeInputData = new ChooseRecipeInputData(recipeInfo);// has to be replaced by actual input data
+    public void execute(RecipeInformation recipeInfo){
+        ChooseRecipeInputData chooseRecipeInputData = new ChooseRecipeInputData(recipeInfo);
         chooseRecipeInteractor.execute(chooseRecipeInputData);
     }
 }

@@ -31,7 +31,6 @@ public class RecipeSearchInteractor implements RecipeSearchInputBoundary{
         }
         // call presenter with output data
         RecipeSearchOutputData recipeSearchOutputData = new RecipeSearchOutputData(recipeIdeasList);
-        //ChooseRecipeInputData chooseRecipeInputData = new ChooseRecipeInputData(recipeIdeasList);
         recipeSearchPresenter.prepareChooseRecipeView(recipeSearchOutputData);
 
     }
