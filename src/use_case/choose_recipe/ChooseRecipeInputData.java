@@ -7,19 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChooseRecipeInputData {
-    public ArrayList<Integer> recipeId;
 
-    public List<RecipeInformation> recipes;
+    public RecipeInformation recipe;
 
-    public ChooseRecipeInputData(List<RecipeInformation> recipes) {
-        this.recipes = recipes;
+    public ChooseRecipeInputData(RecipeInformation recipe) {
+        this.recipe = recipe;
     }
 
-    public RecipeInformation getrecipe1() {
-        if (recipes.isEmpty()) {
-            System.out.println("no recipies found");
-        }
-        return recipes.get(0);
-
-    }
+    public RecipeInformation getrecipe() {return recipe;}
 }

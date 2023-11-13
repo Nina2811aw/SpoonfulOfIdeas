@@ -19,7 +19,7 @@ public class ChooseRecipeInteractor implements ChooseRecipeInputBoundary{
     @Override
     public void execute(ChooseRecipeInputData chooseRecipeInputData) {
         List<List<String>> recipeIdeasList = chooseRecipeDataAccessObject.getRecipeDetails(chooseRecipeInputData);
-        System.out.println(recipeIdeasList);
+        System.out.println("got to the interactor.java");
 
         ChooseRecipeOutputData chooseRecipeOutputData = new ChooseRecipeOutputData();
         chooseRecipePresenter.prepareRecipeDetailsView(chooseRecipeOutputData);

@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_access/RecipeSpecificationDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/RecipeSpecificationDataAccessObject.java" afterDir="false" />
     </list>
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Changed the DAO" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -57,6 +63,19 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "back__to__search",
+    "last_opened_file_path": "/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "DAO-edits",
     "last_opened_file_path": "/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -122,6 +141,7 @@
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
       <workItem from="1698939094343" duration="19626000" />
+      <workItem from="1699825542651" duration="5027000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -275,6 +295,87 @@
       <updated>1698961585163</updated>
     </task>
     <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Merge">
+      <option name="closed" value="true" />
+      <created>1699568040429</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699568040429</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Recipe Search Presenter Changes">
+      <option name="closed" value="true" />
+      <created>1699568328636</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1699568328636</updated>
+    </task>
+    <task id="LOCAL-00022" summary="deleted a space">
+      <option name="closed" value="true" />
+      <created>1699568838853</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1699568838853</updated>
+    </task>
+    <task id="LOCAL-00023" summary="deleted a space">
+      <option name="closed" value="true" />
+      <created>1699568842021</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1699568842021</updated>
+    </task>
+    <task id="LOCAL-00024" summary="wroked on the choose recipe view">
+      <option name="closed" value="true" />
+      <created>1699743891643</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1699743891643</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Tried to make buttons in the Choose Recipe View and was not able to change the view from the view model.">
+      <option name="closed" value="true" />
+      <created>1699809584242</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1699809584242</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Finished updating the view model">
+      <option name="closed" value="true" />
+      <created>1699818045744</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699818045744</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Created the action listeners for the different recipes">
+      <option name="closed" value="true" />
+      <created>1699826991945</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1699826991945</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Edited the controller and the interactor for choose recipe">
+      <option name="closed" value="true" />
+      <created>1699827574545</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1699827574545</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Changed the DAO">
+      <option name="closed" value="true" />
+      <created>1699892510052</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1699892510053</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,9 +393,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created App directory" />
-    <MESSAGE value="Use Case Files" />
-    <MESSAGE value="Created a view model and added to main" />
     <MESSAGE value="Created a recipe View Use Case Factory" />
     <MESSAGE value="workspace change" />
     <MESSAGE value="merge commit" />
@@ -310,6 +408,28 @@
     <MESSAGE value="adapted RecipeSearchController, so that RecipeSearchInputData gets created based on the input from the user" />
     <MESSAGE value="added API call to get recipe ideas based on user input" />
     <MESSAGE value="added switch from Recipe Search View to Choose Recipe View after user clicks on search button" />
+    <MESSAGE value="Still working on displaying the recipe names in the choose recipie presenter" />
+    <MESSAGE value="Merge" />
+    <MESSAGE value="Recipe Search Presenter Changes" />
+    <MESSAGE value="deleted a space" />
+    <MESSAGE value="wroked on the choose recipe view" />
+    <MESSAGE value="Tried to make buttons in the Choose Recipe View and was not able to change the view from the view model." />
+    <MESSAGE value="Finished updating the view model" />
+    <MESSAGE value="Created the action listeners for the different recipes" />
+    <MESSAGE value="Edited the controller and the interactor for choose recipe" />
+    <MESSAGE value="Changed the DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the DAO" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <option name="LAST_COMMIT_MESSAGE" value="added switch from Recipe Search View to Choose Recipe View after user clicks on search button" />
   </component>
 </project>

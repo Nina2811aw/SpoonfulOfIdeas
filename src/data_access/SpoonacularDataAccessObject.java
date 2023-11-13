@@ -88,35 +88,33 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
-        for (int i = 0; i < chooseRecipeInputData.recipeId.size(); i++) {
-            String id = String.valueOf(chooseRecipeInputData.recipeId.get(i));
-            String url = "https://api.spoonacular.com/recipes/" + id + "/information?includeNutrition=false";
-            Request request = new Request.Builder()
-                    .url(url)
-                    .addHeader("x-api-key", API_TOKEN)
-                    .addHeader("Content-Type", "application/json")
-                    .build();
-            try {
-                Response response = client.newCall(request).execute();
-                assert response.body() != null;
-                JSONObject responseBody = new JSONObject(response.body().string());
-                List<String> inner_lst = new ArrayList<>();
+        String id = String.valueOf(chooseRecipeInputData.recipe);
+        String url = "https://api.spoonacular.com/recipes/" + id + "/information?includeNutrition=false";
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("x-api-key", API_TOKEN)
+                .addHeader("Content-Type", "application/json")
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            assert response.body() != null;
+            JSONObject responseBody = new JSONObject(response.body().string());
+            List<String> inner_lst = new ArrayList<>();
 
 
                 // Adding id to nested list [0]
-                inner_lst.add(id);
+            inner_lst.add(id);
 
                 // Adding title to nested list [1]
-                inner_lst.add(responseBody.get("title").toString());
+            inner_lst.add(responseBody.get("title").toString());
 
                 // Adding Instructions to the list [2]
-                inner_lst.add(responseBody.get("instructions").toString());
-                info_list.add(inner_lst);
+            inner_lst.add(responseBody.get("instructions").toString());
+            info_list.add(inner_lst);
 
-            } catch (IOException | JSONException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        } catch (IOException | JSONException e) {
+            throw new RuntimeException(e);}
+
         return info_list;
     }
     public List<List<String>> RecipeNutritionLabelBuilder(ChooseRecipeInputData chooseRecipeInputData) {
@@ -125,17 +123,16 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         //[['id', 'url'],['id', 'url']]
 
 
-        for (int i = 0; i < chooseRecipeInputData.recipeId.size(); i++) {
-            String id = String.valueOf(chooseRecipeInputData.recipeId.get(i));
-            List<String> inner_lst = new ArrayList<>();
+        String id = String.valueOf(chooseRecipeInputData.recipe);
+        List<String> inner_lst = new ArrayList<>();
             // Adding id to nested list [0]
-            inner_lst.add(id);
+        inner_lst.add(id);
 
             // Adding image url to nested list [1]
-            String url = "https://api.spoonacular.com/recipes/" + id + "/nutritionLabel.png";
-            inner_lst.add(url);
-            info_list.add(inner_lst);
-        }
+        String url = "https://api.spoonacular.com/recipes/" + id + "/nutritionLabel.png";
+        inner_lst.add(url);
+        info_list.add(inner_lst);
+
         return info_list;
     }
 
