@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Changed the DAO" />
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Changed the DAO">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="DAO-edits" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +64,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "DAO-edits",
+    "git-widget-placeholder": "Choose-Recipe-Interactor-to-Presenter",
     "last_opened_file_path": "/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -124,7 +130,7 @@
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
       <workItem from="1698939094343" duration="19626000" />
-      <workItem from="1699825542651" duration="5027000" />
+      <workItem from="1699825542651" duration="9371000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -357,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699892510053</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Changed the DAO">
+      <option name="closed" value="true" />
+      <created>1699892731599</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1699892731599</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,11 +409,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="use_case.choose_recipe.ChooseRecipeInputData" memberName="recipe" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
