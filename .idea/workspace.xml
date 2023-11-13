@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Edited the controller and the interactor for choose recipe">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
-    </list>
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Changed the DAO" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +124,7 @@
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
       <workItem from="1698939094343" duration="19626000" />
-      <workItem from="1699825542651" duration="4686000" />
+      <workItem from="1699825542651" duration="5027000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -352,14 +349,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699827574545</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Changed the DAO">
+      <option name="closed" value="true" />
+      <created>1699892510052</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1699892510053</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created a view model and added to main" />
     <MESSAGE value="Created a recipe View Use Case Factory" />
     <MESSAGE value="workspace change" />
     <MESSAGE value="merge commit" />
@@ -384,7 +388,8 @@
     <MESSAGE value="Finished updating the view model" />
     <MESSAGE value="Created the action listeners for the different recipes" />
     <MESSAGE value="Edited the controller and the interactor for choose recipe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited the controller and the interactor for choose recipe" />
+    <MESSAGE value="Changed the DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the DAO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
