@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Created the action listeners for the different recipes">
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="backtochoosebutton" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
