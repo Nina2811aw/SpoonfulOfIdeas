@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Changed the DAO so the interactor error goes away.">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Changed the DAO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipePresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/nutrition_detail/NutritionDetailState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/nutrition_detail/NutritionDetailState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeOutputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeOutputData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +130,7 @@
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
       <workItem from="1698939094343" duration="19626000" />
-      <workItem from="1699825542651" duration="11826000" />
+      <workItem from="1699825542651" duration="9371000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -375,21 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699892731599</updated>
     </task>
-    <task id="LOCAL-00031" summary="Changed the DAO so the interactor error goes away.">
-      <option name="closed" value="true" />
-      <created>1699897127540</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1699897127541</updated>
-    </task>
-    <option name="localTasksCounter" value="32" />
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created a recipe View Use Case Factory" />
     <MESSAGE value="workspace change" />
     <MESSAGE value="merge commit" />
     <MESSAGE value="new classes for nutrition detail use case" />
@@ -414,10 +403,18 @@
     <MESSAGE value="Created the action listeners for the different recipes" />
     <MESSAGE value="Edited the controller and the interactor for choose recipe" />
     <MESSAGE value="Changed the DAO" />
-    <MESSAGE value="Changed the DAO so the interactor error goes away." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the DAO so the interactor error goes away." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the DAO" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="use_case.choose_recipe.ChooseRecipeInputData" memberName="recipe" />
