@@ -59,7 +59,6 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
             Response response = client.newCall(request).execute();
             System.out.println(response);
             JSONObject responseBody = new JSONObject(response.body().string());
-            System.out.println(responseBody);
             JSONArray responseArray = responseBody.getJSONArray("results");
             for(int i = 0; i < responseArray.length(); i++){
                 JSONObject currentObject = responseArray.getJSONObject(i);
@@ -100,7 +99,6 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
             assert response.body() != null;
             System.out.println(response);
             String responseBodyString =  response.body().string().trim();
-            System.out.println(responseBodyString);
             JSONObject responseBody;
             if (!responseBodyString.isEmpty()) {
                 responseBody = new JSONObject(responseBodyString);
