@@ -22,7 +22,6 @@ public class BackToChooseInteractor implements BackToChooseInputBoundary{
     public BackToChooseInteractor(BackToChooseDataAccessInterface backtochooseDataAccessObject, BackToChooseOutputBoundary backtochooseOutputBoundary /*,ChooseRecipeController chooseRecipeController*/){
         this.backToChoosePresenter = backtochooseOutputBoundary;
         this.backtochooseDataAccessObject = backtochooseDataAccessObject;
-        //this.chooseRecipeController = chooseRecipeController;
     }
 
 
@@ -33,7 +32,6 @@ public class BackToChooseInteractor implements BackToChooseInputBoundary{
     public void execute() {
         List<RecipeInformation> recipeInfoList = backtochooseDataAccessObject.getRecipeInformationList();
 
-        //chooseRecipeController.execute(recipeInfoList);
         BackToChooseOutputData backToChooseOutputData = new BackToChooseOutputData(recipeInfoList);
         backToChoosePresenter.prepareSuccessView(backToChooseOutputData);
 
