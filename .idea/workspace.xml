@@ -4,12 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Changed the DAO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeDataAccessInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInputData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/choose_recipe/ChooseRecipeInteractor.java" afterDir="false" />
+=======
+
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Recipe Search Presenter Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChooseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChooseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChoosePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChoosePresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseOutputData.java" afterDir="false" />
+
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="added switch from Recipe Search View to Choose Recipe View after user clicks on search button">
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/food_joke/FoodJokeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/food_joke/FoodJokePresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/food_joke/FoodJokeState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interface_adapter/food_joke/FoodJokeViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeDataAccessInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeInputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeInputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeInteractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeOutputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +47,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -28,7 +56,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+
         <entry key="$PROJECT_DIR$" value="DAO-edits" />
+=======
+        <entry key="$PROJECT_DIR$" value="backtochoosebutton" />
+
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,7 +96,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+
     "git-widget-placeholder": "Choose-Recipe-Interactor-to-Presenter",
+=======
+
+    "git-widget-placeholder": "main",
+
+
     "last_opened_file_path": "/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -112,6 +150,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainApp" />
@@ -130,7 +179,16 @@
       <workItem from="1696178303630" duration="3674000" />
       <workItem from="1698075550593" duration="802000" />
       <workItem from="1698939094343" duration="19626000" />
+
       <workItem from="1699825542651" duration="9371000" />
+=======
+
+      <workItem from="1699716316314" duration="3016000" />
+
+      <workItem from="1699825542651" duration="5027000" />
+      <workItem from="1699895909376" duration="336000" />
+
+
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -377,6 +435,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created a recipe View Use Case Factory" />
     <MESSAGE value="workspace change" />
@@ -420,5 +489,13 @@
         <PinnedItemInfo parentTag="use_case.choose_recipe.ChooseRecipeInputData" memberName="recipe" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SpoonfulOfIdeas$BackToSearchControllerTest_interactorExecute.ic" NAME="BackToSearchControllerTest.interactorExecute Coverage Results" MODIFIED="1699689986911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>interface_adapter.back_to_search.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpoonfulOfIdeas$BackToSearchControllerTest.ic" NAME="BackToSearchControllerTest Coverage Results" MODIFIED="1699689958980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>interface_adapter.back_to_search.*</FILTER>
+    </SUITE>
   </component>
 </project>

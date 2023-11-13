@@ -1,5 +1,7 @@
 package view;
 
+import entity.RecipeInformation;
+import interface_adapter.back_to_search.BackToSearchController;
 import interface_adapter.choose_recipe.ChooseRecipeController;
 import interface_adapter.choose_recipe.ChooseRecipeState;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
@@ -27,12 +29,17 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
     public JButton recipe4;
     public JButton recipe5;
 
+    // back button variables
+    private final BackToSearchController backToSearchController;
+    private JButton back;
     public JPanel buttonsRecipes = new JPanel();
 
-    public ChooseRecipeView(ChooseRecipeController chooseRecipeController, ChooseRecipeViewModel chooseRecipeViewModel){
+    public ChooseRecipeView(ChooseRecipeController chooseRecipeController, BackToSearchController backController, ChooseRecipeViewModel chooseRecipeViewModel){
         this.chooseRecipeController = chooseRecipeController;
         this.chooseRecipeViewModel = chooseRecipeViewModel;
         chooseRecipeViewModel.addPropertyChangeListener(this);
+
+        this.backToSearchController = backController;
 
         ChooseRecipeState state = chooseRecipeViewModel.getState();
         JLabel title = new JLabel(ChooseRecipeViewModel.TITLE_BUTTON);
@@ -52,6 +59,20 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         buttonsRecipes.add(recipe3);
         buttonsRecipes.add(recipe4);
         buttonsRecipes.add(recipe5);
+
+        back = new JButton("<--"); // Make the text input a variable input from ChooseViewModel rather than hard coded.
+        buttonsRecipes.add(back);
+
+        back.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(back)) {
+                            backToSearchController.execute();
+                        }
+                    }
+                }
+        );
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.add(buttonsRecipes);
@@ -81,9 +102,26 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         buttonsRecipes2.add(recipe3);
         buttonsRecipes2.add(recipe4);
         buttonsRecipes2.add(recipe5);
+
+        back = new JButton("<--"); // Make the text input a variable input from ChooseViewModel rather than hard coded.
+        buttonsRecipes2.add(back);
+
         buttonsRecipes2.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.add(buttonsRecipes2);
+
+
+
+        back.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(back)) {
+                            backToSearchController.execute();
+                        }
+                    }
+                }
+        );
 
         recipe1.addActionListener(
                 new ActionListener() {
