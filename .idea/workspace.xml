@@ -7,6 +7,8 @@
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Merged">
       <change beforePath="$PROJECT_DIR$/src/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/MainApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" afterDir="false" />
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Create Favourites DAO empty file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +28,8 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="DAO-edits" />
+        <entry key="$PROJECT_DIR$" value="backtochoosebutton" />
+
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,6 +60,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -69,6 +74,20 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }</component>
   <component name="RecentsManager">
@@ -128,6 +147,9 @@
       <workItem from="1698075550593" duration="802000" />
       <workItem from="1698939094343" duration="19626000" />
       <workItem from="1699825542651" duration="9371000" />
+      <workItem from="1699716316314" duration="3016000" />
+      <workItem from="1699825542651" duration="5027000" />
+      <workItem from="1699895909376" duration="336000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -383,6 +405,9 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+
+    <MESSAGE value="workspace change" />
+
     <MESSAGE value="merge commit" />
     <MESSAGE value="new classes for nutrition detail use case" />
     <MESSAGE value="recipe entity" />
@@ -406,9 +431,14 @@
     <MESSAGE value="Created the action listeners for the different recipes" />
     <MESSAGE value="Edited the controller and the interactor for choose recipe" />
     <MESSAGE value="Changed the DAO" />
+
     <MESSAGE value="Fixed the presenter for Choose Recipe" />
     <MESSAGE value="Merged" />
     <option name="LAST_COMMIT_MESSAGE" value="Merged" />
+
+    <MESSAGE value="Create Favourites DAO empty file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Favourites DAO empty file" />
+
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -426,4 +456,14 @@
       </pinned-members>
     </pin-to-top-manager>
   </component>
+
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SpoonfulOfIdeas$BackToSearchControllerTest.ic" NAME="BackToSearchControllerTest Coverage Results" MODIFIED="1699689958980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>interface_adapter.back_to_search.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpoonfulOfIdeas$BackToSearchControllerTest_interactorExecute.ic" NAME="BackToSearchControllerTest.interactorExecute Coverage Results" MODIFIED="1699689986911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>interface_adapter.back_to_search.*</FILTER>
+    </SUITE>
+  </component>
+
 </project>
