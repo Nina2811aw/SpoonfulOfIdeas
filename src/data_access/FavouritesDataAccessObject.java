@@ -47,7 +47,7 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
     public String getFavourites() {
         StringBuilder recipetitles = new StringBuilder();
         for(Map.Entry<String, String> entry: recipes.entrySet()){
-            if(recipetitles.length() > 0){
+            if(!recipetitles.isEmpty()){
                 recipetitles.append(" , ");
             }
             recipetitles.append(entry.getKey()).append('\n');
