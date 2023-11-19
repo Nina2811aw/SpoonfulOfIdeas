@@ -1,5 +1,6 @@
 package app;
 
+import data_access.FavouritesDataAccessObject;
 import data_access.SpoonacularDataAccessObject;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.back_to_choose.BackToChooseViewModel;
@@ -41,12 +42,23 @@ public class MainApp {
         // results from the use case. The ViewModels are observable, and will
         // be observed by the Views.
         RecipeSearchViewModel recipeSearchViewModel = new RecipeSearchViewModel();
+
         ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
+
         NutritionDetailViewModel nutritionDetailViewModel = new NutritionDetailViewModel();
+
         SpoonacularDataAccessObject nutritionDetailDataAccessObject;
         nutritionDetailDataAccessObject = new SpoonacularDataAccessObject();
+
         SpoonacularDataAccessObject backToChooseDataAccessObject;
         backToChooseDataAccessObject = new SpoonacularDataAccessObject();
+
+        FavouritesDataAccessObject addToFavouritesDataAccessObject;
+        try {
+            addToFavouritesDataAccessObject = new FavouritesDataAccessObject("./favourites.csv");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
         views.add(recipeSearchView, recipeSearchView.viewName);
@@ -54,7 +66,7 @@ public class MainApp {
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, nutritionDetailViewModel);
         views.add(chooseRecipeView, chooseRecipeView.viewName);
 
-        RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject);
+        RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject, addToFavouritesDataAccessObject);
 
         viewManagerModel.setActiveView(recipeSearchView.viewName);
         viewManagerModel.firePropertyChanged();
