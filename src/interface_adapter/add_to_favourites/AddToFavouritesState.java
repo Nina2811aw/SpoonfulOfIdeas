@@ -6,7 +6,10 @@ public class AddToFavouritesState {
     public AddToFavouritesState(){
     }
 
-    public String getRecipes(){return recipes;}
+    public String getFavourites(){return recipes;}
 
-    public void setRecipes(String recipes){this.recipes = recipes;}
+    public void setFavourites(String recipes){this.recipes = recipes;}
+
+
+
 }

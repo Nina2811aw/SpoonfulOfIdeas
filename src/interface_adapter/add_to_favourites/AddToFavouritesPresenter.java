@@ -18,6 +18,7 @@ public class AddToFavouritesPresenter implements AddToFavouritesOutputBoundary {
     @Override
     public void prepareSuccessView(AddToFavouritesOutputData output) {
         AddToFavouritesState addToFavouritesState = NutritionDetailViewModel.getAddToFavouritesState();
+        addToFavouritesState.setFavourites(output.getFavourites());
         this.nutritionDetailViewModel.setAddToFavouritesState(addToFavouritesState);
         nutritionDetailViewModel.firePropertyChanged();
 

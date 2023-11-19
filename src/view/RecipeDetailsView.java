@@ -1,5 +1,7 @@
 package view;
 
+import interface_adapter.add_to_favourites.AddToFavouritesController;
+import interface_adapter.add_to_favourites.AddToFavouritesState;
 import interface_adapter.back_to_choose.BackToChooseController;
 import interface_adapter.back_to_choose.BackToChooseState;
 import interface_adapter.back_to_choose.BackToChooseViewModel;
@@ -15,6 +17,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.List;
 
 
 public class RecipeDetailsView extends JPanel implements ActionListener, PropertyChangeListener {
@@ -25,17 +28,25 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
 
     private final BackToChooseController backToChooseController;
     final JButton back;
-    public RecipeDetailsView(NutritionDetailController nutritionDetailController, NutritionDetailViewModel nutritionDetailViewModel, BackToChooseController backToChooseController) {
+
+    private final AddToFavouritesController addToFavouritesController;
+
+    private final JButton addToFavourites;
+    public RecipeDetailsView(NutritionDetailController nutritionDetailController, NutritionDetailViewModel nutritionDetailViewModel, BackToChooseController backToChooseController, AddToFavouritesController addToFavouritesController) {
         this.nutritionDetailController = nutritionDetailController;
         this.nutritionDetailViewModel = nutritionDetailViewModel;
         this.backToChooseController = backToChooseController;
+        this.addToFavouritesController = addToFavouritesController;
         nutritionDetailViewModel.addPropertyChangeListener(this);
+
         JLabel title = new JLabel("Recipe Details View");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JPanel buttons = new JPanel();
         back = new JButton(NutritionDetailViewModel.BACK_BUTTON_LABEL);
         buttons.add(back);
+        addToFavourites = new JButton(NutritionDetailViewModel.ADD_TO_FAVOURITES_LABEL);
+        buttons.add(addToFavourites);
 
         back.addActionListener(
                 new ActionListener() {
@@ -45,6 +56,22 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                             NutritionDetailState currentState = NutritionDetailViewModel.getState();
 
                             backToChooseController.execute();
+                        }
+                    }
+                }
+        );
+
+        addToFavourites.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(addToFavourites)){
+                            AddToFavouritesState currentState = NutritionDetailViewModel.getAddToFavouritesState();
+                            NutritionDetailState nutritionState = NutritionDetailViewModel.getState();
+                            List<String> recipe = nutritionState.getRecipe();
+                            addToFavouritesController.execute(recipe.get(0), recipe.get(1));
+                            String favourites = currentState.getFavourites();
+                            JOptionPane.showMessageDialog(RecipeDetailsView.this, favourites);
                         }
                     }
                 }
