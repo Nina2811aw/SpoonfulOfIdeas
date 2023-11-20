@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39a6ec68-2eb5-45b9-ba9d-bc73c4624d39" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChoosePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/back_to_choose/BackToChoosePresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favourites.csv" beforeDir="false" afterPath="$PROJECT_DIR$/favourites.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +40,20 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Fixed a bug in the back to choose presenter.">
+      <option name="closed" value="true" />
+      <created>1700498273637</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700498273637</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed a bug in the back to choose presenter." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug in the back to choose presenter." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MainSpoonfulOfIdeas$All_in_SpoonacularAPITest.ic" NAME="All in SpoonacularAPITest Coverage Results" MODIFIED="1700148791622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
