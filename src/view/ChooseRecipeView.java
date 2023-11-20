@@ -23,6 +23,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
 
     public final ChooseRecipeController chooseRecipeController;
 
+    public JButton recipe;
     public JButton recipe1;
     public JButton recipe2;
     public JButton recipe3;
@@ -92,16 +93,34 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         JPanel buttonsRecipes2 = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonsRecipes2.add(new JLabel("Recipes:"));
         buttonsRecipes2.setLayout(new BoxLayout(buttonsRecipes2, BoxLayout.Y_AXIS));
-        recipe1 = new JButton(chooseRecipeState.getRecipeNames().get(1));
-        recipe2 = new JButton(chooseRecipeState.getRecipeNames().get(2));
-        recipe3 = new JButton(chooseRecipeState.getRecipeNames().get(3));
-        recipe4 = new JButton(chooseRecipeState.getRecipeNames().get(4));
-        recipe5 = new JButton(chooseRecipeState.getRecipeNames().get(5));
-        buttonsRecipes2.add(recipe1);
-        buttonsRecipes2.add(recipe2);
-        buttonsRecipes2.add(recipe3);
-        buttonsRecipes2.add(recipe4);
-        buttonsRecipes2.add(recipe5);
+        for(String recipeName: chooseRecipeState.getRecipeNames()){
+            recipe = new JButton(recipeName);
+            buttonsRecipes2.add(recipe);
+
+            recipe.addActionListener(
+                    new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent evt) {
+                            if(evt.getSource().equals(recipe)){
+                                ChooseRecipeState currentState = chooseRecipeViewModel.getState();
+
+                                System.out.println("recipe button pressed");
+                                chooseRecipeController.execute(currentState.get_recipe_info().get(1));
+                            }
+                        }
+                    }
+            );
+        }
+//        recipe1 = new JButton(chooseRecipeState.getRecipeNames().get(1));
+//        recipe2 = new JButton(chooseRecipeState.getRecipeNames().get(2));
+//        recipe3 = new JButton(chooseRecipeState.getRecipeNames().get(3));
+//        recipe4 = new JButton(chooseRecipeState.getRecipeNames().get(4));
+//        recipe5 = new JButton(chooseRecipeState.getRecipeNames().get(5));
+//        buttonsRecipes2.add(recipe1);
+//        buttonsRecipes2.add(recipe2);
+//        buttonsRecipes2.add(recipe3);
+//        buttonsRecipes2.add(recipe4);
+//        buttonsRecipes2.add(recipe5);
 
         back = new JButton("<--"); // Make the text input a variable input from ChooseViewModel rather than hard coded.
         buttonsRecipes2.add(back);
