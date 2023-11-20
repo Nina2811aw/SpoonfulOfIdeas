@@ -5,6 +5,7 @@ import org.json.JSONArray;
 import use_case.back_to_choose.BackToChooseDataAccessInterface;
 import use_case.choose_recipe.ChooseRecipeDataAccessInterface;
 import use_case.choose_recipe.ChooseRecipeInputData;
+import use_case.food_joke.FoodJokeDataAccessInterface;
 import use_case.nutrition_detail.NutritionDetailDataAccessInterface;
 import use_case.recipe_search.RecipeSearchDataAccessInterface;
 import use_case.recipe_search.RecipeSearchInputData;
@@ -21,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface, ChooseRecipeDataAccessInterface,
-        BackToChooseDataAccessInterface, NutritionDetailDataAccessInterface {
+        BackToChooseDataAccessInterface, NutritionDetailDataAccessInterface, FoodJokeDataAccessInterface {
 
     private static String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
 
@@ -137,4 +138,27 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
     }
 
 
+    @Override
+    public String getFoodJoke() {
+
+        String joke = "";
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        final String url = "https://api.spoonacular.com/food/jokes/random";
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("x-api-key", API_TOKEN)
+                .addHeader("Content-Type", "application/json")
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            JSONObject responseBody = new JSONObject(response.body().string());
+            joke = (String)responseBody.get("text");
+
+
+        } catch (IOException | JSONException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+
+    }
 }

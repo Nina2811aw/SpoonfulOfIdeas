@@ -23,6 +23,8 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     private final JButton search;
 
+    private final JButton joke;
+
     // checkboxes for diets
     private final JCheckBox vegan;
     private final JCheckBox vegetarian;
@@ -116,6 +118,10 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         dropDownMacros.add(carbs);
         dropDownMacros.add(calories);
 
+        JPanel foodJoke = new JPanel();
+        joke = new JButton("show me a funny food joke");
+        foodJoke.add(joke);
+
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         this.add(title);
@@ -125,6 +131,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         this.add(dropDownCuisines);
         this.add(dropDownMacros);
         this.add(buttons);
+        this.add(foodJoke);
 
         // action listener when search button gets pressed
         search.addActionListener(
@@ -358,6 +365,18 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                         RecipeSearchState currentState = recipeSearchViewModel.getState();
                         currentState.setCalories(selectedCalories);
                         recipeSearchViewModel.setState(currentState);
+                    }
+                }
+        );
+
+        joke.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if(evt.getSource().equals(joke)){
+
+                        }
+
                     }
                 }
         );
