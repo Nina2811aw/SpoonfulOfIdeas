@@ -2,6 +2,8 @@ package app;
 
 import data_access.SpoonacularDataAccessObject;
 import interface_adapter.ViewManagerModel;
+import interface_adapter.back_to_choose.BackToChooseViewModel;
+import interface_adapter.choose_recipe.ChooseRecipePresenter;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
@@ -46,11 +48,10 @@ public class MainApp {
         SpoonacularDataAccessObject backToChooseDataAccessObject;
         backToChooseDataAccessObject = new SpoonacularDataAccessObject();
 
-
         RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
         views.add(recipeSearchView, recipeSearchView.viewName);
 
-        ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
+        ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, nutritionDetailViewModel);
         views.add(chooseRecipeView, chooseRecipeView.viewName);
 
         RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject);
