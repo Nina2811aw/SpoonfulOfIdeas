@@ -17,7 +17,7 @@ public class FoodJokeInteractor implements FoodJokeInputBoundary{
         String joke = foodJokeDataAccessObject.getFoodJoke();
         String[] words = joke.split("\\s+");
 
-        StringBuilder builder = new StringBuilder();
+        /**StringBuilder builder = new StringBuilder();
         for(int i = 0; i < words.length; i++){
             builder.append(words[i]);
             builder.append(" ");
@@ -25,7 +25,10 @@ public class FoodJokeInteractor implements FoodJokeInputBoundary{
                 builder.append("\n");
             }
         }
-        FoodJokeOutputData outputData = new FoodJokeOutputData(builder.toString());
+         joke = builder.toString();
+         **/
+
+        FoodJokeOutputData outputData = new FoodJokeOutputData(joke);
         foodJokePresenter.prepareJokeView(outputData);
     }
 }
