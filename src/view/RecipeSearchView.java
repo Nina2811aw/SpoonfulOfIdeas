@@ -129,7 +129,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         dropDownMacros.add(calories);
 
         JPanel foodJoke = new JPanel();
-        joke = new JButton("show me a funny food joke");
+        joke = new JButton("show me fun food trivia");
         foodJoke.add(joke);
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));

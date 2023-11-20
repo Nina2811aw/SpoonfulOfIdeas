@@ -148,7 +148,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
         String joke = "";
         OkHttpClient client = new OkHttpClient().newBuilder().build();
-        final String url = "https://api.spoonacular.com/food/jokes/random";
+        final String url = "https://api.spoonacular.com/food/trivia/random";
         Request request = new Request.Builder()
                 .url(url)
                 .addHeader("x-api-key", API_TOKEN)
