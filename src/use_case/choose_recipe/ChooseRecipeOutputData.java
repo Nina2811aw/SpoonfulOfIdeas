@@ -10,4 +10,7 @@ public class ChooseRecipeOutputData {
     }
 
     List<String> recipeDetails;
+
+    public List<String> getRecipeDetails() {return this.recipeDetails;
+    }
 }

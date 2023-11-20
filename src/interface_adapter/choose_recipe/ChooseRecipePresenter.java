@@ -7,6 +7,8 @@ import use_case.choose_recipe.ChooseRecipeOutputBoundary;
 import use_case.choose_recipe.ChooseRecipeOutputData;
 import view.RecipeSearchView;
 
+import java.util.List;
+
 
 public class ChooseRecipePresenter implements ChooseRecipeOutputBoundary {
     private ViewManagerModel viewManagerModel;
@@ -25,7 +27,8 @@ public class ChooseRecipePresenter implements ChooseRecipeOutputBoundary {
     public void prepareRecipeDetailsSuccessView(ChooseRecipeOutputData chooseRecipeOutputData) {
         System.out.println("prepare Nutrition Details view for choose recipe presenter");
         NutritionDetailState nutritionDetailState = new NutritionDetailState();
-        nutritionDetailState.setRecipe(chooseRecipeOutputData); // have to code in the choose recipe output data
+        List<String> recipe = chooseRecipeOutputData.getRecipeDetails();
+        nutritionDetailState.setRecipe(recipe); // have to code in the choose recipe output data
         this.nutritionDetailViewModel.setState(nutritionDetailState);
         nutritionDetailViewModel.firePropertyChanged();
 

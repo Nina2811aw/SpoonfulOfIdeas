@@ -1,6 +1,7 @@
 package interface_adapter.nutrition_detail;
 
 import interface_adapter.ViewModel;
+import interface_adapter.add_to_favourites.AddToFavouritesState;
 import interface_adapter.recipe_search.RecipeSearchState;
 
 import java.beans.PropertyChangeListener;
@@ -13,7 +14,11 @@ public class NutritionDetailViewModel extends ViewModel {
 
     public static final String BACK_BUTTON_LABEL = "Back";
 
+    public static final String ADD_TO_FAVOURITES_LABEL = "Add to Favourites!";
+
     private static NutritionDetailState state = new NutritionDetailState();
+
+    private static AddToFavouritesState addToFavouritesState = new AddToFavouritesState();
 
     public NutritionDetailViewModel() {
         super("Recipe Details");
@@ -21,6 +26,10 @@ public class NutritionDetailViewModel extends ViewModel {
 
     public void setState(NutritionDetailState state) {
         this.state = state;
+    }
+
+    public void setAddToFavouritesState(AddToFavouritesState addToFavouritesState){
+        this.addToFavouritesState = addToFavouritesState;
     }
 
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
@@ -38,4 +47,7 @@ public class NutritionDetailViewModel extends ViewModel {
     public static NutritionDetailState getState() {
         return state;
     }
+
+    public static AddToFavouritesState getAddToFavouritesState(){return addToFavouritesState;}
+
 }
