@@ -7,6 +7,8 @@ import use_case.choose_recipe.ChooseRecipeOutputBoundary;
 import use_case.choose_recipe.ChooseRecipeOutputData;
 import view.RecipeSearchView;
 
+import java.util.List;
+
 
 public class ChooseRecipePresenter implements ChooseRecipeOutputBoundary {
     private ViewManagerModel viewManagerModel;

@@ -35,7 +35,7 @@ public class RecipeDetailsViewUseCaseFactory {
         BackToChooseController backToChooseController = createBackToChooseCase(viewManagerModel, chooseRecipeViewModel, backToChooseDataAccessObject);
         AddToFavouritesController addToFavouritesController = createAddToFavouritesCase(viewManagerModel, recipeDetailViewModel, addToFavouritesDataAccessObject);
 
-        return new RecipeDetailsView(nutritionDetailController, recipeDetailViewModel, backToChooseController);
+        return new RecipeDetailsView(nutritionDetailController, recipeDetailViewModel, backToChooseController, addToFavouritesController);
     }
 
     private static NutritionDetailController createRecipeDetailsCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel recipeDetailViewModel, NutritionDetailDataAccessInterface recipeDetailDataAccessObject) {
