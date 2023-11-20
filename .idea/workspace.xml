@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Merged">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="workspace merge">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/RecipeViewUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/RecipeDetailsViewUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/RecipeDetailsViewUseCaseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipePresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/RecipeDetailsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeDetailsView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +131,8 @@
       <workItem from="1698075550593" duration="802000" />
       <workItem from="1698939094343" duration="19626000" />
       <workItem from="1699825542651" duration="9371000" />
+      <workItem from="1700169871721" duration="2290000" />
+      <workItem from="1700451397438" duration="1012000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -376,15 +381,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699900515751</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="workspace merge">
+      <option name="closed" value="true" />
+      <created>1700156309582</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1700156309582</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="merge commit" />
-    <MESSAGE value="new classes for nutrition detail use case" />
     <MESSAGE value="recipe entity" />
     <MESSAGE value="adapted classes of the nutrition detail use case to remove errors" />
     <MESSAGE value="added text field for user input (ingredients) to the RecipeSearchView" />
@@ -408,15 +419,17 @@
     <MESSAGE value="Changed the DAO" />
     <MESSAGE value="Fixed the presenter for Choose Recipe" />
     <MESSAGE value="Merged" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged" />
+    <MESSAGE value="Workspace commit" />
+    <MESSAGE value="workspace merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipePresenter.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

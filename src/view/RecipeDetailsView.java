@@ -19,6 +19,8 @@ import java.beans.PropertyChangeListener;
 
 public class RecipeDetailsView extends JPanel implements ActionListener, PropertyChangeListener {
 
+    public String viewName = "Recipe Details";
+
     private final NutritionDetailController nutritionDetailController;
 
     private final NutritionDetailViewModel nutritionDetailViewModel;

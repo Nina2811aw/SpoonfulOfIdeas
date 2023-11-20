@@ -25,7 +25,7 @@ public class ChooseRecipePresenter implements ChooseRecipeOutputBoundary {
     public void prepareRecipeDetailsSuccessView(ChooseRecipeOutputData chooseRecipeOutputData) {
         System.out.println("prepare Nutrition Details view for choose recipe presenter");
         NutritionDetailState nutritionDetailState = new NutritionDetailState();
-        nutritionDetailState.setRecipe(chooseRecipeOutputData); // have to code in the choose recipe output data
+        nutritionDetailState.setRecipe(chooseRecipeOutputData);
         this.nutritionDetailViewModel.setState(nutritionDetailState);
         nutritionDetailViewModel.firePropertyChanged();
 

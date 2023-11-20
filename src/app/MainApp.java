@@ -55,7 +55,8 @@ public class MainApp {
         views.add(chooseRecipeView, chooseRecipeView.viewName);
 
         RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject);
-
+        views.add(recipeDetailsView, recipeDetailsView.viewName);
+        
         viewManagerModel.setActiveView(recipeSearchView.viewName);
         viewManagerModel.firePropertyChanged();
 
