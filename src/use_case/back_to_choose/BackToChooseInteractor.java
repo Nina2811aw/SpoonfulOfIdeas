@@ -13,7 +13,6 @@ import java.util.List;
 public class BackToChooseInteractor implements BackToChooseInputBoundary{
 
     final BackToChooseOutputBoundary backToChoosePresenter;
-    //private final ChooseRecipeController chooseRecipeController;
 
     final BackToChooseDataAccessInterface backtochooseDataAccessObject;
 
