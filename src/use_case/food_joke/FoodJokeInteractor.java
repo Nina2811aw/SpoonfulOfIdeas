@@ -15,7 +15,17 @@ public class FoodJokeInteractor implements FoodJokeInputBoundary{
     public void execute() {
         System.out.println("food joke interactor");
         String joke = foodJokeDataAccessObject.getFoodJoke();
-        FoodJokeOutputData outputData = new FoodJokeOutputData(joke);
+        String[] words = joke.split("\\s+");
+
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i < words.length; i++){
+            builder.append(words[i]);
+            builder.append(" ");
+            if(i % 8 == 0){
+                builder.append("\n");
+            }
+        }
+        FoodJokeOutputData outputData = new FoodJokeOutputData(builder.toString());
         foodJokePresenter.prepareJokeView(outputData);
     }
 }
