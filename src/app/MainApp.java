@@ -1,5 +1,6 @@
 package app;
 
+import data_access.FavouritesDataAccessObject;
 import data_access.SpoonacularDataAccessObject;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.back_to_choose.BackToChooseViewModel;
@@ -47,8 +48,14 @@ public class MainApp {
         nutritionDetailDataAccessObject = new SpoonacularDataAccessObject();
         SpoonacularDataAccessObject backToChooseDataAccessObject;
         backToChooseDataAccessObject = new SpoonacularDataAccessObject();
+        FavouritesDataAccessObject favouritesDataAccessObject;
+        try {
+            favouritesDataAccessObject = new FavouritesDataAccessObject("./favourites.csv");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
+        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, favouritesDataAccessObject);
         views.add(recipeSearchView, recipeSearchView.viewName);
 
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, nutritionDetailViewModel);
