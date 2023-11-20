@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="added switch from Recipe Search View to Choose Recipe View after user clicks on search button">
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/food_joke/FoodJokeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/food_joke/FoodJokePresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/food_joke/FoodJokeState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interface_adapter/food_joke/FoodJokeViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeDataAccessInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeInputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeInputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeInteractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeOutputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/use_case/food_joke/FoodJokeOutputData.java" afterDir="false" />
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="adapted classes for food joke use case">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,21 +55,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;food__joke&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/README/API_Files_Test-hamza" />
@@ -148,7 +138,8 @@
       <workItem from="1698075550593" duration="802000" />
       <workItem from="1698939094343" duration="19626000" />
       <workItem from="1699825542651" duration="5027000" />
-      <workItem from="1699895909376" duration="336000" />
+      <workItem from="1699895909376" duration="4743000" />
+      <workItem from="1700439451646" duration="361000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -381,7 +372,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699892510053</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added classes and interfaces for food joke use case">
+      <option name="closed" value="true" />
+      <created>1699896266907</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1699896266907</updated>
+    </task>
+    <task id="LOCAL-00031" summary="adapted classes for food joke use case">
+      <option name="closed" value="true" />
+      <created>1700439758615</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1700439758615</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,8 +406,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created a recipe View Use Case Factory" />
-    <MESSAGE value="workspace change" />
     <MESSAGE value="merge commit" />
     <MESSAGE value="new classes for nutrition detail use case" />
     <MESSAGE value="recipe entity" />
@@ -424,7 +429,9 @@
     <MESSAGE value="Created the action listeners for the different recipes" />
     <MESSAGE value="Edited the controller and the interactor for choose recipe" />
     <MESSAGE value="Changed the DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the DAO" />
+    <MESSAGE value="added classes and interfaces for food joke use case" />
+    <MESSAGE value="adapted classes for food joke use case" />
+    <option name="LAST_COMMIT_MESSAGE" value="adapted classes for food joke use case" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
