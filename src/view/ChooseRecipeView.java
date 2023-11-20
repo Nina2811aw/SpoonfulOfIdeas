@@ -86,7 +86,10 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
     public void actionPerformed(ActionEvent e) {
 
     }
+    // Changed the property change to add the number of buttons passed with a max of 5 buttons,
+    // also created a list that I iterate through and write a listener for each button
 
+    // This method changes all the buttons based on the recipes passed in through the recipe search API call
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         ChooseRecipeState chooseRecipeState = (ChooseRecipeState) evt.getNewValue();
