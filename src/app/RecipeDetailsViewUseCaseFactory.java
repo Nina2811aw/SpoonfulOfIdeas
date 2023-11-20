@@ -31,10 +31,11 @@ public class RecipeDetailsViewUseCaseFactory {
     public static RecipeDetailsView createRecipeDetailsView(ViewManagerModel viewManagerModel,  ChooseRecipeViewModel chooseRecipeViewModel,
                                                             NutritionDetailViewModel recipeDetailViewModel, NutritionDetailDataAccessInterface nutritionDetailDataAccessObject, BackToChooseDataAccessInterface backToChooseDataAccessObject, AddToFavouritesDataAccessInterface addToFavouritesDataAccessObject) throws IOException {
         NutritionDetailController nutritionDetailController = createRecipeDetailsCase(viewManagerModel, chooseRecipeViewModel, recipeDetailViewModel, nutritionDetailDataAccessObject);
+
         BackToChooseController backToChooseController = createBackToChooseCase(viewManagerModel, chooseRecipeViewModel, backToChooseDataAccessObject);
         AddToFavouritesController addToFavouritesController = createAddToFavouritesCase(viewManagerModel, recipeDetailViewModel, addToFavouritesDataAccessObject);
 
-        return null;
+        return new RecipeDetailsView(nutritionDetailController, recipeDetailViewModel, backToChooseController, addToFavouritesController);
     }
 
     private static NutritionDetailController createRecipeDetailsCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel recipeDetailViewModel, NutritionDetailDataAccessInterface recipeDetailDataAccessObject) {
