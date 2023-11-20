@@ -6,6 +6,7 @@ import interface_adapter.ViewManagerModel;
 import interface_adapter.back_to_choose.BackToChooseViewModel;
 import interface_adapter.choose_recipe.ChooseRecipePresenter;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
+import interface_adapter.food_joke.FoodJokeViewModel;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
 import view.ChooseRecipeView;
@@ -52,7 +53,9 @@ public class MainApp {
 
         SpoonacularDataAccessObject backToChooseDataAccessObject;
         backToChooseDataAccessObject = new SpoonacularDataAccessObject();
+        FoodJokeViewModel foodJokeViewModel = new FoodJokeViewModel();
 
+        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, foodJokeViewModel);
         FavouritesDataAccessObject addToFavouritesDataAccessObject;
         try {
             addToFavouritesDataAccessObject = new FavouritesDataAccessObject("./favourites.csv");
