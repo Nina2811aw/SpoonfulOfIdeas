@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="workspace merge">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/RecipeDetailsViewUseCaseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/RecipeDetailsViewUseCaseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipePresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/RecipeDetailsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeDetailsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Choose-Recipe-Interactor-to-Presenter&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Edits-to-the-Choose-Recipe-Screen&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -133,6 +130,8 @@
       <workItem from="1699825542651" duration="9371000" />
       <workItem from="1700169871721" duration="2290000" />
       <workItem from="1700451397438" duration="1012000" />
+      <workItem from="1700499295274" duration="43000" />
+      <workItem from="1700499663685" duration="1166000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -389,14 +388,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700156309582</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Merge">
+      <option name="closed" value="true" />
+      <created>1700498503239</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1700498503239</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="recipe entity" />
     <MESSAGE value="adapted classes of the nutrition detail use case to remove errors" />
     <MESSAGE value="added text field for user input (ingredients) to the RecipeSearchView" />
     <MESSAGE value="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView" />
@@ -408,7 +414,6 @@
     <MESSAGE value="added API call to get recipe ideas based on user input" />
     <MESSAGE value="added switch from Recipe Search View to Choose Recipe View after user clicks on search button" />
     <MESSAGE value="Still working on displaying the recipe names in the choose recipie presenter" />
-    <MESSAGE value="Merge" />
     <MESSAGE value="Recipe Search Presenter Changes" />
     <MESSAGE value="deleted a space" />
     <MESSAGE value="wroked on the choose recipe view" />
@@ -421,7 +426,9 @@
     <MESSAGE value="Merged" />
     <MESSAGE value="Workspace commit" />
     <MESSAGE value="workspace merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace merge" />
+    <MESSAGE value="workspace change" />
+    <MESSAGE value="Merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
