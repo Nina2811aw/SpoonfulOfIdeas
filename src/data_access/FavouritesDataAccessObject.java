@@ -6,7 +6,7 @@ import use_case.show_favourites.ShowFavouritesDataAccessInterface;
 import java.util.*;
 import java.io.*;
 
-public class FavouritesDataAccessObject {
+public class FavouritesDataAccessObject implements ShowFavouritesDataAccessInterface {
     private final Map<String, Integer> headers = new LinkedHashMap<>();
     private final Map<String, String> recipes = new HashMap<>();
     private final File csvFile;
@@ -34,5 +34,12 @@ public class FavouritesDataAccessObject {
         }
     }
 
-
+    @Override
+    public List<RecipeInformation> getFavourites() {
+        List<RecipeInformation> favourites = new ArrayList<>();
+        for (Map.Entry<String, String> entry : recipes.entrySet()) {
+            favourites.add(new RecipeInformation(Integer.parseInt(entry.getValue()), entry.getKey()));
+        }
+        return favourites;
+    }
 }
