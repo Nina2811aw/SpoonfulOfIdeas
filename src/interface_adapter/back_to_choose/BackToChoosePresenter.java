@@ -32,9 +32,7 @@ public class BackToChoosePresenter implements BackToChooseOutputBoundary {
     @Override
     public void prepareSuccessView(BackToChooseOutputData outputData) {
 
-        ChooseRecipeState chooseRecipeState = chooseRecipeViewModel.getState();
-        chooseRecipeState.setRecipeIdeasList(outputData.getRecipeInfoList());
-        this.chooseRecipeViewModel.setState(chooseRecipeState);
+
         chooseRecipeViewModel.firePropertyChanged();
 
         viewManagerModel.setActiveView(chooseRecipeViewModel.getViewName());
