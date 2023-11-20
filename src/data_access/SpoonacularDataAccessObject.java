@@ -163,7 +163,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         } catch (IOException | JSONException e) {
             throw new RuntimeException(e);
         }
-        return null;
+        return joke;
 
     }
 }

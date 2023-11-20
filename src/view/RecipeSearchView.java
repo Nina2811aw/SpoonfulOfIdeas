@@ -1,5 +1,8 @@
 package view;
 import interface_adapter.choose_recipe.ChooseRecipeState;
+import interface_adapter.food_joke.FoodJokeController;
+import interface_adapter.food_joke.FoodJokeState;
+import interface_adapter.food_joke.FoodJokeViewModel;
 import interface_adapter.recipe_search.RecipeSearchController;
 import interface_adapter.recipe_search.RecipeSearchState;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
@@ -55,11 +58,18 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     public final RecipeSearchController recipeSearchController;
 
-    public RecipeSearchView(RecipeSearchController controller, RecipeSearchViewModel recipeSearchViewModel){
+    private final FoodJokeViewModel foodJokeViewModel;
+    public final FoodJokeController foodJokeController;
+
+    public RecipeSearchView(RecipeSearchController controller, RecipeSearchViewModel recipeSearchViewModel, FoodJokeController foodJokeController, FoodJokeViewModel foodJokeViewModel){
 
         this.recipeSearchController = controller;
         this.recipeSearchViewModel = recipeSearchViewModel;
         recipeSearchViewModel.addPropertyChangeListener(this);
+
+        this.foodJokeController = foodJokeController;
+        this.foodJokeViewModel = foodJokeViewModel;
+        foodJokeViewModel.addPropertyChangeListener(this);
 
         JLabel title = new JLabel(RecipeSearchViewModel.TITLE_LABEL);
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -374,7 +384,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                     @Override
                     public void actionPerformed(ActionEvent evt) {
                         if(evt.getSource().equals(joke)){
-
+                            foodJokeController.execute();
                         }
 
                     }
@@ -391,6 +401,9 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+        System.out.println("property change food joke");
+        FoodJokeState state = (FoodJokeState) evt.getNewValue();
+        JOptionPane.showMessageDialog(this, state.getFoodJoke());
 
     }
 

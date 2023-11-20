@@ -13,6 +13,9 @@ public class FoodJokeInteractor implements FoodJokeInputBoundary{
 
     @Override
     public void execute() {
-
+        System.out.println("food joke interactor");
+        String joke = foodJokeDataAccessObject.getFoodJoke();
+        FoodJokeOutputData outputData = new FoodJokeOutputData(joke);
+        foodJokePresenter.prepareJokeView(outputData);
     }
 }
