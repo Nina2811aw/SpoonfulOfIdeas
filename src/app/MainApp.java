@@ -42,10 +42,14 @@ public class MainApp {
         // results from the use case. The ViewModels are observable, and will
         // be observed by the Views.
         RecipeSearchViewModel recipeSearchViewModel = new RecipeSearchViewModel();
+
         ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
+
         NutritionDetailViewModel nutritionDetailViewModel = new NutritionDetailViewModel();
+
         SpoonacularDataAccessObject nutritionDetailDataAccessObject;
         nutritionDetailDataAccessObject = new SpoonacularDataAccessObject();
+
         SpoonacularDataAccessObject backToChooseDataAccessObject;
         backToChooseDataAccessObject = new SpoonacularDataAccessObject();
         FavouritesDataAccessObject favouritesDataAccessObject;
@@ -61,7 +65,7 @@ public class MainApp {
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, nutritionDetailViewModel);
         views.add(chooseRecipeView, chooseRecipeView.viewName);
 
-        RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject);
+        RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject, addToFavouritesDataAccessObject);
 
         viewManagerModel.setActiveView(recipeSearchView.viewName);
         viewManagerModel.firePropertyChanged();
