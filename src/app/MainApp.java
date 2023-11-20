@@ -53,6 +53,7 @@ public class MainApp {
 
         SpoonacularDataAccessObject backToChooseDataAccessObject;
         backToChooseDataAccessObject = new SpoonacularDataAccessObject();
+
         FoodJokeViewModel foodJokeViewModel = new FoodJokeViewModel();
 
         RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, foodJokeViewModel);
@@ -63,7 +64,7 @@ public class MainApp {
             throw new RuntimeException(e);
         }
 
-        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
+        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, foodJokeViewModel);
         views.add(recipeSearchView, recipeSearchView.viewName);
 
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, nutritionDetailViewModel);
