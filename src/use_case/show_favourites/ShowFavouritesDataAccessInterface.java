@@ -5,5 +5,5 @@ import entity.RecipeInformation;
 import java.util.List;
 
 public interface ShowFavouritesDataAccessInterface {
-    List<RecipeInformation> getFavourites();
+    List<RecipeInformation> getFavouritesList();
 }

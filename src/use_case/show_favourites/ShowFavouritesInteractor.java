@@ -14,6 +14,6 @@ public class ShowFavouritesInteractor implements ShowFavouritesInputBoundary {
 
     @Override
     public void execute() {
-        presenter.prepareChooseRecipeView(new RecipeSearchOutputData(favouritesDAO.getFavourites()));
+        presenter.prepareChooseRecipeView(new RecipeSearchOutputData(favouritesDAO.getFavouritesList()));
     }
 }
