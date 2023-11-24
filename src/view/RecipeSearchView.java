@@ -22,7 +22,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     public final String viewName = "Recipe Search View";
 
-    private final JTextField ingredientsInputField = new JTextField(30);
+    private JTextField ingredientsInputField = new JTextField(30);
 
     private final JButton search;
 
@@ -53,7 +53,6 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     private final JComboBox<String> calories;
 
-
     public final RecipeSearchViewModel recipeSearchViewModel;
 
     public final RecipeSearchController recipeSearchController;
@@ -73,6 +72,9 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
         JLabel title = new JLabel(RecipeSearchViewModel.TITLE_LABEL);
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        JButton ingredientsSearchedFor = new JButton("Ingredients Stored");
+        ingredientsSearchedFor.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         LabelTextPanel ingredientsInfo = new LabelTextPanel(new JLabel(RecipeSearchViewModel.INGREDIENTS_LABEL), ingredientsInputField);
 
@@ -132,10 +134,13 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         joke = new JButton("show me fun food trivia");
         foodJoke.add(joke);
 
+        ingredientsInputField.setToolTipText("Type In Your Ingredients");
+
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         this.add(title);
         this.add(ingredientsInfo);
+        this.add(ingredientsSearchedFor);
         this.add(checkboxesDiet);
         this.add(checkboxesAllergies);
         this.add(dropDownCuisines);
@@ -154,33 +159,36 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                             System.out.println("search button pressed");
                             // arguments have to be adapted based on attributed of RecipeSearchState
                             recipeSearchController.execute(currentState.getIngredients(), currentState.getDiets(), currentState.getIntolerances(), currentState.getCuisine(), currentState.getProtein(), currentState.getFat(), currentState.getCarbs(), currentState.getCalories());
+                            //changed the type of getIngredients()
                         }
                     }
                 }
         );
 
         // user types in ingredients
-        ingredientsInputField.addKeyListener(
-                new KeyListener() {
-                    @Override
-                    public void keyTyped(KeyEvent e) {
-                        RecipeSearchState currentState = recipeSearchViewModel.getState();
-                        String text = ingredientsInputField.getText() + e.getKeyChar();
-                        currentState.setIngredients(text);
-                        recipeSearchViewModel.setState(currentState);
-                    }
 
-                    @Override
-                    public void keyPressed(KeyEvent e) {
-
-                    }
-
-                    @Override
-                    public void keyReleased(KeyEvent e) {
-
+        ingredientsSearchedFor.addActionListener(                // This creates an anonymous subclass of ActionListener and instantiates it.
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        RecipeSearchState state = recipeSearchViewModel.getState();
+                        JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0), state.getIngredients());
                     }
                 }
         );
+
+        ingredientsInputField.addActionListener(                // This creates an anonymous subclass of ActionListener and instantiates it.
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        RecipeSearchState currentState = recipeSearchViewModel.getState();
+                        String text = ingredientsInputField.getText();
+                        currentState.addIngredients(text);//need to change set ingredients to add ingredients
+                        ingredientsInputField.setText("");
+                        recipeSearchViewModel.setState(currentState);
+                        System.out.println(recipeSearchViewModel.getState().getIngredients()); // get rid
+                    }
+                }
+        );
+        // will get an error if you don't add an ingrediet
 
         glutenFree.addActionListener(
                 new ActionListener() {
@@ -396,7 +404,6 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-
     }
 
     @Override

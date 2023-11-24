@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Merge">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Edited the comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInputData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/RecipeSearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeSearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +136,7 @@
       <workItem from="1700169871721" duration="2290000" />
       <workItem from="1700451397438" duration="1012000" />
       <workItem from="1700499295274" duration="43000" />
-      <workItem from="1700499663685" duration="1166000" />
+      <workItem from="1700499663685" duration="18933000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -396,15 +401,29 @@
       <option name="project" value="LOCAL" />
       <updated>1700498503239</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Choose View Works Well">
+      <option name="closed" value="true" />
+      <created>1700500912538</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1700500912538</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Edited the comments">
+      <option name="closed" value="true" />
+      <created>1700501308993</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1700501308993</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adapted classes of the nutrition detail use case to remove errors" />
-    <MESSAGE value="added text field for user input (ingredients) to the RecipeSearchView" />
     <MESSAGE value="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView" />
     <MESSAGE value="added attributes to RecipeSearchState for all elements of the UI and added enums for macronutrients" />
     <MESSAGE value="added action listener for all checkboxes (diets, intolerances of the UI)" />
@@ -428,7 +447,9 @@
     <MESSAGE value="workspace merge" />
     <MESSAGE value="workspace change" />
     <MESSAGE value="Merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge" />
+    <MESSAGE value="Choose View Works Well" />
+    <MESSAGE value="Edited the comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited the comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

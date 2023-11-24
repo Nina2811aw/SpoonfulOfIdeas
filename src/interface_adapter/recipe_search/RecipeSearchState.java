@@ -2,11 +2,12 @@ package interface_adapter.recipe_search;
 
 import use_case.recipe_search.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RecipeSearchState {
-    private String ingredients = "";
+    private ArrayList<String> ingredients = new ArrayList<>();
 
     private boolean dietChosen = false;
     private boolean intoleranceChosen = false;
@@ -71,12 +72,12 @@ public class RecipeSearchState {
 
 
 
-    public String getIngredients() {
+    public ArrayList<String> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
+    public void addIngredients(String ingredients) {
+        this.ingredients.add(ingredients);
     }
 
     public boolean isGlutenFree() {

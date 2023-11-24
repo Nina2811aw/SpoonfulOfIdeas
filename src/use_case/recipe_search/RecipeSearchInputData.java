@@ -1,12 +1,14 @@
 package use_case.recipe_search;
 
 
+import java.util.ArrayList;
+
 public class RecipeSearchInputData {
 
     // stores the user input which specifies the search
 
     // diets and intolerances are initialized as Strings to make the API call easier
-    private String ingredients;
+    private ArrayList<String> ingredients;
     private String diets;
     private String cuisine;
     private String intolerances;
@@ -20,7 +22,7 @@ public class RecipeSearchInputData {
     private int maxCalories;
 
 
-    public RecipeSearchInputData(String ingredients, String diets, String cuisine, String intolerances, int minProtein, int maxProtein, int minFat, int maxFat, int minCarbs, int maxCarbs, int minCalories, int maxCalories) {
+    public RecipeSearchInputData(ArrayList<String> ingredients, String diets, String cuisine, String intolerances, int minProtein, int maxProtein, int minFat, int maxFat, int minCarbs, int maxCarbs, int minCalories, int maxCalories) {
         this.ingredients = ingredients;
         this.diets = diets;
         this.cuisine = cuisine;
@@ -35,7 +37,7 @@ public class RecipeSearchInputData {
         this.maxCalories = maxCalories;
     }
 
-    public String getIngredients() {
+    public ArrayList<String> getIngredients() {
         return ingredients;
     }
 
