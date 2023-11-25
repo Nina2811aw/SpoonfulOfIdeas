@@ -15,6 +15,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -123,24 +125,35 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
         return inner_lst;
     }
-    public List<List<String>> RecipeNutritionLabelBuilder(ChooseRecipeInputData chooseRecipeInputData) {
-        List<List<String>> info_list = new ArrayList<>();
+    public static void displayNutritionLabelImage(String id) {
+        String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
 
-        //[['id', 'url'],['id', 'url']]
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        String nutritionLabelUrl = "https://api.spoonacular.com/recipes/" + id + "/nutritionLabel.png";
+        Request imageRequest = new Request.Builder()
+                .url(nutritionLabelUrl)
+                .addHeader("x-api-key", API_TOKEN)
+                .build();
 
+        try {
+            Response imageResponse = client.newCall(imageRequest).execute();
+            assert imageResponse.body() != null;
 
-        String id = String.valueOf(chooseRecipeInputData.recipe);
-        List<String> inner_lst = new ArrayList<>();
-            // Adding id to nested list [0]
-        inner_lst.add(id);
+            ImageIcon imageIcon = new ImageIcon(imageResponse.body().bytes());
+            JOptionPane.showMessageDialog(
+                    null,
+                    new JLabel(imageIcon),
+                    "Nutrition Label for Recipe ID: " + id,
+                    JOptionPane.PLAIN_MESSAGE,
+                    null
+            );
 
-            // Adding image url to nested list [1]
-        String url = "https://api.spoonacular.com/recipes/" + id + "/nutritionLabel.png";
-        inner_lst.add(url);
-        info_list.add(inner_lst);
-
-        return info_list;
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error fetching or displaying image", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
+
 
 
     @Override
