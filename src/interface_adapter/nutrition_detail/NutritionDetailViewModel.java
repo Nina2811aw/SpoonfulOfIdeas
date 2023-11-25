@@ -16,6 +16,8 @@ public class NutritionDetailViewModel extends ViewModel {
 
     public static final String ADD_TO_FAVOURITES_LABEL = "Add to Favourites!";
 
+    public static final String NUTRITION_INFO_LABEL = "View Nutritional Information";
+
     private static NutritionDetailState state = new NutritionDetailState();
 
     private static AddToFavouritesState addToFavouritesState = new AddToFavouritesState();

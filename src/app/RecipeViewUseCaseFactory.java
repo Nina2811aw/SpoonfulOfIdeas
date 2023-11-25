@@ -9,6 +9,9 @@ import interface_adapter.choose_recipe.ChooseRecipeController;
 import interface_adapter.choose_recipe.ChooseRecipePresenter;
 import interface_adapter.choose_recipe.ChooseRecipeState;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
+import interface_adapter.food_joke.FoodJokeController;
+import interface_adapter.food_joke.FoodJokePresenter;
+import interface_adapter.food_joke.FoodJokeViewModel;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 import interface_adapter.recipe_search.RecipeSearchController;
 import interface_adapter.recipe_search.RecipeSearchPresenter;
@@ -20,6 +23,10 @@ import use_case.choose_recipe.ChooseRecipeDataAccessInterface;
 import use_case.choose_recipe.ChooseRecipeInputBoundary;
 import use_case.choose_recipe.ChooseRecipeInteractor;
 import use_case.choose_recipe.ChooseRecipeOutputBoundary;
+import use_case.food_joke.FoodJokeDataAccessInterface;
+import use_case.food_joke.FoodJokeInputBoundary;
+import use_case.food_joke.FoodJokeInteractor;
+import use_case.food_joke.FoodJokeOutputBoundary;
 import use_case.recipe_search.RecipeSearchDataAccessInterface;
 import use_case.recipe_search.RecipeSearchInputBoundary;
 import use_case.recipe_search.RecipeSearchInteractor;
@@ -37,10 +44,12 @@ import java.util.List;
 public class RecipeViewUseCaseFactory {
 
     public static RecipeSearchView createSearchView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel,
-                                                    FavouritesDataAccessObject favouritesDataAccessObject){
+                                                    FoodJokeViewModel foodJokeViewModel, FavouritesDataAccessObject favouritesDataAccessObject){
         RecipeSearchController recipeSearchController = createSearchCase(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
+        FoodJokeController foodJokeController = createFoodJokeCase(foodJokeViewModel);
         ShowFavouritesController showFavouritesController = createShowFavouritesCase(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, favouritesDataAccessObject);
-        return new RecipeSearchView(recipeSearchController,recipeSearchViewModel, showFavouritesController); // delete this line, might want to remove static later
+        return new RecipeSearchView(recipeSearchController,recipeSearchViewModel, foodJokeController, foodJokeViewModel, showFavouritesController); // delete this line, might want to remove static later
+
     }
 
     public static RecipeSearchController createSearchCase(ViewManagerModel viewManagerModel,RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel){
@@ -78,6 +87,16 @@ public class RecipeViewUseCaseFactory {
         return new ChooseRecipeController(chooseRecipeInputBoundary);
 
 
+    }
+
+    public static FoodJokeController createFoodJokeCase(FoodJokeViewModel foodJokeViewModel){
+        FoodJokeOutputBoundary foodJokePresenter = new FoodJokePresenter(foodJokeViewModel);
+
+        FoodJokeDataAccessInterface spoonacularDataAccessObject = new SpoonacularDataAccessObject();
+
+        FoodJokeInputBoundary foodJokeInteractor = new FoodJokeInteractor(spoonacularDataAccessObject, foodJokePresenter);
+
+        return new FoodJokeController(foodJokeInteractor);
     }
 
     // Creates and configures a BackToSearchController for handling the transition from the ChooseRecipe view back to the RecipeSearch view.
