@@ -6,11 +6,22 @@ import use_case.nutrition_detail.NutritionDetailOutputBoundary;
 import use_case.nutrition_detail.NutritionDetailOutputData;
 
 public class NutritionDetailPresenter implements NutritionDetailOutputBoundary {
-    public NutritionDetailPresenter(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel recipeDetailViewModel) {
+    private final NutritionDetailViewModel nutritionDetailViewModel;
+    private ViewManagerModel viewManagerModel;
+    private ChooseRecipeViewModel chooseRecipeViewModel;
+    public NutritionDetailPresenter(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel nutritionDetailViewModel) {
+        this.nutritionDetailViewModel = nutritionDetailViewModel;
+        this.chooseRecipeViewModel = chooseRecipeViewModel;
+        this.viewManagerModel = viewManagerModel;
+
     }
 
     @Override
     public void prepareShowNutritionDetailView(NutritionDetailOutputData nutritionDetailOutputData) {
+        System.out.println("nutrition detail presenter");
+        viewManagerModel.setActiveView(nutritionDetailViewModel.getViewName());
+        System.out.println("active view: "+ viewManagerModel.getActiveView());
+        viewManagerModel.firePropertyChanged();
 
     }
 }
