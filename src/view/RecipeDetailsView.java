@@ -16,6 +16,7 @@ import java.beans.PropertyChangeListener;
 import java.util.List;
 
 import static data_access.SpoonacularDataAccessObject.displayNutritionLabelImage;
+import static data_access.SpoonacularDataAccessObject.get_instructons;
 
 public class RecipeDetailsView extends JPanel implements ActionListener, PropertyChangeListener {
 
@@ -32,6 +33,10 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
     private final JButton nutritionDetail;
     public final NutritionDetailController nutritionDetailController;
 
+    private final JLabel titleLabel;
+    private final JLabel instructions;
+
+
     public RecipeDetailsView(NutritionDetailController nutritionDetailController, NutritionDetailViewModel nutritionDetailViewModel, BackToChooseController backToChooseController, AddToFavouritesController addToFavouritesController) {
         this.nutritionDetailViewModel = nutritionDetailViewModel;
         this.nutritionDetailController = nutritionDetailController;
@@ -43,7 +48,13 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         // Change
         JLabel title = new JLabel("---title----");
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
-        //^^
+
+
+        titleLabel = new JLabel();
+        titleLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        instructions = new JLabel();
+        instructions.setAlignmentX(Component.LEFT_ALIGNMENT);
 
 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -110,9 +121,10 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         // add the recipe info later
 
         this.add(title);
+        this.add(titleLabel); // Added to display recipe ID
         this.add(buttons);
         this.add(details);
-
+        this.add(instructions);
 
 }
 
@@ -120,7 +132,11 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         NutritionDetailState state = (NutritionDetailState) evt.getNewValue();
+        titleLabel.setText(state.getRecipe().get(1));
+        String text = get_instructons((state.getRecipe().get(0)));
+        text = "<html>" + text.replaceAll("\n", "<br>") + "</html>";
 
+        instructions.setText(text);
     }
 
     @Override
