@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favourites.csv" beforeDir="false" afterPath="$PROJECT_DIR$/favourites.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_access/FavouritesDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/FavouritesDataAccessObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DAO-edits" />
+        <entry key="$PROJECT_DIR$" value="backtochoosetest" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,7 +62,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Edits-to-the-Choose-Recipe-Screen&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -109,8 +110,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in SpoonacularAPITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpoonacularAPITest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in SpoonacularAPITest" />
+        <item itemvalue="Application.MainApp" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainApp" />
         <item itemvalue="Application.Main" />
       </list>
@@ -132,6 +144,10 @@
       <workItem from="1700451397438" duration="1012000" />
       <workItem from="1700499295274" duration="43000" />
       <workItem from="1700499663685" duration="1166000" />
+      <workItem from="1700676122145" duration="331000" />
+      <workItem from="1700699533725" duration="583000" />
+      <workItem from="1700858069296" duration="75000" />
+      <workItem from="1700945580691" duration="193000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -433,10 +449,14 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/interface_adapter/choose_recipe/ChooseRecipePresenter.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="15" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/app/MainApp.java</url>
+          <line>15</line>
+          <properties class="app.MainApp">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -445,5 +465,8 @@
         <PinnedItemInfo parentTag="use_case.choose_recipe.ChooseRecipeInputData" memberName="recipe" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MainSpoonfulOfIdeas$All_in_SpoonacularAPITest.ic" NAME="All in SpoonacularAPITest Coverage Results" MODIFIED="1700148791622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
