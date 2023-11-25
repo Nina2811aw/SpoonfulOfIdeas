@@ -1,4 +1,4 @@
-# SpoonacularAPITest 
+# SpoonacularAPITestttt
 
 ## Description of the problem domain:
 Cooking varied and healthy meals, dietary preferences as well as nutritional awareness have become an important part of our daily lives. The sheer abundance of recipes on the web as well as taking several aspects such as diet, nutrients, intolerances and available ingredients into account, makes it difficult for many people to find suitable recipes for everyday cooking.
