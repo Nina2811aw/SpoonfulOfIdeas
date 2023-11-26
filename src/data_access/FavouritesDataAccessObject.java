@@ -37,10 +37,7 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
 
 
     @Override
-    public void AddToFavourites(String recipeTitle, String recipeId) {
-        String temp = recipeTitle;
-        recipeTitle = recipeId;
-        recipeId = temp;
+    public void AddToFavourites(String recipeId, String recipeTitle) {
         recipes.put(recipeId, recipeTitle);
         this.AddToFavourites();
     }
@@ -77,6 +74,8 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
         }
     }
 
+    // During creation of the FavouritesDAO all the values stored in favourites.csv is now in program stored
+    // in recipes map. Hence, we construct the list of RecipeInformation object utilizing this object.
     @Override
     public List<RecipeInformation> getFavouritesList() {
         List<RecipeInformation> favourites = new ArrayList<>();

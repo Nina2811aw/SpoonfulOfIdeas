@@ -62,6 +62,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     private final FoodJokeViewModel foodJokeViewModel;
     public final FoodJokeController foodJokeController;
+
     private final ShowFavouritesController showFavouritesController;
 
     public RecipeSearchView(RecipeSearchController controller, RecipeSearchViewModel recipeSearchViewModel, FoodJokeController foodJokeController, FoodJokeViewModel foodJokeViewModel, ShowFavouritesController showFavouritesController){
@@ -171,7 +172,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                     public void actionPerformed(ActionEvent evt) {
                         if(evt.getSource().equals(favourites)){
                             System.out.println("favourites button pressed");
-                            showFavouritesController.execute();
+                            showFavouritesController.execute(); // no user input required
                         }
                     }
                 }
