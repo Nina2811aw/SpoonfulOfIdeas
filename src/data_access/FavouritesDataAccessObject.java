@@ -50,20 +50,11 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
         StringBuilder recipeTitles = new StringBuilder();
         for(Map.Entry<String, String> entry: recipes.entrySet()){
             if(!recipeTitles.isEmpty()){
-                recipeTitles.append(" , ");
+                recipeTitles.append(" ,");
             }
             recipeTitles.append(entry.getValue()).append('\n');
         }
         return recipeTitles.toString();
-    }
-
-    @Override
-    public List<RecipeInformation> getFavouritesList() {
-        List<RecipeInformation> favourites = new ArrayList<>();
-        for (Map.Entry<String, String> entry : recipes.entrySet()) {
-            favourites.add(new RecipeInformation(Integer.parseInt(entry.getKey()), entry.getValue()));
-        }
-        return favourites;
     }
 
     private void AddToFavourites(){
@@ -76,7 +67,6 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
             for(Map.Entry<String, String> entry: recipes.entrySet()){
                 String line = String.format("%s,%s",
                         entry.getKey(), entry.getValue());
-                System.out.println(entry.getKey());
                 writer.write(line);
                 writer.newLine();
             }
@@ -85,5 +75,14 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public List<RecipeInformation> getFavouritesList() {
+        List<RecipeInformation> favourites = new ArrayList<>();
+        for (Map.Entry<String, String> entry : recipes.entrySet()) {
+            favourites.add(new RecipeInformation(Integer.parseInt(entry.getKey()), entry.getValue()));
+        }
+        return favourites;
     }
 }

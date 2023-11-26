@@ -179,4 +179,40 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         return joke;
 
     }
+    public static String get_instructons(String id) {
+        String _ins;
+        //['id', 'title', 'instructions']
+        //going to add more details depending on what we need later
+
+        String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
+
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        String url = "https://api.spoonacular.com/recipes/" + id + "/information?includeNutrition=false";
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("x-api-key", API_TOKEN)
+                .addHeader("Content-Type", "application/json")
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            assert response.body() != null;
+            System.out.println(response);
+            String responseBodyString =  response.body().string().trim();
+            JSONObject responseBody;
+            if (!responseBodyString.isEmpty()) {
+                responseBody = new JSONObject(responseBodyString);
+                // Process the JSON data
+            } else {
+                responseBody = null;
+            }
+
+            _ins = (responseBody.get("instructions").toString());
+
+
+        } catch (IOException | JSONException e) {
+            throw new RuntimeException(e);}
+        return _ins;
+    }
+
 }
