@@ -3,13 +3,12 @@ package data_access;
 import app.RecipeDetailsViewUseCaseFactory;
 import entity.RecipeInformation;
 import use_case.add_to_favourites.AddToFavouritesDataAccessInterface;
+import use_case.show_favourites.ShowFavouritesDataAccessInterface;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
-public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInterface {
+public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInterface, ShowFavouritesDataAccessInterface {
     private final Map<String, Integer> headers = new LinkedHashMap<>();
     private final Map<String, String> recipes = new HashMap<>();
     private final File csvFile;
@@ -38,21 +37,22 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
 
 
     @Override
-    public void AddToFavourites(String recipetitle, String recipeid) {
-        recipes.put(recipetitle, recipeid);
+    public void AddToFavourites(String recipeId, String recipeTitle) {
+        recipes.put(recipeId, recipeTitle);
         this.AddToFavourites();
     }
 
     @Override
     public String getFavourites() {
-        StringBuilder recipetitles = new StringBuilder();
+        StringBuilder recipeTitles = new StringBuilder();
+        recipeTitles.append("Favourites List:\n");
         for(Map.Entry<String, String> entry: recipes.entrySet()){
-            if(!recipetitles.isEmpty()){
-                recipetitles.append(" ,");
+            if(!recipeTitles.isEmpty()){
+                recipeTitles.append("* ");
             }
-            recipetitles.append(entry.getValue()).append('\n');
+            recipeTitles.append(entry.getValue()).append('\n');
         }
-        return recipetitles.toString();
+        return recipeTitles.toString();
     }
 
     private void AddToFavourites(){
@@ -63,7 +63,7 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
             writer.newLine();
 
             for(Map.Entry<String, String> entry: recipes.entrySet()){
-                String line = String.format("%s, %s",
+                String line = String.format("%s,%s",
                         entry.getKey(), entry.getValue());
                 writer.write(line);
                 writer.newLine();
@@ -73,7 +73,16 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
 
-
+    // During creation of the FavouritesDAO all the values stored in favourites.csv is now in program stored
+    // in recipes map. Hence, we construct the list of RecipeInformation object utilizing this object.
+    @Override
+    public List<RecipeInformation> getFavouritesList() {
+        List<RecipeInformation> favourites = new ArrayList<>();
+        for (Map.Entry<String, String> entry : recipes.entrySet()) {
+            favourites.add(new RecipeInformation(Integer.parseInt(entry.getKey()), entry.getValue()));
+        }
+        return favourites;
     }
 }
