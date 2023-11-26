@@ -62,6 +62,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     private final FoodJokeViewModel foodJokeViewModel;
     public final FoodJokeController foodJokeController;
+    private final ShowFavouritesController showFavouritesController;
 
     public RecipeSearchView(RecipeSearchController controller, RecipeSearchViewModel recipeSearchViewModel, FoodJokeController foodJokeController, FoodJokeViewModel foodJokeViewModel, ShowFavouritesController showFavouritesController){
 

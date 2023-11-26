@@ -59,7 +59,7 @@ public class MainApp {
             throw new RuntimeException(e);
         }
 
-        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, foodJokeViewModel);
+        RecipeSearchView recipeSearchView = RecipeViewUseCaseFactory.createSearchView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, foodJokeViewModel, addToFavouritesDataAccessObject );
         views.add(recipeSearchView, recipeSearchView.viewName);
 
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, nutritionDetailViewModel);
