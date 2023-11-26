@@ -63,6 +63,8 @@ public class RecipeViewUseCaseFactory {
         return new RecipeSearchController(recipeSearchInputBoundary);
     }
 
+    // Creates and configures a ShowFavouritesController for handling the transition from the transition from RecipeSearchView
+    // to ChooseRecipeView showcasing the user's list of favourited items.
     public static ShowFavouritesController createShowFavouritesCase(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel,
                                            FavouritesDataAccessObject favouritesDataAccessObject){
         RecipeSearchOutputBoundary recipeSearchPresenter = new RecipeSearchPresenter(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
