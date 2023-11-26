@@ -6,6 +6,7 @@ public class BackToSearchController {
 
     final BackToSearchInputBoundary backToSearchInputBoundary;
 
+    // constructor sets up controller to have access to the use case interactor to call upon it.
     public BackToSearchController(BackToSearchInputBoundary backToSearchInteractor){
         this.backToSearchInputBoundary = backToSearchInteractor;
     }

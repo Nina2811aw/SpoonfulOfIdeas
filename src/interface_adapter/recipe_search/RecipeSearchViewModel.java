@@ -12,6 +12,8 @@ public class RecipeSearchViewModel extends ViewModel {
 
     public static final String SEARCH_BUTTON = "Search";
 
+    public static final String FAVOURITES = "Favourites";
+
     private RecipeSearchState state = new RecipeSearchState();
 
     public RecipeSearchViewModel() {
