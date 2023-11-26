@@ -16,21 +16,21 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
 
     public FavouritesDataAccessObject(String csvPath) throws IOException{
         csvFile = new File(csvPath);
-        headers.put("Recipe Title", 0);
-        headers.put("Recipe ID", 1);
+        headers.put("Recipe ID", 0);
+        headers.put("Recipe Title", 1);
         if (csvFile.length() == 0){
             AddToFavourites();
         }else{
             try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))){
                 String header = reader.readLine();
-                assert header.equals("Recipe Title,Recipe ID");
+                assert header.equals("Recipe ID,Recipe Title");
 
                 String row;
                 while((row = reader.readLine()) != null){
                     String[] col = row.split(",");
-                    String recipetitle = String.valueOf(col[headers.get("Recipe Title")]);
-                    String recipeid = String.valueOf(col[headers.get("Recipe ID")]);
-                    recipes.put(recipetitle, recipeid);
+                    String recipeTitle = String.valueOf(col[headers.get("Recipe Title")]);
+                    String recipeId = String.valueOf(col[headers.get("Recipe ID")]);
+                    recipes.put(recipeId, recipeTitle);
                 }
             }
         }
@@ -48,9 +48,9 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
         StringBuilder recipetitles = new StringBuilder();
         for(Map.Entry<String, String> entry: recipes.entrySet()){
             if(!recipetitles.isEmpty()){
-                recipetitles.append(" , ");
+                recipetitles.append(" ,");
             }
-            recipetitles.append(entry.getKey()).append('\n');
+            recipetitles.append(entry.getValue()).append('\n');
         }
         return recipetitles.toString();
     }
