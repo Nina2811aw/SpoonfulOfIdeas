@@ -14,7 +14,7 @@ public class RecipeSearchInteractorTest {
         RecipeSearchOutputBoundary recipeSearchPresenter = new RecipeSearchOutputBoundary() {
             @Override
             public void prepareChooseRecipeView(RecipeSearchOutputData recipeSearchOutputData) {
-                assertTrue(recipeSearchOutputData.getRecipeIDList().size() > 0);
+                assertFalse(recipeSearchOutputData.getRecipeIDList().isEmpty());
             }
 
             @Override
@@ -34,10 +34,4 @@ public class RecipeSearchInteractorTest {
         recipeSearchInteractor.execute(inputDataFail);
     }
 
-    @Test
-    public void noRecipesFoundTest(){
-
-
-
-    }
 }
