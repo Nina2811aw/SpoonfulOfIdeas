@@ -9,9 +9,12 @@ import interface_adapter.nutrition_detail.NutritionDetailState;
 import interface_adapter.recipe_search.RecipeSearchState;
 
 import javax.swing.*;
+import javax.swing.text.html.HTML;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
@@ -26,11 +29,6 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
     public final ChooseRecipeController chooseRecipeController;
 
     public JButton button;
-    public JButton recipe1;
-    public JButton recipe2;
-    public JButton recipe3;
-    public JButton recipe4;
-    public JButton recipe5;
 
     // back button variables
     private final BackToSearchController backToSearchController;
@@ -52,16 +50,6 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         buttonsRecipes.setLayout(new BoxLayout(buttonsRecipes, BoxLayout.Y_AXIS));
         buttonsRecipes.add(new JLabel("Recipes:"));
         buttonsRecipes.setAlignmentX(Component.CENTER_ALIGNMENT);
-        recipe1 = new JButton(state.getRecipeNames().get(0));
-        recipe2 = new JButton(state.getRecipeNames().get(1));
-        recipe3 = new JButton(state.getRecipeNames().get(2));
-        recipe4 = new JButton(state.getRecipeNames().get(3));
-        recipe5 = new JButton(state.getRecipeNames().get(4));
-        buttonsRecipes.add(recipe1);
-        buttonsRecipes.add(recipe2);
-        buttonsRecipes.add(recipe3);
-        buttonsRecipes.add(recipe4);
-        buttonsRecipes.add(recipe5);
 
         back = new JButton("<--"); // Make the text input a variable input from ChooseViewModel rather than hard coded.
         buttonsRecipes.add(back);
@@ -133,8 +121,6 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         buttonsRecipes2.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.add(buttonsRecipes2);
-
-
 
         back.addActionListener(
                 new ActionListener() {

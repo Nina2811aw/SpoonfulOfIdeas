@@ -1,6 +1,8 @@
 package use_case.recipe_search;
 
 
+import java.util.ArrayList;
+
 public class RecipeSearchInputData {
 
     // stores the user input which specifies the search
