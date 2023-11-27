@@ -78,8 +78,12 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         JLabel title = new JLabel(RecipeSearchViewModel.TITLE_LABEL);
         title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        JPanel ingredients_managed = new JPanel();
+        JButton clear_recipe = new JButton("Clear Ingredients Stored");
         JButton ingredientsSearchedFor = new JButton("Ingredients Stored");
-        ingredientsSearchedFor.setAlignmentX(Component.CENTER_ALIGNMENT);
+        ingredients_managed.add(ingredientsSearchedFor);
+        ingredients_managed.add(clear_recipe);
+        ingredients_managed.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         LabelTextPanel ingredientsInfo = new LabelTextPanel(new JLabel(RecipeSearchViewModel.INGREDIENTS_LABEL), ingredientsInputField);
 
@@ -147,7 +151,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
         this.add(title);
         this.add(ingredientsInfo);
-        this.add(ingredientsSearchedFor);
+        this.add(ingredients_managed);
         this.add(checkboxesDiet);
         this.add(checkboxesAllergies);
         this.add(dropDownCuisines);
@@ -186,11 +190,27 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
         // user types in ingredients
 
+        clear_recipe.addActionListener(                // This creates an anonymous subclass of ActionListener and instantiates it.
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        RecipeSearchState state = new RecipeSearchState();
+                        recipeSearchViewModel.setState(state);
+                        JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0),"Cleared");
+
+                    }
+                }
+        );
+
         ingredientsSearchedFor.addActionListener(                // This creates an anonymous subclass of ActionListener and instantiates it.
                 new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                         RecipeSearchState state = recipeSearchViewModel.getState();
+                        if (!state.getIngredients().isEmpty()){
                         JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0), state.getIngredients().substring(0,state.getIngredients().length() - 1));
+                    }
+                        else{
+                            JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0),"No Recipes Stored");
+                        }
                     }
                 }
         );
