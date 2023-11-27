@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Edited the comments">
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Created a way to store ingrediets, still need to edit the API call to use a list instead of a string value.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_access/SpoonacularDataAccessObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/RecipeSearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeSearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +135,7 @@
       <workItem from="1700169871721" duration="2290000" />
       <workItem from="1700451397438" duration="1012000" />
       <workItem from="1700499295274" duration="43000" />
-      <workItem from="1700499663685" duration="18933000" />
+      <workItem from="1700499663685" duration="22043000" />
     </task>
     <task id="LOCAL-00001" summary="created App directory">
       <option name="closed" value="true" />
@@ -417,14 +416,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700501308993</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Created a way to store ingrediets, still need to edit the API call to use a list instead of a string value.">
+      <option name="closed" value="true" />
+      <created>1700867820350</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1700867820350</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView" />
     <MESSAGE value="added attributes to RecipeSearchState for all elements of the UI and added enums for macronutrients" />
     <MESSAGE value="added action listener for all checkboxes (diets, intolerances of the UI)" />
     <MESSAGE value="added action listener for the cuisine drop-down and the macro nutrients drop downs" />
@@ -449,7 +455,8 @@
     <MESSAGE value="Merge" />
     <MESSAGE value="Choose View Works Well" />
     <MESSAGE value="Edited the comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited the comments" />
+    <MESSAGE value="Created a way to store ingrediets, still need to edit the API call to use a list instead of a string value." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a way to store ingrediets, still need to edit the API call to use a list instead of a string value." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
