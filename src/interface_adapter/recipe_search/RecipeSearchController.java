@@ -17,7 +17,7 @@ public class RecipeSearchController {
 
     // the parameters of this method have to be adapted depending on how the
     // input data from the user is gathered
-    public void execute(ArrayList<String> ingredients, Map<String, Boolean> diets, Map<String, Boolean> intolerances, String cuisine, String protein, String fat, String carbs, String calories){
+    public void execute(String ingredients, Map<String, Boolean> diets, Map<String, Boolean> intolerances, String cuisine, String protein, String fat, String carbs, String calories){
 
         int minProtein = 0;
         int maxProtein = 0;

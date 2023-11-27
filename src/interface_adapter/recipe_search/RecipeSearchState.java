@@ -72,8 +72,12 @@ public class RecipeSearchState {
 
 
 
-    public ArrayList<String> getIngredients() {
-        return ingredients;
+    public String getIngredients() {
+        String newvar = "";
+        for (String var: ingredients){
+            newvar = newvar + var + ",";
+        }
+        return newvar;
     }
 
     public void addIngredients(String ingredients) {

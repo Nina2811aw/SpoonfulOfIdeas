@@ -36,7 +36,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
         // getting the user information which specifies the complex search
 
-        ArrayList<String> ingredients = recipeSearchInputData.getIngredients();
+        String ingredients = recipeSearchInputData.getIngredients();
         String diets = recipeSearchInputData.getDiets();
         String intolerances = recipeSearchInputData.getAllergies();
         String cuisine = recipeSearchInputData.getCuisines();

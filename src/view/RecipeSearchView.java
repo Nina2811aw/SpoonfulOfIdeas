@@ -171,7 +171,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                 new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                         RecipeSearchState state = recipeSearchViewModel.getState();
-                        JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0), state.getIngredients());
+                        JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0), state.getIngredients().substring(0,state.getIngredients().length() - 1));
                     }
                 }
         );
