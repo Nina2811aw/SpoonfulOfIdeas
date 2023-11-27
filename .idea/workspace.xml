@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/use_case/food_joke/FoodJokeInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/use_case/food_joke/FoodJokeInteractorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +59,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -71,6 +76,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -88,7 +96,7 @@
       <recent name="use_case.add_to_favourites" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainApp">
+  <component name="RunManager" selected="JUnit.FoodJokeInteractorTest.executeTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="API_TOKEN" value="05488370403241b6ae345c5a794c69d4" />
@@ -118,6 +126,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FoodJokeInteractorTest.executeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpoonacularAPITest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.food_joke.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.food_joke" />
+      <option name="MAIN_CLASS_NAME" value="use_case.food_joke.FoodJokeInteractorTest" />
+      <option name="METHOD_NAME" value="executeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test in SpoonacularAPITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpoonacularAPITest" />
       <option name="TEST_OBJECT" value="directory" />
@@ -139,6 +163,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FoodJokeInteractorTest.executeTest" />
         <item itemvalue="Application.MainApp" />
         <item itemvalue="JUnit.test in SpoonacularAPITest" />
         <item itemvalue="Application.Main" />
@@ -434,14 +459,32 @@
       <option name="project" value="LOCAL" />
       <updated>1701101987145</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Merge">
+      <option name="closed" value="true" />
+      <created>1701103882403</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1701103882403</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adapted classes of the nutrition detail use case to remove errors" />
     <MESSAGE value="added text field for user input (ingredients) to the RecipeSearchView" />
     <MESSAGE value="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView" />
     <MESSAGE value="added attributes to RecipeSearchState for all elements of the UI and added enums for macronutrients" />
@@ -465,6 +508,7 @@
     <MESSAGE value="Workspace commit" />
     <MESSAGE value="workspace merge" />
     <MESSAGE value="workspace change" />
+    <MESSAGE value="workspace" />
     <MESSAGE value="Merge" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge" />
   </component>
@@ -486,6 +530,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MainSpoonfulOfIdeas$test_in_SpoonacularAPITest.ic" NAME="test in SpoonacularAPITest Coverage Results" MODIFIED="1701046792254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/SpoonfulOfIdeas6$FoodJokeInteractorTest_executeTest.ic" NAME="FoodJokeInteractorTest.executeTest Coverage Results" MODIFIED="1701104902243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>use_case.food_joke.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/MainSpoonfulOfIdeas$All_in_SpoonacularAPITest.ic" NAME="All in SpoonacularAPITest Coverage Results" MODIFIED="1700148791622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
