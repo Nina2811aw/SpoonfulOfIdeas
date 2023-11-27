@@ -209,7 +209,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                         JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0), state.getIngredients().substring(0,state.getIngredients().length() - 1));
                     }
                         else{
-                            JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0),"No Recipes Stored");
+                            JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0),"No Ingredients Stored");
                         }
                     }
                 }
