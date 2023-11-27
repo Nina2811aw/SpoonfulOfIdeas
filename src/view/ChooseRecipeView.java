@@ -98,7 +98,6 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
         }
         counter = 0;
         for (JButton button: button_list){
-            counter ++;
             int finalCounter = counter;
             button.addActionListener(
                     new ActionListener() {
@@ -113,6 +112,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
                         }
                     }
             );
+            counter ++; // counter must begin at 0 for .get(finalCounter) to be correct. Thus counter++ at end of loop.
         }
 
         back = new JButton("<--"); // Make the text input a variable input from ChooseViewModel rather than hard coded.

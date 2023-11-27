@@ -5,7 +5,6 @@ import interface_adapter.add_to_favourites.AddToFavouritesController;
 import interface_adapter.add_to_favourites.AddToFavouritesPresenter;
 import interface_adapter.back_to_choose.BackToChooseController;
 import interface_adapter.back_to_choose.BackToChoosePresenter;
-import interface_adapter.back_to_choose.BackToChooseViewModel;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.nutrition_detail.NutritionDetailController;
 import interface_adapter.nutrition_detail.NutritionDetailPresenter;

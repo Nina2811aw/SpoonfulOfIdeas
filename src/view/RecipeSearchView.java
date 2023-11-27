@@ -6,6 +6,7 @@ import interface_adapter.food_joke.FoodJokeViewModel;
 import interface_adapter.recipe_search.RecipeSearchController;
 import interface_adapter.recipe_search.RecipeSearchState;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
+import interface_adapter.show_favourites.ShowFavouritesController;
 import use_case.recipe_search.Cuisine;
 
 import javax.swing.*;
@@ -25,6 +26,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
     private JTextField ingredientsInputField = new JTextField(30);
 
     private final JButton search;
+    private final JButton favourites;
 
     private final JButton joke;
 
@@ -60,10 +62,13 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
     private final FoodJokeViewModel foodJokeViewModel;
     public final FoodJokeController foodJokeController;
 
-    public RecipeSearchView(RecipeSearchController controller, RecipeSearchViewModel recipeSearchViewModel, FoodJokeController foodJokeController, FoodJokeViewModel foodJokeViewModel){
+    private final ShowFavouritesController showFavouritesController;
+
+    public RecipeSearchView(RecipeSearchController controller, RecipeSearchViewModel recipeSearchViewModel, FoodJokeController foodJokeController, FoodJokeViewModel foodJokeViewModel, ShowFavouritesController showFavouritesController){
 
         this.recipeSearchController = controller;
         this.recipeSearchViewModel = recipeSearchViewModel;
+        this.showFavouritesController = showFavouritesController;
         recipeSearchViewModel.addPropertyChangeListener(this);
 
         this.foodJokeController = foodJokeController;
@@ -80,6 +85,8 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
         JPanel buttons = new JPanel();
         search = new JButton(RecipeSearchViewModel.SEARCH_BUTTON);
+        favourites = new JButton(RecipeSearchViewModel.FAVOURITES);
+        buttons.add(favourites);
         buttons.add(search);
 
         JPanel checkboxesDiet = new JPanel();
@@ -160,6 +167,18 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                             // arguments have to be adapted based on attributed of RecipeSearchState
                             recipeSearchController.execute(currentState.getIngredients(), currentState.getDiets(), currentState.getIntolerances(), currentState.getCuisine(), currentState.getProtein(), currentState.getFat(), currentState.getCarbs(), currentState.getCalories());
                             //changed the type of getIngredients()
+                        }
+                    }
+                }
+        );
+
+        favourites.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+                        if(evt.getSource().equals(favourites)){
+                            System.out.println("favourites button pressed");
+                            showFavouritesController.execute(); // no user input required
                         }
                     }
                 }
