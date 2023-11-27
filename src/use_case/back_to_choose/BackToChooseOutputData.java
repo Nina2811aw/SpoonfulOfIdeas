@@ -19,5 +19,4 @@ public class BackToChooseOutputData {
 
     //This public method returns a list of RecipeInformation.
 
-    public List<RecipeInformation> getRecipeInfoList(){return recipeInfoList;}
 }
