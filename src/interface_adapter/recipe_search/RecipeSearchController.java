@@ -3,6 +3,7 @@ package interface_adapter.recipe_search;
 import use_case.recipe_search.RecipeSearchInputBoundary;
 import use_case.recipe_search.RecipeSearchInputData;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class RecipeSearchController {
