@@ -17,6 +17,6 @@ public class BackToChooseOutputData {
         this.recipeInfoList = recipeInfoList;
     }
 
-    //This public method returns a list of RecipeInformation.
+
 
 }
