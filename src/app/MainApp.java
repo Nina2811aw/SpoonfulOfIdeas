@@ -3,8 +3,6 @@ package app;
 import data_access.FavouritesDataAccessObject;
 import data_access.SpoonacularDataAccessObject;
 import interface_adapter.ViewManagerModel;
-import interface_adapter.back_to_choose.BackToChooseViewModel;
-import interface_adapter.choose_recipe.ChooseRecipePresenter;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.food_joke.FoodJokeViewModel;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;

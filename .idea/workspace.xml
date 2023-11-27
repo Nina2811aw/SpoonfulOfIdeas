@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Merge">
+      <change afterPath="$PROJECT_DIR$/test/BackToChooseCoverageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChooseRecipeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-back-to-search/BackToSearchCoverageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BackToSearchCoverageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,21 +58,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Edits-to-the-Choose-Recipe-Screen&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "backtochoosetest",
+    "last_opened_file_path": "/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/README/API_Files_Test-hamza" />
@@ -79,7 +81,7 @@
       <recent name="$PROJECT_DIR$/src/data_access" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainApp">
+  <component name="RunManager" selected="JUnit.test in SpoonacularAPITest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="API_TOKEN" value="05488370403241b6ae345c5a794c69d4" />
@@ -109,8 +111,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test in SpoonacularAPITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpoonacularAPITest" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.test in SpoonacularAPITest" />
         <item itemvalue="Application.MainApp" />
         <item itemvalue="Application.Main" />
       </list>
@@ -445,5 +456,9 @@
         <PinnedItemInfo parentTag="use_case.choose_recipe.ChooseRecipeInputData" memberName="recipe" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MainSpoonfulOfIdeas$test_in_SpoonacularAPITest.ic" NAME="test in SpoonacularAPITest Coverage Results" MODIFIED="1701046792254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/MainSpoonfulOfIdeas$All_in_SpoonacularAPITest.ic" NAME="All in SpoonacularAPITest Coverage Results" MODIFIED="1700148791622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
