@@ -8,6 +8,9 @@ import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import use_case.recipe_search.RecipeSearchOutputBoundary;
 import use_case.recipe_search.RecipeSearchOutputData;
 import view.ChooseRecipeView;
+import view.RecipeSearchView;
+
+import javax.swing.*;
 
 public class RecipeSearchPresenter implements  RecipeSearchOutputBoundary{
 
@@ -41,6 +44,7 @@ public class RecipeSearchPresenter implements  RecipeSearchOutputBoundary{
     // this method is called when no recipe ideas have been found
     @Override
     public void prepareNoRecipeFoundView() {
+        recipeSearchViewModel.firePropertyChanged();
 
     }
     // need this to return RecipeSearchOutputBoundry Type

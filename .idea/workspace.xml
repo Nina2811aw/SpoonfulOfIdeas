@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Merge">
-      <change afterPath="$PROJECT_DIR$/test/BackToChooseCoverageTest.java" afterDir="false" />
+    <list default="true" id="e7f8958a-cfec-4864-963f-0666649bdd92" name="Changes" comment="Small Text change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/back_to_choose/BackToChooseOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-back-to-search/BackToSearchCoverageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BackToSearchCoverageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interface_adapter/recipe_search/RecipeSearchPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/use_case/recipe_search/RecipeSearchInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/RecipeSearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RecipeSearchView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;backtochoosetest&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Edits-to-the-Choose-Recipe-Screen&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/hamza/SpoonfulOfIdeas2/README/API_Files_Test-hamza&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -81,7 +81,7 @@
       <recent name="$PROJECT_DIR$/src/data_access" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.test in SpoonacularAPITest">
+  <component name="RunManager" selected="Application.MainApp">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="API_TOKEN" value="05488370403241b6ae345c5a794c69d4" />
@@ -111,17 +111,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test in SpoonacularAPITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpoonacularAPITest" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/test" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.test in SpoonacularAPITest" />
         <item itemvalue="Application.MainApp" />
         <item itemvalue="Application.Main" />
       </list>
@@ -422,7 +413,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adapted classes of the nutrition detail use case to remove errors" />
     <MESSAGE value="added text field for user input (ingredients) to the RecipeSearchView" />
     <MESSAGE value="Added checkboxes and drop-down menus for diets, allergies, cuisines and macro nutrients to RecipeSearchView" />
     <MESSAGE value="added attributes to RecipeSearchState for all elements of the UI and added enums for macronutrients" />
@@ -447,7 +437,8 @@
     <MESSAGE value="workspace merge" />
     <MESSAGE value="workspace change" />
     <MESSAGE value="Merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge" />
+    <MESSAGE value="Small Text change" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small Text change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
