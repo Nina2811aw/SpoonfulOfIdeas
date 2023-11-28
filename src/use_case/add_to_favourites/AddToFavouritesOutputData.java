@@ -8,8 +8,7 @@ public class AddToFavouritesOutputData {
         this.favourites = favourites;
     }
 
-    // Method that sets the user's favourite recipes.
-    public void setFavourites(String favourites){this.favourites = favourites;}
+
 
     // Method that returns the user's favourite recipes.
     public String getFavourites(){return favourites;}
