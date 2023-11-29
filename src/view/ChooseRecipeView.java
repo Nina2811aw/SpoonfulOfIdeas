@@ -19,6 +19,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ChooseRecipeView extends JPanel implements ActionListener, PropertyChangeListener{
 
@@ -81,59 +82,61 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         ChooseRecipeState chooseRecipeState = (ChooseRecipeState) evt.getNewValue();
-        this.remove(buttonsRecipes);
         this.removeAll();
-        JPanel buttonsRecipes2 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        buttonsRecipes2.add(new JLabel("Recipes:"));
-        buttonsRecipes2.setLayout(new BoxLayout(buttonsRecipes2, BoxLayout.Y_AXIS));
-        List<String> recipe_names = chooseRecipeState.getRecipeNames();
-        List<JButton> button_list = new ArrayList<>();
+
+        // Main panel with BorderLayout
+        JPanel mainPanel = new JPanel(new BorderLayout());
+
+        // Panel for the "Back" button aligned left
+        JPanel backPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        back = new JButton();
+        Icon backIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/back_icon.png")));
+        back.setIcon(backIcon);
+        back.addActionListener(e -> {
+            if (e.getSource() == back) {
+                backToSearchController.execute();
+            }
+        });
+        backPanel.add(back);
+
+        // Panel for recipe buttons with vertical alignment
+        JPanel recipePanel = new JPanel();
+        recipePanel.setLayout(new BoxLayout(recipePanel, BoxLayout.Y_AXIS));
+        recipePanel.add(new JLabel("Recipes:"));
+        final int maxButtons = 5; // Maximum number of buttons
+
+        // Create and add recipe buttons
         int counter = 0;
-        for (String recipe: recipe_names){
-            counter ++;
-            button = new JButton(recipe);
-            button_list.add(button);
-            buttonsRecipes2.add(button);
-            if (counter > 5){break;}
-        }
-        counter = 0;
-        for (JButton button: button_list){
+        for (String recipe : chooseRecipeState.getRecipeNames()) {
+            if (counter >= maxButtons) {
+                break;
+            }
+            JButton recipeButton = new JButton(recipe);
             int finalCounter = counter;
-            button.addActionListener(
-                    new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent evt) {
-                            if(evt.getSource().equals(button)){
-                                ChooseRecipeState currentState = chooseRecipeViewModel.getState();
-
-                                System.out.println("recipe button pressed");
-                                chooseRecipeController.execute(currentState.get_recipe_info().get(finalCounter));
-                            }
-                        }
-                    }
-            );
-            counter ++; // counter must begin at 0 for .get(finalCounter) to be correct. Thus counter++ at end of loop.
+            recipeButton.addActionListener(e -> {
+                ChooseRecipeState currentState = chooseRecipeViewModel.getState();
+                System.out.println("Recipe button pressed");
+                chooseRecipeController.execute(currentState.get_recipe_info().get(finalCounter));
+            });
+            recipePanel.add(recipeButton);
+            counter++;
         }
 
-        back = new JButton("<--"); // Make the text input a variable input from ChooseViewModel rather than hard coded.
-        buttonsRecipes2.add(back);
+        // Add the back panel to the top of the main panel
+        mainPanel.add(backPanel, BorderLayout.NORTH);
 
-        buttonsRecipes2.setAlignmentX(Component.CENTER_ALIGNMENT);
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        this.add(buttonsRecipes2);
+        // Center the recipe panel
+        JPanel centerWrapper = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        centerWrapper.add(recipePanel);
+        mainPanel.add(centerWrapper, BorderLayout.CENTER);
 
-        back.addActionListener(
-                new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (e.getSource().equals(back)) {
-                            backToSearchController.execute();
-                        }
-                    }
-                }
-        );
+        // Set the main panel as the layout for 'this'
+        this.setLayout(new BorderLayout());
+        this.add(mainPanel);
 
-
+        // Refresh the container to reflect the changes
+        this.revalidate();
+        this.repaint();
     }
 
 }
