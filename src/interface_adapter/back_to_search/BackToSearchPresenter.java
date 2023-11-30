@@ -8,6 +8,12 @@ public class BackToSearchPresenter implements BackToSearchOutputBoundary {
     private final ViewManagerModel viewManagerModel;
     private final RecipeSearchViewModel recipeSearchViewModel;
 
+    /**
+     * Constructor sets up presenter so that it can update the view.
+     *
+     * @param viewManagerModel should contain the core viewManager used in the program.
+     * @param recipeSearchViewModel should contain the core viewManager used in the program.
+     */
     public BackToSearchPresenter(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel){
         this.viewManagerModel = viewManagerModel;
         this.recipeSearchViewModel = recipeSearchViewModel;
