@@ -1,24 +1,16 @@
 package view;
 
-import entity.RecipeInformation;
 import interface_adapter.back_to_search.BackToSearchController;
 import interface_adapter.choose_recipe.ChooseRecipeController;
 import interface_adapter.choose_recipe.ChooseRecipeState;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
-import interface_adapter.nutrition_detail.NutritionDetailState;
-import interface_adapter.recipe_search.RecipeSearchState;
 
 import javax.swing.*;
-import javax.swing.text.html.HTML;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class ChooseRecipeView extends JPanel implements ActionListener, PropertyChangeListener{
@@ -75,9 +67,9 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
     public void actionPerformed(ActionEvent e) {
 
     }
-    // Changed the property change to add the number of buttons passed with a max of 5 buttons,
-    // also created a list that I iterate through and write a listener for each button
 
+    // Changed the property change to add the number of buttons passed with a max of 5 buttons,
+    // also created a list that I iterate through and write a listener for each button.
     // This method changes all the buttons based on the recipes passed in through the recipe search API call
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
