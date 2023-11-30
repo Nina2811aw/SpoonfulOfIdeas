@@ -29,10 +29,11 @@ public class RecipeSearchInteractor implements RecipeSearchInputBoundary{
         if(recipeIdeasList.isEmpty()){
             recipeSearchPresenter.prepareNoRecipeFoundView();
         }
-        // call presenter with output data
-        RecipeSearchOutputData recipeSearchOutputData = new RecipeSearchOutputData(recipeIdeasList);
-        recipeSearchPresenter.prepareChooseRecipeView(recipeSearchOutputData);
-
+        else {
+            // call presenter with output data
+            RecipeSearchOutputData recipeSearchOutputData = new RecipeSearchOutputData(recipeIdeasList);
+            recipeSearchPresenter.prepareChooseRecipeView(recipeSearchOutputData);
+        }
     }
 
 }
