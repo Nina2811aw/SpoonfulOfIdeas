@@ -12,11 +12,13 @@ public class AddToFavouritesInteractor implements AddToFavouritesInputBoundary{
 
     @Override
     public void execute(AddToFavouritesInputData addToFavouritesInputData) {
+        // Some typos with naming, recipetitle is actually recipeId value. And recipeId contains the recipeTitle value.
         String recipetitle = addToFavouritesInputData.getTitle();
         String recipeid = addToFavouritesInputData.getID();
         addToFavouritesDataAccessObject.AddToFavourites(recipetitle, recipeid);
         String recipes = addToFavouritesDataAccessObject.getFavourites();
         AddToFavouritesOutputData addToFavouritesOutputData = new AddToFavouritesOutputData(recipes);
+        addToFavouritesOutputData.setFavouriteFilled(addToFavouritesDataAccessObject.isFavourite(recipetitle));
         addToFavouritesPresenter.prepareSuccessView(addToFavouritesOutputData);
         
     }
