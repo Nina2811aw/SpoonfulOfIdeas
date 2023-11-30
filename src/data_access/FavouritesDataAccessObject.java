@@ -91,4 +91,8 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
         }
         return favourites;
     }
+
+    public Boolean isFavourite(String recipeId){
+        return recipes.containsKey(recipeId);
+    }
 }

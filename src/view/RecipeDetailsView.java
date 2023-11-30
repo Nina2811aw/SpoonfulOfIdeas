@@ -68,7 +68,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         back.setIcon(backIcon);
         buttons.add(back, BorderLayout.WEST);
 
-        addToFavourites = new JButton(NutritionDetailViewModel.ADD_TO_FAVOURITES_LABEL);
+        addToFavourites = new JButton();
         buttons.add(addToFavourites, BorderLayout.EAST);
 
         nutritionDetail = new JButton(NutritionDetailViewModel.NUTRITION_INFO_LABEL);
@@ -142,6 +142,15 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         text = "<html>" + text.replaceAll("\n", "<br>") + "</html>";
 
         instructions.setText(text);
+
+        Boolean toFillFavourites = state.getFavouritesFilled();
+        if (toFillFavourites){
+            Icon favouritesIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/star_filled.png")));
+            addToFavourites.setIcon(favouritesIcon);
+        }else{
+            Icon favouritesIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/star.png")));
+            addToFavourites.setIcon(favouritesIcon);
+        }
     }
 
     @Override
