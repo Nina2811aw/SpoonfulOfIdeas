@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface, ChooseRecipeDataAccessInterface,
+public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface,
         BackToChooseDataAccessInterface, NutritionDetailDataAccessInterface, FoodJokeDataAccessInterface {
 
     private static String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
@@ -80,7 +80,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
     public List<RecipeInformation> getRecipeInformationList(){return recipeInformationList;}
 
-    @Override
+    // No longer an override method due to having the unified adapter class.
     public List<String> getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData)     {
         List<String> inner_lst = new ArrayList<>();
         //['id', 'title', 'instructions']
