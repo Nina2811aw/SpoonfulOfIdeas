@@ -6,5 +6,5 @@ public interface ChooseRecipeDataAccessInterface {
 
     List<String> getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData);
 
-
+    Boolean isFavourites(String id);
 }

@@ -38,7 +38,13 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
 
     @Override
     public void AddToFavourites(String recipeId, String recipeTitle) {
-        recipes.put(recipeId, recipeTitle);
+        // Verify that if the user favourited this recipe before, then we remove
+        // this recipe from favourites, otherwise add to favourites.
+        if (recipes.containsKey(recipeId)){
+            recipes.remove(recipeId);
+        }else{
+            recipes.put(recipeId, recipeTitle);
+        }
         this.AddToFavourites();
     }
 
@@ -84,5 +90,9 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
             favourites.add(new RecipeInformation(Integer.parseInt(entry.getKey()), entry.getValue()));
         }
         return favourites;
+    }
+
+    public Boolean isFavourite(String recipeId){
+        return recipes.containsKey(recipeId);
     }
 }

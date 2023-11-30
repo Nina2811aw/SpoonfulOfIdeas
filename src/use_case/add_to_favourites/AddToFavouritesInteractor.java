@@ -17,7 +17,7 @@ public class AddToFavouritesInteractor implements AddToFavouritesInputBoundary{
         addToFavouritesDataAccessObject.AddToFavourites(recipetitle, recipeid);
         String recipes = addToFavouritesDataAccessObject.getFavourites();
         AddToFavouritesOutputData addToFavouritesOutputData = new AddToFavouritesOutputData(recipes);
+        addToFavouritesOutputData.setFavouriteFilled(addToFavouritesDataAccessObject.isFavourite(recipetitle));
         addToFavouritesPresenter.prepareSuccessView(addToFavouritesOutputData);
-        
     }
 }
