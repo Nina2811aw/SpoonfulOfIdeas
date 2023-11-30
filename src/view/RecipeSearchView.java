@@ -209,7 +209,7 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
                         JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0), state.getIngredients().substring(0,state.getIngredients().length() - 1));
                     }
                         else{
-                            JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0),"No Ingredients Stored");
+                            JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0),"No Recipes Stored");
                         }
                     }
                 }
@@ -447,9 +447,16 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        System.out.println("property change food joke");
-        FoodJokeState state = (FoodJokeState) evt.getNewValue();
-        JOptionPane.showMessageDialog(this, state.getFoodJoke());
+        if (evt.getSource().getClass().toString().equals("class interface_adapter.food_joke.FoodJokeViewModel")) {
+            System.out.println("property change food joke");
+            FoodJokeState state = (FoodJokeState) evt.getNewValue();
+            JOptionPane.showMessageDialog(this, state.getFoodJoke());
+        }
+        else if(evt.getSource().getClass().toString().equals("class interface_adapter.recipe_search.RecipeSearchViewModel")){
+            JOptionPane.showMessageDialog(this, "No Recipes Found, Try Broadening Your Search");
+            RecipeSearchState state = new RecipeSearchState();
+            recipeSearchViewModel.setState(state);
+        }
 
     }
 
