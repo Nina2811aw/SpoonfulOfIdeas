@@ -5,9 +5,9 @@ public class AddToFavouritesState {
 
     public AddToFavouritesState(){
     }
-
+// Returns the current favourited recipes.
     public String getFavourites(){return recipes;}
-
+//sets the current favourited recipes
     public void setFavourites(String recipes){this.recipes = recipes;}
 
 
