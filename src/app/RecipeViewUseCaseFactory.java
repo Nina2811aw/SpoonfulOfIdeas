@@ -42,8 +42,24 @@ import javax.swing.*;
 import java.lang.reflect.Array;
 import java.util.List;
 
+/**
+ * Factory class responsible for creating and configuring the views and controllers
+ * for the recipe application, specifically the RecipeSearch and ChooseRecipe views.
+ */
 public class RecipeViewUseCaseFactory {
 
+    /**
+     * Creates and returns an instance of RecipeSearchView.
+     * This method sets up the controllers and interactors required for
+     * the RecipeSearchView including recipe search, food jokes, and show favourites.
+     *
+     * @param viewManagerModel the view manager model
+     * @param recipeSearchViewModel the recipe search view model
+     * @param chooseRecipeViewModel the choose recipe view model
+     * @param foodJokeViewModel the food joke view model
+     * @param favouritesDataAccessObject the data access object for favourites
+     * @return RecipeSearchView instance configured with necessary controllers
+     */
     public static RecipeSearchView createSearchView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel,
                                                     FoodJokeViewModel foodJokeViewModel, FavouritesDataAccessObject favouritesDataAccessObject){
         RecipeSearchController recipeSearchController = createSearchCase(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
@@ -53,6 +69,14 @@ public class RecipeViewUseCaseFactory {
 
     }
 
+    /**
+     * Creates and configures a RecipeSearchController.
+     *
+     * @param viewManagerModel the view manager model
+     * @param recipeSearchViewModel the recipe search view model
+     * @param chooseRecipeViewModel the choose recipe view model
+     * @return RecipeSearchController instance
+     */
     public static RecipeSearchController createSearchCase(ViewManagerModel viewManagerModel,RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel){
         //throws IOException?
         RecipeSearchOutputBoundary recipeSearchPresenter = new RecipeSearchPresenter(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
@@ -64,8 +88,16 @@ public class RecipeViewUseCaseFactory {
         return new RecipeSearchController(recipeSearchInputBoundary);
     }
 
-    // Creates and configures a ShowFavouritesController for handling the transition from the transition from RecipeSearchView
-    // to ChooseRecipeView showcasing the user's list of favourited items.
+    /**
+     * Creates and configures a ShowFavouritesController -- used for handling the transition from RecipeSearchView
+     * to ChooseRecipeView showcasing the user's list of favourite items.
+     *
+     * @param viewManagerModel the view manager model
+     * @param recipeSearchViewModel the recipe search view model
+     * @param chooseRecipeViewModel the choose recipe view model
+     * @param favouritesDataAccessObject the data access object for favourites
+     * @return ShowFavouritesController instance
+     */
     public static ShowFavouritesController createShowFavouritesCase(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel,
                                            FavouritesDataAccessObject favouritesDataAccessObject){
         RecipeSearchOutputBoundary recipeSearchPresenter = new RecipeSearchPresenter(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel);
@@ -73,13 +105,31 @@ public class RecipeViewUseCaseFactory {
         return new ShowFavouritesController(showFavouritesInteractor);
     }
 
+    /**
+     * Creates and returns an instance of ChooseRecipeView.
+     *
+     * @param viewManagerModel the view manager model
+     * @param recipeSearchViewModel the recipe search view model
+     * @param chooseRecipeViewModel the choose recipe view model
+     * @param nutritionDetailViewModel the nutrition detail view model
+     * @param favouritesDataAccessObject the data access object for favourites
+     * @return ChooseRecipeView instance configured with necessary controllers
+     */
     public static ChooseRecipeView createChooseView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel nutritionDetailViewModel, FavouritesDataAccessObject favouritesDataAccessObject){
         ChooseRecipeController chooseRecipeController = createChooseCase(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, favouritesDataAccessObject);
         BackToSearchController backToSearchController = createBackToSearchUseCase(viewManagerModel, recipeSearchViewModel);
         return new ChooseRecipeView(chooseRecipeController, backToSearchController, chooseRecipeViewModel);
     }
 
-
+    /**
+     * Creates and configures a ChooseRecipeController.
+     *
+     * @param viewManagerModel the view manager model
+     * @param chooseRecipeViewModel the choose recipe view model
+     * @param nutritionDetailViewModel the nutrition detail view model
+     * @param favouritesDataAccessObject the data access object for favourites
+     * @return ChooseRecipeController instance
+     */
     public static ChooseRecipeController createChooseCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel nutritionDetailViewModel, FavouritesDataAccessObject favouritesDataAccessObject){
         ChooseRecipeOutputBoundary chooseRecipePresenter = new ChooseRecipePresenter(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel);
 
@@ -88,10 +138,16 @@ public class RecipeViewUseCaseFactory {
         ChooseRecipeInputBoundary chooseRecipeInputBoundary = new ChooseRecipeInteractor(chooseRecipeDAO, chooseRecipePresenter);
 
         return new ChooseRecipeController(chooseRecipeInputBoundary);
-
-
     }
 
+
+    /**
+     * Creates and returns a FoodJokeController.
+     * This method sets up the controller for handling food joke interactions.
+     *
+     * @param foodJokeViewModel the food joke view model
+     * @return FoodJokeController instance
+     */
     public static FoodJokeController createFoodJokeCase(FoodJokeViewModel foodJokeViewModel){
         FoodJokeOutputBoundary foodJokePresenter = new FoodJokePresenter(foodJokeViewModel);
 
@@ -102,12 +158,18 @@ public class RecipeViewUseCaseFactory {
         return new FoodJokeController(foodJokeInteractor);
     }
 
-    // Creates and configures a BackToSearchController for handling the transition from the ChooseRecipe view back to the RecipeSearch view.
+    /**
+     * Creates and configures a BackToSearchController.
+     * This method prepares the controller responsible for handling the transition
+     * from the ChooseRecipe view back to the RecipeSearch view.
+     *
+     * @param viewManagerModel the view manager model
+     * @param recipeSearchViewModel the recipe search view model
+     * @return BackToSearchController instance
+     */
     public static BackToSearchController createBackToSearchUseCase(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel){
         BackToSearchOutputBoundary backToSearchPresenter = new BackToSearchPresenter(viewManagerModel, recipeSearchViewModel);
         BackToSearchInteractor backToSearchInteractor = new BackToSearchInteractor(backToSearchPresenter);
         return new BackToSearchController(backToSearchInteractor);
     }
-
-
 }
