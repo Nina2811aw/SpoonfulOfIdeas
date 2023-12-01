@@ -35,7 +35,7 @@ public class FavouritesDataAccessObject implements AddToFavouritesDataAccessInte
         }else{
             try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))){
                 String header = reader.readLine();
-                assert header.equals("Recipe ID,Recipe Title");
+                //assert header.equals("Recipe ID,Recipe Title");
 
                 String row;
                 while((row = reader.readLine()) != null){

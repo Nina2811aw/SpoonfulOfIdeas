@@ -105,7 +105,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                             AddToFavouritesState currentState = NutritionDetailViewModel.getAddToFavouritesState();
                             NutritionDetailState nutritionState = NutritionDetailViewModel.getState();
                             List<String> recipe = nutritionState.getRecipe();
-                            addToFavouritesController.execute(recipe.get(0), recipe.get(1));
+                            addToFavouritesController.execute(recipe.get(1), recipe.get(0));
                             String favourites = currentState.getFavourites();
                             JOptionPane.showMessageDialog(RecipeDetailsView.this, favourites);
                         }
