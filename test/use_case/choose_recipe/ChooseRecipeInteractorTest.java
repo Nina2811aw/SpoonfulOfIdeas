@@ -1,16 +1,21 @@
 package use_case.choose_recipe;
 
+import data_access.FavouritesDataAccessObject;
 import data_access.SpoonacularDataAccessObject;
+import data_access.UnifiedRecipeDataAccessObject;
 import entity.RecipeInformation;
 import org.junit.Test;
+
+import java.io.IOException;
 
 import static org.junit.Assert.*;
 
 public class ChooseRecipeInteractorTest {
 
     @Test
-    public void executeTest() {
-        ChooseRecipeDataAccessInterface dataAccessObject = new SpoonacularDataAccessObject();
+    public void executeTest() throws IOException {
+        ChooseRecipeDataAccessInterface dataAccessObject = new UnifiedRecipeDataAccessObject(new SpoonacularDataAccessObject(),
+                new FavouritesDataAccessObject("./favourites.csv"));
 
         ChooseRecipeOutputBoundary chooseRecipePresenter = new ChooseRecipeOutputBoundary() {
             @Override
