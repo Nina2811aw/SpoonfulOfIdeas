@@ -10,7 +10,15 @@ public class ChooseRecipeOutputData {
     }
 
     List<String> recipeDetails;
+    private Boolean favouriteFilled = false;
 
-    public List<String> getRecipeDetails() {return this.recipeDetails;
+    public List<String> getRecipeDetails() {return this.recipeDetails;}
+
+    public void setFavouriteFilled(Boolean favouriteFilled){
+        this.favouriteFilled = favouriteFilled;
+    }
+
+    public Boolean getFavouriteFilled(){
+        return favouriteFilled;
     }
 }

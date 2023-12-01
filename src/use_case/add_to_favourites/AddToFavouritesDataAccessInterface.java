@@ -7,4 +7,5 @@ public interface AddToFavouritesDataAccessInterface {
 
     String getFavourites();
 
+    Boolean isFavourite(String id);
 }

@@ -8,12 +8,14 @@ import interface_adapter.nutrition_detail.NutritionDetailState;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.List;
+import java.util.Objects;
 
 import static data_access.SpoonacularDataAccessObject.displayNutritionLabelImage;
 import static data_access.SpoonacularDataAccessObject.get_instructons;
@@ -45,31 +47,43 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         this.backToChooseController = backToChooseController;
         this.addToFavouritesController = addToFavouritesController;
 
-        // Change
-        JLabel title = new JLabel("---title----");
-        title.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-
+        JLabel title = new JLabel("---title----"); // Change text
         titleLabel = new JLabel();
-        titleLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-
         instructions = new JLabel();
-        instructions.setAlignmentX(Component.LEFT_ALIGNMENT);
+        title.setAlignmentX(Component.CENTER_ALIGNMENT);
+        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        instructions.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-
+        // We  have our main panel, referred to with "this" and then 2 sub-panels.
+        // One for the back and addToFavourites button at the header, and another
+        // for the recipe details + show nutritional contents button.
+        this.setLayout(new BorderLayout());
+        JPanel buttons = new JPanel(new BorderLayout());
+        JPanel details = new JPanel();
+        details.setLayout(new BoxLayout(details, BoxLayout.Y_AXIS));
 
         // Button Setup
-        JPanel buttons = new JPanel();
-        JPanel details = new JPanel();
-        back = new JButton(NutritionDetailViewModel.BACK_BUTTON_LABEL);
-        buttons.add(back);
-        addToFavourites = new JButton(NutritionDetailViewModel.ADD_TO_FAVOURITES_LABEL);
-        buttons.add(addToFavourites);
+        back = new JButton();
+        Icon backIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/back_icon.png")));
+        back.setIcon(backIcon);
+        buttons.add(back, BorderLayout.WEST);
+
+        addToFavourites = new JButton();
+        buttons.add(addToFavourites, BorderLayout.EAST);
 
         nutritionDetail = new JButton(NutritionDetailViewModel.NUTRITION_INFO_LABEL);
+
+        details.add(Box.createVerticalGlue()); // glue just adds invisible spacing between panel objects.
+        details.add(title);
+        details.add(titleLabel);
+        details.add(instructions);
         details.add(nutritionDetail);
+        details.add(Box.createVerticalGlue());
+
+        this.add(Box.createHorizontalGlue());
+        this.add(buttons, BorderLayout.NORTH);
+        this.add(details, BorderLayout.CENTER);
+
 
         back.addActionListener(
                 new ActionListener() {
@@ -92,7 +106,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                             AddToFavouritesState currentState = NutritionDetailViewModel.getAddToFavouritesState();
                             NutritionDetailState nutritionState = NutritionDetailViewModel.getState();
                             List<String> recipe = nutritionState.getRecipe();
-                            addToFavouritesController.execute(recipe.get(0), recipe.get(1));
+                            addToFavouritesController.execute(recipe.get(1), recipe.get(0));
                             String favourites = currentState.getFavourites();
                             JOptionPane.showMessageDialog(RecipeDetailsView.this, favourites);
                         }
@@ -117,15 +131,6 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                     }
                 }
         );
-
-        // add the recipe info later
-
-        this.add(title);
-        this.add(titleLabel); // Added to display recipe ID
-        this.add(buttons);
-        this.add(details);
-        this.add(instructions);
-
 }
 
 
@@ -137,6 +142,15 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         text = "<html>" + text.replaceAll("\n", "<br>") + "</html>";
 
         instructions.setText(text);
+
+        Boolean toFillFavourites = state.getFavouritesFilled();
+        if (toFillFavourites){
+            Icon favouritesIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/star_filled.png")));
+            addToFavourites.setIcon(favouritesIcon);
+        }else{
+            Icon favouritesIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/star.png")));
+            addToFavourites.setIcon(favouritesIcon);
+        }
     }
 
     @Override

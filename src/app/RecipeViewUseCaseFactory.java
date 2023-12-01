@@ -2,6 +2,7 @@ package app;
 
 import data_access.FavouritesDataAccessObject;
 import data_access.SpoonacularDataAccessObject;
+import data_access.UnifiedRecipeDataAccessObject;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.back_to_search.BackToSearchController;
 import interface_adapter.back_to_search.BackToSearchPresenter;
@@ -72,19 +73,19 @@ public class RecipeViewUseCaseFactory {
         return new ShowFavouritesController(showFavouritesInteractor);
     }
 
-    public static ChooseRecipeView createChooseView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel nutritionDetailViewModel){
-        ChooseRecipeController chooseRecipeController = createChooseCase(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel);
+    public static ChooseRecipeView createChooseView(ViewManagerModel viewManagerModel, RecipeSearchViewModel recipeSearchViewModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel nutritionDetailViewModel, FavouritesDataAccessObject favouritesDataAccessObject){
+        ChooseRecipeController chooseRecipeController = createChooseCase(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, favouritesDataAccessObject);
         BackToSearchController backToSearchController = createBackToSearchUseCase(viewManagerModel, recipeSearchViewModel);
         return new ChooseRecipeView(chooseRecipeController, backToSearchController, chooseRecipeViewModel);
     }
 
 
-    public static ChooseRecipeController createChooseCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel nutritionDetailViewModel){
+    public static ChooseRecipeController createChooseCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel nutritionDetailViewModel, FavouritesDataAccessObject favouritesDataAccessObject){
         ChooseRecipeOutputBoundary chooseRecipePresenter = new ChooseRecipePresenter(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel);
 
-        ChooseRecipeDataAccessInterface spoonacularDataAccessObject = new SpoonacularDataAccessObject();
+        ChooseRecipeDataAccessInterface chooseRecipeDAO = new UnifiedRecipeDataAccessObject(new SpoonacularDataAccessObject(), favouritesDataAccessObject);
 
-        ChooseRecipeInputBoundary chooseRecipeInputBoundary = new ChooseRecipeInteractor(spoonacularDataAccessObject, chooseRecipePresenter);
+        ChooseRecipeInputBoundary chooseRecipeInputBoundary = new ChooseRecipeInteractor(chooseRecipeDAO, chooseRecipePresenter);
 
         return new ChooseRecipeController(chooseRecipeInputBoundary);
 

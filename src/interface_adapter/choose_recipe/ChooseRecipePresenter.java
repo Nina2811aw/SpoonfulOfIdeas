@@ -26,16 +26,16 @@ public class ChooseRecipePresenter implements ChooseRecipeOutputBoundary {
     @Override
     public void prepareRecipeDetailsSuccessView(ChooseRecipeOutputData chooseRecipeOutputData) {
         System.out.println("prepare Nutrition Details view for choose recipe presenter");
-        NutritionDetailState nutritionDetailState = new NutritionDetailState();
+        NutritionDetailState nutritionDetailState = nutritionDetailViewModel.getState();
         List<String> recipe = chooseRecipeOutputData.getRecipeDetails();
         nutritionDetailState.setRecipe(recipe); // have to code in the choose recipe output data
+        nutritionDetailState.setFavouritesFilled(chooseRecipeOutputData.getFavouriteFilled());
         this.nutritionDetailViewModel.setState(nutritionDetailState);
         nutritionDetailViewModel.firePropertyChanged();
 
         viewManagerModel.setActiveView(nutritionDetailViewModel.getViewName());
         System.out.println("active view: "+ viewManagerModel.getActiveView());
         viewManagerModel.firePropertyChanged();
-
     }
 
     }
