@@ -44,7 +44,7 @@ public class AddToFavouritesCoverageTest {
 
         // Assert
         // Verify that AddToFavourites method is called on the dataAccessObject
-        verify(dataAccessMock).AddToFavourites(input.getTitle(), input.getID());
+        verify(dataAccessMock).AddToFavourites(input.getID(), input.getTitle());
 
         // Verify that getFavourites method is called on the dataAccessObject
         verify(dataAccessMock).getFavourites();
