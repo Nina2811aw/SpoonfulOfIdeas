@@ -16,6 +16,7 @@ import interface_adapter.nutrition_detail.NutritionDetailState;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import use_case.add_to_favourites.*;
@@ -41,9 +42,7 @@ public class ChooseRecipeCoverageTest {
 
     @Mock
     private NutritionDetailViewModel nutritionDetailViewModelMock;
-
     private ChooseRecipePresenter chooseRecipePresenter;
-
     private ChooseRecipeInputBoundary chooseRecipeInteractorMock;
 
     private ChooseRecipeInteractor interactor;
@@ -65,24 +64,26 @@ public class ChooseRecipeCoverageTest {
     }
 
     @Test
-    public void InteractorTest() throws IOException {
-        ChooseRecipeDataAccessInterface dataAccessObject = new UnifiedRecipeDataAccessObject(new SpoonacularDataAccessObject(),
-                new FavouritesDataAccessObject("./favourites.csv"));
+    public void testInteractor() throws IOException {
+        // Arrange
+        RecipeInformation recipe = new RecipeInformation(1, "Recipe1");
+        ChooseRecipeInputData input = new ChooseRecipeInputData(recipe);
+        List<String> recipeDetailsList = Arrays.asList("Detail1", "Detail2");
+        when(dataAccessMock.getRecipeDetails(input)).thenReturn(recipeDetailsList);
+        when(dataAccessMock.isFavourites(String.valueOf(recipe.getID()))).thenReturn(true);
 
-        ChooseRecipeOutputBoundary chooseRecipePresenter = new ChooseRecipeOutputBoundary() {
-            @Override
-            public void prepareRecipeDetailsSuccessView(ChooseRecipeOutputData chooseRecipeOutputData) {
-                assertFalse(chooseRecipeOutputData.getRecipeDetails().isEmpty());
-            }
-        };
+        // Act
+        interactor.execute(input);
 
-        RecipeInformation information = new RecipeInformation(716429, "Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs");
-        ChooseRecipeInputData inputData = new ChooseRecipeInputData(information);
+        // Assert
+        verify(dataAccessMock).getRecipeDetails(input);
+        verify(dataAccessMock).isFavourites(String.valueOf(recipe.getID()));
 
-        ChooseRecipeInteractor chooseRecipeInteractor = new ChooseRecipeInteractor(dataAccessObject, chooseRecipePresenter);
-
-        chooseRecipeInteractor.execute(inputData);
+        ChooseRecipeOutputData expectedOutput = new ChooseRecipeOutputData(recipeDetailsList);
+        expectedOutput.setFavouriteFilled(true);
+        verify(presenterMock).prepareRecipeDetailsSuccessView(any(ChooseRecipeOutputData.class));
     }
+
 
     @Test
     public void testPresenter() {
@@ -105,13 +106,15 @@ public class ChooseRecipeCoverageTest {
     public void testController(){
         // Arrange
         RecipeInformation recipe = new RecipeInformation(1, "Recipe1");
+        ChooseRecipeInputBoundary mockInputBoundary = mock(ChooseRecipeInputBoundary.class);
+        ChooseRecipeController controller = new ChooseRecipeController(mockInputBoundary);
 
         // Act
-        chooseRecipeController.execute(recipe);
+        controller.execute(recipe);
 
         // Assert
         // Verify that execute method is called on addToFavouritesInteractorMock with the expected input
-        verify(chooseRecipeInteractorMock).execute(any(ChooseRecipeInputData.class));
+        verify(mockInputBoundary).execute(any(ChooseRecipeInputData.class));
 
     }
 }
