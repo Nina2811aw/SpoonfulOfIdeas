@@ -16,8 +16,7 @@ import java.beans.PropertyChangeListener;
 import java.util.List;
 import java.util.Objects;
 
-import static data_access.SpoonacularDataAccessObject.displayNutritionLabelImage;
-import static data_access.SpoonacularDataAccessObject.get_instructions;
+import static data_access.SpoonacularDataAccessObject.*;
 
 public class RecipeDetailsView extends JPanel implements ActionListener, PropertyChangeListener {
 
@@ -36,7 +35,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
 
     private final JLabel titleLabel;
     private final JLabel instructions;
-
+    private final JLabel recip_img;
 
     public RecipeDetailsView(NutritionDetailController nutritionDetailController, NutritionDetailViewModel nutritionDetailViewModel, BackToChooseController backToChooseController, AddToFavouritesController addToFavouritesController) {
         this.nutritionDetailViewModel = nutritionDetailViewModel;
@@ -51,6 +50,8 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
 
         instructions = new JLabel();
         instructions.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        recip_img = new JLabel();
 
         // Inner central panel for title and instructions. Essentially a recipe card.
         JPanel innerCentralPanel = new JPanel();
@@ -93,6 +94,8 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         details.add(Box.createHorizontalGlue()); // glue just adds invisible spacing between panel objects.
         details.add(nutritionDetail);
         details.add(Box.createHorizontalGlue());
+        details.add(recip_img);
+
         details.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         this.add(Box.createHorizontalGlue());
@@ -166,14 +169,20 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         instructions.setText(text);
         Font italicFont  = instructions.getFont().deriveFont(Font.ITALIC);
         instructions.setFont(italicFont);
+
+
+        ImageIcon imageIcon = get_image(state.getRecipe().get(0));
+        recip_img.setIcon(imageIcon);
+
         Boolean toFillFavourites = state.getFavouritesFilled();
         if (toFillFavourites){
             Icon favouritesIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/star_filled.png")));
             addToFavourites.setIcon(favouritesIcon);
-        }else{
+        }else {
             Icon favouritesIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/star.png")));
             addToFavourites.setIcon(favouritesIcon);
         }
+
     }
 
     @Override
