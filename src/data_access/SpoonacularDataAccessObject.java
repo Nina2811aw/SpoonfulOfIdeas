@@ -16,9 +16,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Data access object for interacting with the Spoonacular API.
@@ -241,11 +243,46 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
             }
 
             _ins = (responseBody.get("instructions").toString());
+            _ins += ("\n\n" + "Ready in: " + responseBody.get("readyInMinutes").toString() + " min");
 
-
+            JSONArray extendedIngredients = responseBody.getJSONArray("extendedIngredients");
+            StringBuilder ingredientsStringBuilder = new StringBuilder();
+            for (int i = 0; i < extendedIngredients.length(); i++) {
+                JSONObject ingredient = extendedIngredients.getJSONObject(i);
+                String ingredientName = ingredient.getString("nameClean");
+                ingredientsStringBuilder.append(ingredientName);
+                if (i < extendedIngredients.length() - 1) {
+                    ingredientsStringBuilder.append(", ");
+                }
+            }
+            _ins += ("\n\n" + "Extended Ingredients: " + ingredientsStringBuilder);
         } catch (IOException | JSONException e) {
             throw new RuntimeException(e);}
         return _ins;
     }
 
+    public static ImageIcon get_image(String id) {
+        String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
+
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        // sample working id
+        String imageUrl = "https://api.spoonacular.com/recipes/" + "1082038" + "/ingredientWidget";
+        Request imageRequest = new Request.Builder()
+                .url(imageUrl)
+                .addHeader("x-api-key", API_TOKEN)
+                .addHeader("Content-Type", "application/json")
+                .build();
+
+        try {
+            Response imageResponse = client.newCall(imageRequest).execute();
+            assert imageResponse.body() != null;
+
+            byte[] imageData = imageResponse.body().bytes();
+            return new ImageIcon(imageData);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error fetching image", e);
+        }
+    }
 }
