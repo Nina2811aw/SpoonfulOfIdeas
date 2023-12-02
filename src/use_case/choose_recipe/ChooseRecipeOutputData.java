@@ -23,6 +23,8 @@ public class ChooseRecipeOutputData {
      */
     public List<String> getRecipeDetails() {return this.recipeDetails;}
 
+
+
     /**
      * Sets the favorite status of the recipe.
      * @param favouriteFilled the favorite status to set

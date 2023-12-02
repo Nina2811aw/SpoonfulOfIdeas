@@ -1,3 +1,5 @@
+package use_case.add_to_favourites;
+
 import interface_adapter.ViewManagerModel;
 import interface_adapter.add_to_favourites.AddToFavouritesController;
 import interface_adapter.add_to_favourites.AddToFavouritesPresenter;
