@@ -49,10 +49,25 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         titleLabel = new JLabel();
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-
-
         instructions = new JLabel();
         instructions.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        // Inner central panel for title and instructions. Essentially a recipe card.
+        JPanel innerCentralPanel = new JPanel();
+        innerCentralPanel.setLayout(new BoxLayout(innerCentralPanel, BoxLayout.Y_AXIS));
+        innerCentralPanel.setBackground(new Color(0xF5F5F5)); // Set the background to this different grey shade
+        innerCentralPanel.add(Box.createVerticalStrut(20), BorderLayout.NORTH); // Adds spacing to the top
+        innerCentralPanel.add(titleLabel);
+        innerCentralPanel.add(instructions);
+        innerCentralPanel.add(Box.createHorizontalStrut(750), BorderLayout.WEST); // Adds spacing to the left
+        innerCentralPanel.add(Box.createHorizontalStrut(750), BorderLayout.EAST); // Adds spacing to the right
+        innerCentralPanel.add(Box.createVerticalStrut(20), BorderLayout.SOUTH); // Adds spacing to the bottom
+
+
+        // Outer panel to provide padding and centering for inner recipe card.
+        JPanel outerCentralPanel = new JPanel(new GridBagLayout()); // Using GridBagLayout for centering
+        outerCentralPanel.setBackground(this.getBackground()); // Match the background color of the main panel
+        outerCentralPanel.add(innerCentralPanel); // Add the inner panel to the outer panel
 
         // We  have our main panel, referred to with "this" and then 2 sub-panels.
         // One for the back and addToFavourites button at the header, and another
@@ -60,7 +75,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         this.setLayout(new BorderLayout());
         JPanel buttons = new JPanel(new BorderLayout());
         JPanel details = new JPanel();
-        details.setLayout(new BoxLayout(details, BoxLayout.Y_AXIS));
+        details.setLayout(new BoxLayout(details, BoxLayout.X_AXIS));
 
         // Button Setup
         back = new JButton();
@@ -72,16 +87,18 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         buttons.add(addToFavourites, BorderLayout.EAST);
 
         nutritionDetail = new JButton(NutritionDetailViewModel.NUTRITION_INFO_LABEL);
+        nutritionDetail.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        details.add(Box.createVerticalGlue()); // glue just adds invisible spacing between panel objects.
-        details.add(titleLabel);
-        details.add(instructions);
+        // Essentially just a container for nutritionDetail to be centered.
+        details.add(Box.createHorizontalGlue()); // glue just adds invisible spacing between panel objects.
         details.add(nutritionDetail);
-        details.add(Box.createVerticalGlue());
+        details.add(Box.createHorizontalGlue());
+        details.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         this.add(Box.createHorizontalGlue());
         this.add(buttons, BorderLayout.NORTH);
-        this.add(details, BorderLayout.CENTER);
+        this.add(outerCentralPanel, BorderLayout.CENTER); // Add the central card panel to the main panel
+        this.add(details, BorderLayout.SOUTH);
 
 
         back.addActionListener(
