@@ -17,12 +17,23 @@ public class ChooseRecipePresenter implements ChooseRecipeOutputBoundary {
 
     private final NutritionDetailViewModel nutritionDetailViewModel;
 
+    /**
+     * Constructs a ChooseRecipePresenter with the given view models and view manager.
+     *
+     * @param viewManagerModel the model managing the active view
+     * @param chooseRecipeViewModel the view model for choosing recipes
+     * @param nutritionDetailViewModel the view model for nutrition details
+     */
     public ChooseRecipePresenter(ViewManagerModel viewManagerModel,ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel nutritionDetailViewModel){
         this.nutritionDetailViewModel = nutritionDetailViewModel;
         this.chooseRecipeViewModel = chooseRecipeViewModel;
         this.viewManagerModel = viewManagerModel;
     }
 
+    /**
+     * Updates view to RecipeDetailView showcasing the recipe the user clicked on.
+     * @param chooseRecipeOutputData contains the recipe information like id and whether user favourited this recipe
+     */
     @Override
     public void prepareRecipeDetailsSuccessView(ChooseRecipeOutputData chooseRecipeOutputData) {
         System.out.println("prepare Nutrition Details view for choose recipe presenter");
@@ -38,5 +49,5 @@ public class ChooseRecipePresenter implements ChooseRecipeOutputBoundary {
         viewManagerModel.firePropertyChanged();
     }
 
-    }
+}
 

@@ -8,7 +8,6 @@ import interface_adapter.nutrition_detail.NutritionDetailState;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +17,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static data_access.SpoonacularDataAccessObject.displayNutritionLabelImage;
-import static data_access.SpoonacularDataAccessObject.get_instructons;
+import static data_access.SpoonacularDataAccessObject.get_instructions;
 
 public class RecipeDetailsView extends JPanel implements ActionListener, PropertyChangeListener {
 
@@ -138,7 +137,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
     public void propertyChange(PropertyChangeEvent evt) {
         NutritionDetailState state = (NutritionDetailState) evt.getNewValue();
         titleLabel.setText(state.getRecipe().get(1));
-        String text = get_instructons((state.getRecipe().get(0)));
+        String text = get_instructions((state.getRecipe().get(0)));
         text = "<html>" + text.replaceAll("\n", "<br>") + "</html>";
 
         instructions.setText(text);
