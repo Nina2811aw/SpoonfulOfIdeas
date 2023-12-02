@@ -46,11 +46,12 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         this.backToChooseController = backToChooseController;
         this.addToFavouritesController = addToFavouritesController;
 
-        JLabel title = new JLabel("---title----"); // Change text
         titleLabel = new JLabel();
-        instructions = new JLabel();
-        title.setAlignmentX(Component.CENTER_ALIGNMENT);
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+
+
+        instructions = new JLabel();
         instructions.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         // We  have our main panel, referred to with "this" and then 2 sub-panels.
@@ -73,7 +74,6 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         nutritionDetail = new JButton(NutritionDetailViewModel.NUTRITION_INFO_LABEL);
 
         details.add(Box.createVerticalGlue()); // glue just adds invisible spacing between panel objects.
-        details.add(title);
         details.add(titleLabel);
         details.add(instructions);
         details.add(nutritionDetail);
@@ -137,11 +137,18 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
     public void propertyChange(PropertyChangeEvent evt) {
         NutritionDetailState state = (NutritionDetailState) evt.getNewValue();
         titleLabel.setText(state.getRecipe().get(1));
+        Font boldFont  = titleLabel.getFont().deriveFont(Font.BOLD);
+        titleLabel.setFont(boldFont);
+        Font largerFont = titleLabel.getFont().deriveFont((float) 20);
+        titleLabel.setFont(largerFont);
+
+
         String text = get_instructions((state.getRecipe().get(0)));
         text = "<html>" + text.replaceAll("\n", "<br>") + "</html>";
 
         instructions.setText(text);
-
+        Font italicFont  = instructions.getFont().deriveFont(Font.ITALIC);
+        instructions.setFont(italicFont);
         Boolean toFillFavourites = state.getFavouritesFilled();
         if (toFillFavourites){
             Icon favouritesIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/star_filled.png")));
