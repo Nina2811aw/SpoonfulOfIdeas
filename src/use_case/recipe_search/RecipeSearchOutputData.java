@@ -15,9 +15,6 @@ public class RecipeSearchOutputData {
         return recipeIDList;
     }
 
-    public void setRecipeIDList(List<RecipeInformation> recipeIDList) {
-        this.recipeIDList = recipeIDList;
-    }
 
     List<RecipeInformation> recipeIDList;
 
