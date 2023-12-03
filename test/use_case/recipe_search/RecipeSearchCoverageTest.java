@@ -220,6 +220,11 @@ public class RecipeSearchCoverageTest {
     public void testProteinEnum() {
         testEnum(Protein.values(), "NORESTRICTION", "LOWPROTEIN", "HIGHPROTEIN");
     }
+    @Test
+    public void testAllergyEnum() {
+        testEnum(Allergy.values(), "PEANUTS", "DAIRY", "SOY");
+    }
+
 
     private <E extends Enum<E>> void testEnum(E[] enumValues, String... expectedNames) {
         assertEquals(expectedNames.length, enumValues.length);

@@ -138,7 +138,7 @@ public class ChooseRecipeCoverageTest {
         verify(backToSearchController, times(1)).execute();
     }
 
-   /* @Test
+    @Test
     public void recipeButtonShouldInvokeChooseRecipeController() {
         // Arrange
         ChooseRecipeController chooseRecipeController = mock(ChooseRecipeController.class);
@@ -164,5 +164,5 @@ public class ChooseRecipeCoverageTest {
 
         // Assert
         verify(chooseRecipeController, times(1)).execute(any()); // Ensure execute is called with any argument
-    }*/
+    }
 }
