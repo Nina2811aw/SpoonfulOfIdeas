@@ -7,6 +7,7 @@ import interface_adapter.choose_recipe.ChooseRecipeState;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
 import interface_adapter.recipe_search.RecipeSearchController;
 import interface_adapter.recipe_search.RecipeSearchPresenter;
+import interface_adapter.recipe_search.RecipeSearchState;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
 import org.junit.Test;
 
@@ -41,9 +42,12 @@ public class RecipeSearchCoverageTest {
     @InjectMocks
     private RecipeSearchPresenter recipeSearchPresenter;
 
+    private RecipeSearchState state;
+
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
+        state = new RecipeSearchState();
     }
     @Test
     public void successTest() {
@@ -122,7 +126,108 @@ public class RecipeSearchCoverageTest {
         // Assert
         verify(recipeSearchViewModel).firePropertyChanged();
     }
-        
+
+    @Test
+    public void testDietsIntolerancesGettersSetters() {
+        state.setGlutenFree(true);
+        assertTrue(state.isGlutenFree());
+
+        state.setVegan(true);
+        assertTrue(state.isVegan());
+
+        state.setKeto(true);
+        assertTrue(state.isKeto());
+
+        state.setPaleo(true);
+        assertTrue(state.isPaleo());
+
+        state.setVegetarian(true);
+        assertTrue(state.isVegetarian());
+
+        state.setPeanutIntolerance(true);
+        assertTrue(state.isPeanutIntolerance());
+
+        state.setDairyIntolerance(true);
+        assertTrue(state.isDairyIntolerance());
+
+        state.setSoyIntolerance(true);
+        assertTrue(state.isSoyIntolerance());
     }
+
+    @Test
+    public void testCuisineProteinFatCarbsCaloriesGettersSetters() {
+        state.setCuisine("Italian");
+        assertEquals("Italian", state.getCuisine());
+
+        state.setProtein("high protein");
+        assertEquals("high protein", state.getProtein());
+
+        state.setFat("low fat");
+        assertEquals("low fat", state.getFat());
+
+        state.setCarbs("high carbs");
+        assertEquals("high carbs", state.getCarbs());
+
+        state.setCalories("low calorie");
+        assertEquals("low calorie", state.getCalories());
+    }
+
+    @Test
+    public void testIngredientsHandling() {
+        state.addIngredients("chicken");
+        state.addIngredients("tomato");
+
+        String ingredients = state.getIngredients();
+        assertTrue(ingredients.contains("chicken"));
+        assertTrue(ingredients.contains("tomato"));
+    }
+
+    @Test
+    public void testDietIntoleranceChosen() {
+        state.setDietChosen(true);
+        assertTrue(state.isDietChosen());
+
+        state.setIntoleranceChosen(true);
+        assertTrue(state.isIntoleranceChosen());
+    }
+
+    @Test
+    public void testCaloriesEnum() {
+        testEnum(Calories.values(), "NORESTRICTION", "LOWCALORIE", "HIGHCALORIE");
+    }
+
+    @Test
+    public void testCarbsEnum() {
+        testEnum(Carbs.values(), "NORESTRICTION", "LOWCARB", "HIGHCARB");
+    }
+
+    @Test
+    public void testCuisineEnum() {
+        testEnum(Cuisine.values(), "NORESTRICTION", "AFRICAN", "CHINESE", "GERMAN", "MEXICAN", "INDIAN", "ITALIEN");
+    }
+
+    @Test
+    public void testDietEnum() {
+        testEnum(Diet.values(), "KETO", "VEGETERIAN", "GLUTENFREE", "VEGAN", "PALEO");
+    }
+
+    @Test
+    public void testFatEnum() {
+        testEnum(Fat.values(), "NORESTRICTION", "LOWFAT", "HIGHFAT");
+    }
+
+    @Test
+    public void testProteinEnum() {
+        testEnum(Protein.values(), "NORESTRICTION", "LOWPROTEIN", "HIGHPROTEIN");
+    }
+
+    private <E extends Enum<E>> void testEnum(E[] enumValues, String... expectedNames) {
+        assertEquals(expectedNames.length, enumValues.length);
+        for (int i = 0; i < enumValues.length; i++) {
+            assertEquals(expectedNames[i], enumValues[i].name());
+        }
+    }
+
+}
 
 
