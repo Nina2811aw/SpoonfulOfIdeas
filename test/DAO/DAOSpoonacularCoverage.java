@@ -19,7 +19,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SpoonacularDataAccessObjectTest {
+class DAOSpoonacularCoverage {
 
     private MockWebServer mockWebServer;
     private SpoonacularDataAccessObject dao;
