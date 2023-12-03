@@ -144,8 +144,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                             NutritionDetailState nutritionState = NutritionDetailViewModel.getState();
                             List<String> recipe = nutritionState.getRecipe();
                             String id = recipe.get(0);
-
-                            displayNutritionLabelImage(id);
+                            nutritionDetailController.displayNutritionLabelImage(id);
                         }
                     }
                 }
