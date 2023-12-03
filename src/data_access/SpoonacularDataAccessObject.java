@@ -264,27 +264,33 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         return _ins;
     }
 
-    public static ImageIcon get_image(String id) {
+    public static void displayExtendedIngredientsImage(String id) {
         String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
-        // sample working id
-        String imageUrl = "https://api.spoonacular.com/recipes/" + id + "/ingredientWidget.png";
+        String nutritionLabelUrl = "https://api.spoonacular.com/recipes/" + id + "/ingredientWidget.png";
         Request imageRequest = new Request.Builder()
-                .url(imageUrl)
+                .url(nutritionLabelUrl)
                 .addHeader("x-api-key", API_TOKEN)
-                .addHeader("Content-Type", "application/json")
                 .build();
 
         try {
             Response imageResponse = client.newCall(imageRequest).execute();
             assert imageResponse.body() != null;
+
             ImageIcon imageIcon = new ImageIcon(imageResponse.body().bytes());
-            return imageIcon;
+            JOptionPane.showMessageDialog(
+                    null,
+                    new JLabel(imageIcon),
+                    "Extended Ingredients for Recipe ID: " + id,
+                    JOptionPane.PLAIN_MESSAGE,
+                    null
+            );
 
         } catch (IOException e) {
             e.printStackTrace();
-            throw new RuntimeException("Error fetching image", e);
+            JOptionPane.showMessageDialog(null, "Error fetching or displaying image", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+
 }

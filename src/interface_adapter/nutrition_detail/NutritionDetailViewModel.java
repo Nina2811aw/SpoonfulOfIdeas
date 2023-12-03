@@ -18,6 +18,8 @@ public class NutritionDetailViewModel extends ViewModel {
 
     public static final String NUTRITION_INFO_LABEL = "View Nutritional Information";
 
+    public static final String EXTENDED_INGREDIENTS = "View Extended Ingredients";
+
     private static NutritionDetailState state = new NutritionDetailState();
 
     private static AddToFavouritesState addToFavouritesState = new AddToFavouritesState();

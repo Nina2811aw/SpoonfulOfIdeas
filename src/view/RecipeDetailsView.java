@@ -16,7 +16,9 @@ import java.beans.PropertyChangeListener;
 import java.util.List;
 import java.util.Objects;
 
-import static data_access.SpoonacularDataAccessObject.*;
+import data_access.SpoonacularDataAccessObject.*;
+
+import static data_access.SpoonacularDataAccessObject.get_instructions;
 
 public class RecipeDetailsView extends JPanel implements ActionListener, PropertyChangeListener {
 
@@ -29,7 +31,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
 
     private final JButton addToFavourites;
     public final AddToFavouritesController addToFavouritesController;
-    private final JLabel recip_img;
+    private final JButton recip_img;
     private final JButton nutritionDetail;
     public final NutritionDetailController nutritionDetailController;
 
@@ -65,7 +67,6 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         instructions = new JLabel();
         instructions.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        recip_img = new JLabel();
 
         // Inner central panel for title and instructions. Essentially a recipe card.
         JPanel innerCentralPanel = new JPanel();
@@ -74,7 +75,6 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         innerCentralPanel.add(Box.createVerticalStrut(20), BorderLayout.NORTH); // Adds spacing to the top
         innerCentralPanel.add(titleLabel);
         innerCentralPanel.add(instructions);
-        innerCentralPanel.add(recip_img);
         innerCentralPanel.add(Box.createHorizontalStrut(750), BorderLayout.WEST); // Adds spacing to the left
         innerCentralPanel.add(Box.createHorizontalStrut(750), BorderLayout.EAST); // Adds spacing to the right
         innerCentralPanel.add(Box.createVerticalStrut(20), BorderLayout.SOUTH); // Adds spacing to the bottom
@@ -102,12 +102,16 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         addToFavourites = new JButton();
         buttons.add(addToFavourites, BorderLayout.EAST);
         details.add(Box.createHorizontalGlue());
-        details.add(recip_img);
         details.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         nutritionDetail = new JButton(NutritionDetailViewModel.NUTRITION_INFO_LABEL);
-        nutritionDetail.setAlignmentX(Component.CENTER_ALIGNMENT);
+        nutritionDetail.setAlignmentX(Component.LEFT_ALIGNMENT);
         details.add(nutritionDetail);
+
+        recip_img = new JButton(NutritionDetailViewModel.EXTENDED_INGREDIENTS);
+        recip_img.setAlignmentX(Component.LEFT_ALIGNMENT);
+        details.add(recip_img);
+
 
 
         this.add(Box.createHorizontalGlue());
@@ -145,6 +149,19 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                 }
         );
 
+        recip_img.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(recip_img)){
+                            NutritionDetailState nutritionState = NutritionDetailViewModel.getState();
+                            List<String> recipe = nutritionState.getRecipe();
+                            String id = recipe.get(0);
+                            data_access.SpoonacularDataAccessObject.displayExtendedIngredientsImage(id);
+                        }
+                    }
+                }
+        );
 
         // Show nutritional information check
 
@@ -165,6 +182,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
     }
 
 
+
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         adjustFrameSize();
@@ -182,12 +200,6 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         instructions.setText(text);
         Font regularFont = instructions.getFont().deriveFont(Font.PLAIN);
         instructions.setFont(regularFont);
-
-        ImageIcon imageIcon = get_image(state.getRecipe().get(0));
-        ImageIcon resizedIcon = resizeImageIcon(imageIcon, 400, 400);
-
-        recip_img.setIcon(resizedIcon);
-        recip_img.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         Boolean toFillFavourites = state.getFavouritesFilled();
         if (toFillFavourites){
