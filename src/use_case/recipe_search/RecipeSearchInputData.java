@@ -81,15 +81,9 @@ public class RecipeSearchInputData {
         return maxProtein;
     }
 
-    public void setMaxProtein(int maxProtein) {
-        this.maxProtein = maxProtein;
-    }
 
     public int getMinFat() {
         return minFat;
     }
 
-    public void setMinFat(int minFat) {
-        this.minFat = minFat;
-    }
 }
