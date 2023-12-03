@@ -8,7 +8,6 @@ import interface_adapter.nutrition_detail.NutritionDetailState;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,8 +16,9 @@ import java.beans.PropertyChangeListener;
 import java.util.List;
 import java.util.Objects;
 
-import static data_access.SpoonacularDataAccessObject.displayNutritionLabelImage;
-import static data_access.SpoonacularDataAccessObject.get_instructons;
+import data_access.SpoonacularDataAccessObject.*;
+
+import static data_access.SpoonacularDataAccessObject.get_instructions;
 
 public class RecipeDetailsView extends JPanel implements ActionListener, PropertyChangeListener {
 
@@ -31,13 +31,27 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
 
     private final JButton addToFavourites;
     public final AddToFavouritesController addToFavouritesController;
-
+    private final JButton recip_img;
     private final JButton nutritionDetail;
     public final NutritionDetailController nutritionDetailController;
 
     private final JLabel titleLabel;
     private final JLabel instructions;
 
+    private ImageIcon resizeImageIcon(ImageIcon originalIcon, int width, int height) {
+        Image originalImage = originalIcon.getImage();
+        Image resizedImage = originalImage.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);
+        return new ImageIcon(resizedImage);
+    }
+
+    private void adjustFrameSize() {
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
+            if (frame != null) {
+                frame.pack();
+            }
+        });
+    }
 
     public RecipeDetailsView(NutritionDetailController nutritionDetailController, NutritionDetailViewModel nutritionDetailViewModel, BackToChooseController backToChooseController, AddToFavouritesController addToFavouritesController) {
         this.nutritionDetailViewModel = nutritionDetailViewModel;
@@ -47,12 +61,29 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         this.backToChooseController = backToChooseController;
         this.addToFavouritesController = addToFavouritesController;
 
-        JLabel title = new JLabel("---title----"); // Change text
         titleLabel = new JLabel();
-        instructions = new JLabel();
-        title.setAlignmentX(Component.CENTER_ALIGNMENT);
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        instructions = new JLabel();
         instructions.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+
+        // Inner central panel for title and instructions. Essentially a recipe card.
+        JPanel innerCentralPanel = new JPanel();
+        innerCentralPanel.setLayout(new BoxLayout(innerCentralPanel, BoxLayout.Y_AXIS));
+        innerCentralPanel.setBackground(new Color(0xF5F5F5)); // Set the background to this different grey shade
+        innerCentralPanel.add(Box.createVerticalStrut(20), BorderLayout.NORTH); // Adds spacing to the top
+        innerCentralPanel.add(titleLabel);
+        innerCentralPanel.add(instructions);
+        innerCentralPanel.add(Box.createHorizontalStrut(750), BorderLayout.WEST); // Adds spacing to the left
+        innerCentralPanel.add(Box.createHorizontalStrut(750), BorderLayout.EAST); // Adds spacing to the right
+        innerCentralPanel.add(Box.createVerticalStrut(20), BorderLayout.SOUTH); // Adds spacing to the bottom
+
+
+        // Outer panel to provide padding and centering for inner recipe card.
+        JPanel outerCentralPanel = new JPanel(new GridBagLayout()); // Using GridBagLayout for centering
+        outerCentralPanel.setBackground(this.getBackground()); // Match the background color of the main panel
+        outerCentralPanel.add(innerCentralPanel); // Add the inner panel to the outer panel
 
         // We  have our main panel, referred to with "this" and then 2 sub-panels.
         // One for the back and addToFavourites button at the header, and another
@@ -60,7 +91,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         this.setLayout(new BorderLayout());
         JPanel buttons = new JPanel(new BorderLayout());
         JPanel details = new JPanel();
-        details.setLayout(new BoxLayout(details, BoxLayout.Y_AXIS));
+        details.setLayout(new BoxLayout(details, BoxLayout.X_AXIS));
 
         // Button Setup
         back = new JButton();
@@ -70,19 +101,23 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
 
         addToFavourites = new JButton();
         buttons.add(addToFavourites, BorderLayout.EAST);
+        details.add(Box.createHorizontalGlue());
+        details.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         nutritionDetail = new JButton(NutritionDetailViewModel.NUTRITION_INFO_LABEL);
-
-        details.add(Box.createVerticalGlue()); // glue just adds invisible spacing between panel objects.
-        details.add(title);
-        details.add(titleLabel);
-        details.add(instructions);
+        nutritionDetail.setAlignmentX(Component.LEFT_ALIGNMENT);
         details.add(nutritionDetail);
-        details.add(Box.createVerticalGlue());
+
+        recip_img = new JButton(NutritionDetailViewModel.EXTENDED_INGREDIENTS);
+        recip_img.setAlignmentX(Component.LEFT_ALIGNMENT);
+        details.add(recip_img);
+
+
 
         this.add(Box.createHorizontalGlue());
         this.add(buttons, BorderLayout.NORTH);
-        this.add(details, BorderLayout.CENTER);
+        this.add(outerCentralPanel, BorderLayout.CENTER); // Add the central card panel to the main panel
+        this.add(details, BorderLayout.SOUTH);
 
 
         back.addActionListener(
@@ -106,7 +141,7 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                             AddToFavouritesState currentState = NutritionDetailViewModel.getAddToFavouritesState();
                             NutritionDetailState nutritionState = NutritionDetailViewModel.getState();
                             List<String> recipe = nutritionState.getRecipe();
-                            addToFavouritesController.execute(recipe.get(0), recipe.get(1));
+                            addToFavouritesController.execute(recipe.get(1), recipe.get(0));
                             String favourites = currentState.getFavourites();
                             JOptionPane.showMessageDialog(RecipeDetailsView.this, favourites);
                         }
@@ -114,6 +149,19 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                 }
         );
 
+        recip_img.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (e.getSource().equals(recip_img)){
+                            NutritionDetailState nutritionState = NutritionDetailViewModel.getState();
+                            List<String> recipe = nutritionState.getRecipe();
+                            String id = recipe.get(0);
+                            data_access.SpoonacularDataAccessObject.displayExtendedIngredientsImage(id);
+                        }
+                    }
+                }
+        );
 
         // Show nutritional information check
 
@@ -125,32 +173,43 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                             NutritionDetailState nutritionState = NutritionDetailViewModel.getState();
                             List<String> recipe = nutritionState.getRecipe();
                             String id = recipe.get(0);
-
-                            displayNutritionLabelImage(id);
+                            nutritionDetailController.displayNutritionLabelImage(id);
                         }
                     }
                 }
         );
-}
+        nutritionDetailViewModel.addPropertyChangeListener(evt -> adjustFrameSize());
+    }
+
 
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+        adjustFrameSize();
         NutritionDetailState state = (NutritionDetailState) evt.getNewValue();
         titleLabel.setText(state.getRecipe().get(1));
-        String text = get_instructons((state.getRecipe().get(0)));
+        Font boldFont  = titleLabel.getFont().deriveFont(Font.BOLD);
+        titleLabel.setFont(boldFont);
+        Font largerFont = titleLabel.getFont().deriveFont((float) 20);
+        titleLabel.setFont(largerFont);
+
+
+        String text = get_instructions((state.getRecipe().get(0)));
         text = "<html>" + text.replaceAll("\n", "<br>") + "</html>";
 
         instructions.setText(text);
+        Font regularFont = instructions.getFont().deriveFont(Font.PLAIN);
+        instructions.setFont(regularFont);
 
         Boolean toFillFavourites = state.getFavouritesFilled();
         if (toFillFavourites){
             Icon favouritesIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/star_filled.png")));
             addToFavourites.setIcon(favouritesIcon);
-        }else{
+        }else {
             Icon favouritesIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/star.png")));
             addToFavourites.setIcon(favouritesIcon);
         }
+
     }
 
     @Override

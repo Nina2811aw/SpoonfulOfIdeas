@@ -3,7 +3,6 @@ package data_access;
 import entity.RecipeInformation;
 import org.json.JSONArray;
 import use_case.back_to_choose.BackToChooseDataAccessInterface;
-import use_case.choose_recipe.ChooseRecipeDataAccessInterface;
 import use_case.choose_recipe.ChooseRecipeInputData;
 import use_case.food_joke.FoodJokeDataAccessInterface;
 import use_case.nutrition_detail.NutritionDetailDataAccessInterface;
@@ -17,18 +16,30 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+
+/**
+ * Data access object for interacting with the Spoonacular API.
+ * This class handles various operations related to recipe search, food jokes,
+ * nutrition details, and managing recipe information.
+ */
 public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface,
         BackToChooseDataAccessInterface, NutritionDetailDataAccessInterface, FoodJokeDataAccessInterface {
 
     private static String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
 
     private List<RecipeInformation> recipeInformationList;
+
+    /**
+     * Retrieves a list of recipes suggest by Spoonacular based on user specification criteria.
+     *
+     * @param recipeSearchInputData the data containing search criteria
+     * @return a list of RecipeInformation objects matching the search criteria
+     */
     @Override
     public List<RecipeInformation> getRecipeIdeas(RecipeSearchInputData recipeSearchInputData) {
 
@@ -78,9 +89,19 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
     }
 
+    /**
+     * Getter method to retrieve the recipes found in getRecipeIdeas(...).
+     * @return a list of RecipeInformation objects matching the search criteria
+     */
     public List<RecipeInformation> getRecipeInformationList(){return recipeInformationList;}
 
-    // No longer an override method due to having the unified adapter class.
+    /**
+     * Retrieves detailed information about a specific recipe from Spoonacular.
+     * No longer requires an override method due to having the unified adapter class.
+     *
+     * @param chooseRecipeInputData the data containing recipe ID
+     * @return a list of strings representing recipe details
+     */
     public List<String> getRecipeDetails(ChooseRecipeInputData chooseRecipeInputData)     {
         List<String> inner_lst = new ArrayList<>();
         //['id', 'title', 'instructions']
@@ -125,7 +146,12 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
         return inner_lst;
     }
-    public static void displayNutritionLabelImage(String id) {
+
+    /**
+     * Displays a nutrition label image for a specified recipe.
+     * @param id the ID of the recipe
+     */
+    public void displayNutritionLabelImage(String id) {
         String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -154,8 +180,10 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         }
     }
 
-
-
+    /**
+     * Fetches a random food joke from the Spoonacular API.
+     * @return a string containing a food joke
+     */
     @Override
     public String getFoodJoke() {
 
@@ -179,7 +207,14 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         return joke;
 
     }
-    public static String get_instructons(String id) {
+
+    /**
+     * Retrieves cooking instructions for a specified recipe.
+     *
+     * @param id the ID of the recipe
+     * @return a string containing cooking instructions
+     */
+    public static String get_instructions(String id) {
         String _ins;
         //['id', 'title', 'instructions']
         //going to add more details depending on what we need later
@@ -207,12 +242,55 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
                 responseBody = null;
             }
 
-            _ins = (responseBody.get("instructions").toString());
+            _ins = ("\n"+responseBody.get("instructions").toString());
+            _ins += ("\n\n" + "Ready in: " + responseBody.get("readyInMinutes").toString() + " min");
 
+            JSONArray extendedIngredients = responseBody.getJSONArray("extendedIngredients");
+            StringBuilder ingredientsStringBuilder = new StringBuilder();
+            for (int i = 0; i < extendedIngredients.length(); i++) {
+                JSONObject ingredient = extendedIngredients.getJSONObject(i);
+                String ingredientName = ingredient.getString("nameClean");
+                if (!ingredientsStringBuilder.toString().contains(ingredientName)) {
+                    ingredientsStringBuilder.append(ingredientName);
 
+                    if (i < extendedIngredients.length() - 1) {
+                        ingredientsStringBuilder.append(", ");
+                    }
+                }
+            }
+            _ins += ("\n\n" + "Extended Ingredients: " + ingredientsStringBuilder);
         } catch (IOException | JSONException e) {
             throw new RuntimeException(e);}
         return _ins;
+    }
+
+    public static void displayExtendedIngredientsImage(String id) {
+        String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
+
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        String nutritionLabelUrl = "https://api.spoonacular.com/recipes/" + id + "/ingredientWidget.png";
+        Request imageRequest = new Request.Builder()
+                .url(nutritionLabelUrl)
+                .addHeader("x-api-key", API_TOKEN)
+                .build();
+
+        try {
+            Response imageResponse = client.newCall(imageRequest).execute();
+            assert imageResponse.body() != null;
+
+            ImageIcon imageIcon = new ImageIcon(imageResponse.body().bytes());
+            JOptionPane.showMessageDialog(
+                    null,
+                    new JLabel(imageIcon),
+                    "Extended Ingredients for Recipe ID: " + id,
+                    JOptionPane.PLAIN_MESSAGE,
+                    null
+            );
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error fetching or displaying image", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
 }

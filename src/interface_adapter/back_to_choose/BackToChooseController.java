@@ -2,7 +2,8 @@ package interface_adapter.back_to_choose;
 
 import use_case.back_to_choose.BackToChooseInputBoundary;
 
-//@author Shreya Dubey
+//The Controller class for the BackToChoose use case.
+// @author Shreya Dubey
 
 public class BackToChooseController {
 
