@@ -52,14 +52,14 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         return new ImageIcon(resizedImage);
     }
 
-    private void adjustFrameSize() {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
-            if (frame != null) {
-                frame.pack();
-            }
-        });
-    }
+//    private void adjustFrameSize() {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
+//            if (frame != null) {
+//                frame.pack();
+//            }
+//        });
+//    }
 
     public RecipeDetailsView(NutritionDetailController nutritionDetailController,
                              NutritionDetailViewModel nutritionDetailViewModel,
@@ -192,7 +192,8 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         if (e.getSource().equals(extendedIng)){
-                            ExtendedIngredientsState extendedState = ExtendedIngredientsViewModel.getState();
+//                            ExtendedIngredientsState extendedState = ExtendedIngredientsViewModel.getState();
+                            NutritionDetailState extendedState = NutritionDetailViewModel.getState();
                             List<String> recipe = extendedState.getRecipe();
                             String id = recipe.get(0);
                             extendedIngredientsController.displayExtendedIngredientsImage(id);
@@ -209,8 +210,8 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        adjustFrameSize();
-        ExtendedIngredientsState ingState = (ExtendedIngredientsState) evt.getNewValue();
+//        adjustFrameSize();
+//        ExtendedIngredientsState ingState = (ExtendedIngredientsState) evt.getNewValue();
         NutritionDetailState state = (NutritionDetailState) evt.getNewValue();
         titleLabel.setText(state.getRecipe().get(1));
         Font boldFont  = titleLabel.getFont().deriveFont(Font.BOLD);
