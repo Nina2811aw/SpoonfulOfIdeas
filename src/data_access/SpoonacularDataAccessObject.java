@@ -4,6 +4,7 @@ import entity.RecipeInformation;
 import org.json.JSONArray;
 import use_case.back_to_choose.BackToChooseDataAccessInterface;
 import use_case.choose_recipe.ChooseRecipeInputData;
+import use_case.extended_ingredients.ExtendedIngredientsDataAccessInterface;
 import use_case.food_joke.FoodJokeDataAccessInterface;
 import use_case.nutrition_detail.NutritionDetailDataAccessInterface;
 import use_case.recipe_search.RecipeSearchDataAccessInterface;
@@ -28,7 +29,7 @@ import java.util.List;
  * nutrition details, and managing recipe information.
  */
 public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterface,
-        BackToChooseDataAccessInterface, NutritionDetailDataAccessInterface, FoodJokeDataAccessInterface {
+        BackToChooseDataAccessInterface, NutritionDetailDataAccessInterface, FoodJokeDataAccessInterface, ExtendedIngredientsDataAccessInterface {
 
     private static String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
 
@@ -170,6 +171,34 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
                     null,
                     new JLabel(imageIcon),
                     "Nutrition Label for Recipe ID: " + id,
+                    JOptionPane.PLAIN_MESSAGE,
+                    null
+            );
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error fetching or displaying image", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    public void displayExtendedIngredientsImage(String id) {
+        String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
+
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        String nutritionLabelUrl = "https://api.spoonacular.com/recipes/" + id + "/ingredientWidget.png";
+        Request imageRequest = new Request.Builder()
+                .url(nutritionLabelUrl)
+                .addHeader("x-api-key", API_TOKEN)
+                .build();
+
+        try {
+            Response imageResponse = client.newCall(imageRequest).execute();
+            assert imageResponse.body() != null;
+
+            ImageIcon imageIcon = new ImageIcon(imageResponse.body().bytes());
+            JOptionPane.showMessageDialog(
+                    null,
+                    new JLabel(imageIcon),
+                    "Extended Ingredients for Recipe ID: " + id,
                     JOptionPane.PLAIN_MESSAGE,
                     null
             );

@@ -4,9 +4,12 @@ import data_access.FavouritesDataAccessObject;
 import data_access.SpoonacularDataAccessObject;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
+import interface_adapter.extended_ingredients.ExtendedIngredientsViewModel;
 import interface_adapter.food_joke.FoodJokeViewModel;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 import interface_adapter.recipe_search.RecipeSearchViewModel;
+import use_case.extended_ingredients.ExtendedIngredientsDataAccessInterface;
+import use_case.nutrition_detail.NutritionDetailDataAccessInterface;
 import view.ChooseRecipeView;
 import view.RecipeDetailsView;
 import view.RecipeSearchView;
@@ -43,8 +46,14 @@ public class MainApp {
         RecipeSearchViewModel recipeSearchViewModel = new RecipeSearchViewModel();
         ChooseRecipeViewModel chooseRecipeViewModel = new ChooseRecipeViewModel();
         NutritionDetailViewModel nutritionDetailViewModel = new NutritionDetailViewModel();
+        ExtendedIngredientsViewModel extendedIngredientsViewModel = new ExtendedIngredientsViewModel();
+
         SpoonacularDataAccessObject nutritionDetailDataAccessObject;
         nutritionDetailDataAccessObject = new SpoonacularDataAccessObject();
+
+        SpoonacularDataAccessObject extendedIngredientsDataAccessObject;
+        extendedIngredientsDataAccessObject = new SpoonacularDataAccessObject();
+
         SpoonacularDataAccessObject backToChooseDataAccessObject;
         backToChooseDataAccessObject = new SpoonacularDataAccessObject();
 
@@ -63,9 +72,17 @@ public class MainApp {
         ChooseRecipeView chooseRecipeView = RecipeViewUseCaseFactory.createChooseView(viewManagerModel, recipeSearchViewModel, chooseRecipeViewModel, nutritionDetailViewModel, addToFavouritesDataAccessObject);
         views.add(chooseRecipeView, chooseRecipeView.viewName);
 
-        RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject, backToChooseDataAccessObject, addToFavouritesDataAccessObject);
+        RecipeDetailsView recipeDetailsView = RecipeDetailsViewUseCaseFactory.createRecipeDetailsView(
+                viewManagerModel,
+                chooseRecipeViewModel,
+                nutritionDetailViewModel,
+                extendedIngredientsViewModel,
+                nutritionDetailDataAccessObject,
+                extendedIngredientsDataAccessObject,
+                backToChooseDataAccessObject,
+                addToFavouritesDataAccessObject
+        );
         views.add(recipeDetailsView, recipeDetailsView.viewName);
-
         viewManagerModel.setActiveView(recipeSearchView.viewName);
         viewManagerModel.firePropertyChanged();
 

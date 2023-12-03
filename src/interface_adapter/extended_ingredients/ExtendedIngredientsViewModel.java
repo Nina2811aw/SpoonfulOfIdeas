@@ -1,0 +1,55 @@
+package interface_adapter.extended_ingredients;
+
+import interface_adapter.ViewModel;
+import interface_adapter.add_to_favourites.AddToFavouritesState;
+
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
+public class ExtendedIngredientsViewModel extends ViewModel {
+    public static final String TITLE_LABEL = "Recipe Details View";
+
+    public static final String SEARCH_BUTTON = "Search";
+
+    public static final String BACK_BUTTON_LABEL = "Back";
+
+    public static final String ADD_TO_FAVOURITES_LABEL = "Add to Favourites!";
+
+    public static final String NUTRITION_INFO_LABEL = "View Nutritional Information";
+    public static final String INGREDIENTS_INFO_LABEL = "View Extended Ingredients";
+
+    private static ExtendedIngredientsState state = new ExtendedIngredientsState();
+
+    private static AddToFavouritesState addToFavouritesState = new AddToFavouritesState();
+
+    public ExtendedIngredientsViewModel() {
+        super("Recipe Details");
+    }
+
+    public void setState(ExtendedIngredientsState state) {
+        this.state = state;
+    }
+
+    public void setAddToFavouritesState(AddToFavouritesState addToFavouritesState){
+        this.addToFavouritesState = addToFavouritesState;
+    }
+
+    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
+
+    // This is what the Signup Presenter will call to let the ViewModel know
+    // to alert the View
+    public void firePropertyChanged() {
+        support.firePropertyChange("state", null, this.state);
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        support.addPropertyChangeListener(listener);
+    }
+
+    public static ExtendedIngredientsState getState() {
+        return state;
+    }
+
+    public static AddToFavouritesState getAddToFavouritesState(){return addToFavouritesState;}
+
+}

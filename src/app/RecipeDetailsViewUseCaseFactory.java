@@ -6,6 +6,9 @@ import interface_adapter.add_to_favourites.AddToFavouritesPresenter;
 import interface_adapter.back_to_choose.BackToChooseController;
 import interface_adapter.back_to_choose.BackToChoosePresenter;
 import interface_adapter.choose_recipe.ChooseRecipeViewModel;
+import interface_adapter.extended_ingredients.ExtendedIngredientsController;
+import interface_adapter.extended_ingredients.ExtendedIngredientsPresenter;
+import interface_adapter.extended_ingredients.ExtendedIngredientsViewModel;
 import interface_adapter.nutrition_detail.NutritionDetailController;
 import interface_adapter.nutrition_detail.NutritionDetailPresenter;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
@@ -17,6 +20,7 @@ import use_case.back_to_choose.BackToChooseDataAccessInterface;
 import use_case.back_to_choose.BackToChooseInputBoundary;
 import use_case.back_to_choose.BackToChooseInteractor;
 import use_case.back_to_choose.BackToChooseOutputBoundary;
+import use_case.extended_ingredients.*;
 import use_case.nutrition_detail.NutritionDetailDataAccessInterface;
 import use_case.nutrition_detail.NutritionDetailInputBoundary;
 import use_case.nutrition_detail.NutritionDetailInteractor;
@@ -46,16 +50,21 @@ public class RecipeDetailsViewUseCaseFactory {
      * @return an instance of RecipeDetailsView
      * @throws IOException if an I/O error occurs
      */
-    public static RecipeDetailsView createRecipeDetailsView(ViewManagerModel viewManagerModel,  ChooseRecipeViewModel chooseRecipeViewModel,
-                                                            NutritionDetailViewModel recipeDetailViewModel, NutritionDetailDataAccessInterface nutritionDetailDataAccessObject, BackToChooseDataAccessInterface backToChooseDataAccessObject, AddToFavouritesDataAccessInterface addToFavouritesDataAccessObject) throws IOException {
-        NutritionDetailController nutritionDetailController = createRecipeDetailsCase(viewManagerModel, chooseRecipeViewModel, recipeDetailViewModel, nutritionDetailDataAccessObject);
+    public static RecipeDetailsView createRecipeDetailsView(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel,
+                                                            NutritionDetailViewModel nutritionDetailViewModel, ExtendedIngredientsViewModel extendedIngredientsViewModel,
+                                                            NutritionDetailDataAccessInterface nutritionDetailDataAccessObject, ExtendedIngredientsDataAccessInterface extendedIngredientsDataAccessInterface,
+                                                            BackToChooseDataAccessInterface backToChooseDataAccessObject, AddToFavouritesDataAccessInterface addToFavouritesDataAccessObject) throws IOException {
+
+
+        NutritionDetailController nutritionDetailController = createRecipeDetailsCase(viewManagerModel, chooseRecipeViewModel, nutritionDetailViewModel, nutritionDetailDataAccessObject);
+
+        ExtendedIngredientsController extendedIngredientsController = createExtendedIngredientsCase(viewManagerModel, chooseRecipeViewModel, extendedIngredientsViewModel, extendedIngredientsDataAccessInterface);
 
         BackToChooseController backToChooseController = createBackToChooseCase(viewManagerModel, chooseRecipeViewModel, backToChooseDataAccessObject);
-        AddToFavouritesController addToFavouritesController = createAddToFavouritesCase(viewManagerModel, recipeDetailViewModel, addToFavouritesDataAccessObject);
+        AddToFavouritesController addToFavouritesController = createAddToFavouritesCase(viewManagerModel, nutritionDetailViewModel, addToFavouritesDataAccessObject);
 
-        return new RecipeDetailsView(nutritionDetailController, recipeDetailViewModel, backToChooseController, addToFavouritesController);
+        return new RecipeDetailsView(nutritionDetailController, nutritionDetailViewModel, extendedIngredientsController, extendedIngredientsViewModel, backToChooseController, addToFavouritesController);
     }
-
     /**
      * Creates and returns a NutritionDetailController.
      *
@@ -69,6 +78,12 @@ public class RecipeDetailsViewUseCaseFactory {
         NutritionDetailOutputBoundary nutritionDetailOutputBoundary = new NutritionDetailPresenter(viewManagerModel, chooseRecipeViewModel, recipeDetailViewModel);
         NutritionDetailInputBoundary nutritionDetailInteractor = new NutritionDetailInteractor(recipeDetailDataAccessObject, nutritionDetailOutputBoundary);
         return new NutritionDetailController(nutritionDetailInteractor);
+    }
+
+    private static ExtendedIngredientsController createExtendedIngredientsCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel, ExtendedIngredientsViewModel extendedIngredientsViewModel, ExtendedIngredientsDataAccessInterface extendedIngredientsDataAccessInterface) {
+        ExtendedIngredientsOutputBoundary extendedIngredientsOutputBoundary = new ExtendedIngredientsPresenter(viewManagerModel, chooseRecipeViewModel, extendedIngredientsViewModel);
+        ExtendedIngredientsInputBoundary extendedIngredientsInteractor = new ExtendedIngredientsInteractor(extendedIngredientsDataAccessInterface, extendedIngredientsOutputBoundary);
+        return new ExtendedIngredientsController(extendedIngredientsInteractor);
     }
 
     /**
