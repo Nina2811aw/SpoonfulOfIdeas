@@ -1,3 +1,5 @@
+package use_case.back_to_search;
+
 import interface_adapter.back_to_search.BackToSearchController;
 import interface_adapter.back_to_search.BackToSearchPresenter;
 import org.junit.jupiter.api.Test;

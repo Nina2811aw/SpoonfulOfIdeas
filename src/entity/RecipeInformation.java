@@ -31,9 +31,6 @@ public class RecipeInformation {
      * Sets the ID of the recipe.
      * @param ID the new unique identifier for the recipe
      */
-    public void setID(int ID) {
-        this.ID = ID;
-    }
 
     /**
      * Gets the title of the recipe.
@@ -46,8 +43,5 @@ public class RecipeInformation {
     /**
      * Sets the title of the recipe.
      * @param title the new title for the recipe
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
+     **/
 }
