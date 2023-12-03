@@ -1,11 +1,14 @@
 package use_case.nutrition_detail;
 
-public class NutritionDetailInteractor implements NutritionDetailInputBoundary{
-    public NutritionDetailInteractor(NutritionDetailDataAccessInterface recipeDetailDataAccessObject, NutritionDetailOutputBoundary nutritionDetailOutputBoundary) {
+public class NutritionDetailInteractor implements NutritionDetailInputBoundary {
+    private final NutritionDetailDataAccessInterface dataAccess;
+
+    public NutritionDetailInteractor(NutritionDetailDataAccessInterface dataAccess, NutritionDetailOutputBoundary nutritionDetailOutputBoundary) {
+        this.dataAccess = dataAccess;
     }
 
     @Override
-    public void execute(NutritionDetailInputData nutritionDetailInputData) {
-
+    public void displayNutritionLabelImage(String id) {
+        dataAccess.displayNutritionLabelImage(id);
     }
 }

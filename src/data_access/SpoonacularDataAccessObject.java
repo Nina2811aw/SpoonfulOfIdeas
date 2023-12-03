@@ -151,7 +151,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
      * Displays a nutrition label image for a specified recipe.
      * @param id the ID of the recipe
      */
-    public static void displayNutritionLabelImage(String id) {
+    public void displayNutritionLabelImage(String id) {
         String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();

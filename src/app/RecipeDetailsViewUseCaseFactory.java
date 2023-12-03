@@ -67,7 +67,6 @@ public class RecipeDetailsViewUseCaseFactory {
      */
     private static NutritionDetailController createRecipeDetailsCase(ViewManagerModel viewManagerModel, ChooseRecipeViewModel chooseRecipeViewModel, NutritionDetailViewModel recipeDetailViewModel, NutritionDetailDataAccessInterface recipeDetailDataAccessObject) {
         NutritionDetailOutputBoundary nutritionDetailOutputBoundary = new NutritionDetailPresenter(viewManagerModel, chooseRecipeViewModel, recipeDetailViewModel);
-
         NutritionDetailInputBoundary nutritionDetailInteractor = new NutritionDetailInteractor(recipeDetailDataAccessObject, nutritionDetailOutputBoundary);
         return new NutritionDetailController(nutritionDetailInteractor);
     }
