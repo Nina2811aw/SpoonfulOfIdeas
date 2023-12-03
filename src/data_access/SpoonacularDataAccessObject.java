@@ -269,7 +269,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         // sample working id
-        String imageUrl = "https://api.spoonacular.com/recipes/" + "1082038" + "/ingredientWidget";
+        String imageUrl = "https://api.spoonacular.com/recipes/" + id + "/ingredientWidget.png";
         Request imageRequest = new Request.Builder()
                 .url(imageUrl)
                 .addHeader("x-api-key", API_TOKEN)
@@ -279,9 +279,8 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         try {
             Response imageResponse = client.newCall(imageRequest).execute();
             assert imageResponse.body() != null;
-
-            byte[] imageData = imageResponse.body().bytes();
-            return new ImageIcon(imageData);
+            ImageIcon imageIcon = new ImageIcon(imageResponse.body().bytes());
+            return imageIcon;
 
         } catch (IOException e) {
             e.printStackTrace();
