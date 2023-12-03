@@ -242,7 +242,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
                 responseBody = null;
             }
 
-            _ins = (responseBody.get("instructions").toString());
+            _ins = ("\n"+responseBody.get("instructions").toString());
             _ins += ("\n\n" + "Ready in: " + responseBody.get("readyInMinutes").toString() + " min");
 
             JSONArray extendedIngredients = responseBody.getJSONArray("extendedIngredients");
@@ -250,9 +250,12 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
             for (int i = 0; i < extendedIngredients.length(); i++) {
                 JSONObject ingredient = extendedIngredients.getJSONObject(i);
                 String ingredientName = ingredient.getString("nameClean");
-                ingredientsStringBuilder.append(ingredientName);
-                if (i < extendedIngredients.length() - 1) {
-                    ingredientsStringBuilder.append(", ");
+                if (!ingredientsStringBuilder.toString().contains(ingredientName)) {
+                    ingredientsStringBuilder.append(ingredientName);
+
+                    if (i < extendedIngredients.length() - 1) {
+                        ingredientsStringBuilder.append(", ");
+                    }
                 }
             }
             _ins += ("\n\n" + "Extended Ingredients: " + ingredientsStringBuilder);
