@@ -38,21 +38,6 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
     private final JLabel titleLabel;
     private final JLabel instructions;
 
-    private ImageIcon resizeImageIcon(ImageIcon originalIcon, int width, int height) {
-        Image originalImage = originalIcon.getImage();
-        Image resizedImage = originalImage.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);
-        return new ImageIcon(resizedImage);
-    }
-
-    private void adjustFrameSize() {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
-            if (frame != null) {
-                frame.pack();
-            }
-        });
-    }
-
     public RecipeDetailsView(NutritionDetailController nutritionDetailController, NutritionDetailViewModel nutritionDetailViewModel, BackToChooseController backToChooseController, AddToFavouritesController addToFavouritesController) {
         this.nutritionDetailViewModel = nutritionDetailViewModel;
         this.nutritionDetailController = nutritionDetailController;
@@ -105,12 +90,13 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
         details.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         nutritionDetail = new JButton(NutritionDetailViewModel.NUTRITION_INFO_LABEL);
-        nutritionDetail.setAlignmentX(Component.LEFT_ALIGNMENT);
+        nutritionDetail.setAlignmentX(Component.CENTER_ALIGNMENT);
         details.add(nutritionDetail);
 
         recip_img = new JButton(NutritionDetailViewModel.EXTENDED_INGREDIENTS);
-        recip_img.setAlignmentX(Component.LEFT_ALIGNMENT);
+        recip_img.setAlignmentX(Component.CENTER_ALIGNMENT);
         details.add(recip_img);
+        details.add(Box.createHorizontalGlue());
 
 
 
@@ -178,14 +164,12 @@ public class RecipeDetailsView extends JPanel implements ActionListener, Propert
                     }
                 }
         );
-        nutritionDetailViewModel.addPropertyChangeListener(evt -> adjustFrameSize());
     }
 
 
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        adjustFrameSize();
         NutritionDetailState state = (NutritionDetailState) evt.getNewValue();
         titleLabel.setText(state.getRecipe().get(1));
         Font boldFont  = titleLabel.getFont().deriveFont(Font.BOLD);

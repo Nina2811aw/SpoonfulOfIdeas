@@ -1,9 +1,15 @@
+package use_case.add_to_favourites;
+
 import interface_adapter.ViewManagerModel;
 import interface_adapter.add_to_favourites.AddToFavouritesController;
 import interface_adapter.add_to_favourites.AddToFavouritesPresenter;
+import interface_adapter.add_to_favourites.AddToFavouritesState;
+import interface_adapter.nutrition_detail.NutritionDetailState;
 import interface_adapter.nutrition_detail.NutritionDetailViewModel;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import use_case.add_to_favourites.*;
 
 import static org.mockito.Mockito.*;
@@ -20,6 +26,15 @@ public class AddToFavouritesCoverageTest {
 
     private AddToFavouritesController addToFavouritesController;
     private AddToFavouritesInputBoundary addToFavouritesInteractorMock;
+
+    @Mock
+    private ViewManagerModel viewManagerModel;
+
+    @Mock
+    private NutritionDetailViewModel nutritionDetailViewModel;
+
+    @InjectMocks
+    private AddToFavouritesPresenter addToFavouritesPresentermock;
 
     @Before
     public void setUp() {
@@ -67,5 +82,35 @@ public class AddToFavouritesCoverageTest {
 
     }
 
-}
+  /*  @Test
+    public void testPresenter() {
+        // Arrange
+        AddToFavouritesOutputData outputData = new AddToFavouritesOutputData("New Favourites");
+        outputData.setFavouriteFilled(true);
+
+        AddToFavouritesState addToFavouritesState = new AddToFavouritesState();
+        NutritionDetailState nutritionDetailState = new NutritionDetailState();
+
+        when(nutritionDetailViewModel.getAddToFavouritesState()).thenReturn(addToFavouritesState);
+
+        // Act
+        addToFavouritesPresenter.prepareSuccessView(outputData);
+
+        // Assert
+        verify(nutritionDetailViewModel).getAddToFavouritesState();
+        verify(nutritionDetailViewModel).getState();
+
+        verify(nutritionDetailViewModel.getAddToFavouritesState()).setFavourites("New Favourites");
+        verify(nutritionDetailViewModel.getState()).setFavouritesFilled(true);
+
+        verify(nutritionDetailViewModel).setState(nutritionDetailState);
+        verify(nutritionDetailViewModel).setAddToFavouritesState(addToFavouritesState);
+        verify(nutritionDetailViewModel).firePropertyChanged();
+
+        verify(viewManagerModel).setActiveView(nutritionDetailViewModel.getViewName());
+        verify(viewManagerModel).firePropertyChanged();
+    }*/
+    }
+
+
 

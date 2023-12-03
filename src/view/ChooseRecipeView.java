@@ -25,7 +25,7 @@ public class ChooseRecipeView extends JPanel implements ActionListener, Property
 
     // back button variables
     private final BackToSearchController backToSearchController;
-    private JButton back;
+    public JButton back;
     public JPanel buttonsRecipes = new JPanel();
 
     public ChooseRecipeView(ChooseRecipeController chooseRecipeController, BackToSearchController backController, ChooseRecipeViewModel chooseRecipeViewModel){
