@@ -3,14 +3,14 @@ import use_case.extended_ingredients.ExtendedIngredientsInputBoundary;
 
 public class ExtendedIngredientsController {
 
-    private static ExtendedIngredientsInputBoundary extendedIngredientsInteractor;
+    private final ExtendedIngredientsInputBoundary extendedIngredientsInteractor;
 
 
     public ExtendedIngredientsController(ExtendedIngredientsInputBoundary extendedIngredientsInteractor) {
         this.extendedIngredientsInteractor = extendedIngredientsInteractor;
     }
 
-    public static void displayExtendedIngredientsImage(String id){
+    public void displayExtendedIngredientsImage(String id){
         extendedIngredientsInteractor.displayExtendedIngredientsImage(id);
     }
 }

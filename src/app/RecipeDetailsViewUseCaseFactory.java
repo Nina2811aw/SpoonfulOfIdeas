@@ -43,7 +43,7 @@ public class RecipeDetailsViewUseCaseFactory {
      *
      * @param viewManagerModel                 the view manager model
      * @param chooseRecipeViewModel            the choose recipe view model
-     * @param recipeDetailViewModel            the recipe detail view model
+//     * @param recipeDetailViewModel            the recipe detail view model
      * @param nutritionDetailDataAccessObject  the data access object for nutrition details
      * @param backToChooseDataAccessObject     the data access object for navigating back to choose
      * @param addToFavouritesDataAccessObject  the data access object for adding to favorites
