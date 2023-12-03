@@ -151,7 +151,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
      * Displays a nutrition label image for a specified recipe.
      * @param id the ID of the recipe
      */
-    public static void displayNutritionLabelImage(String id) {
+    public void displayNutritionLabelImage(String id) {
         String API_TOKEN = "47e1335f069c4ff1b2fbb1ea17cf2179";
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -242,7 +242,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
                 responseBody = null;
             }
 
-            _ins = (responseBody.get("instructions").toString());
+            _ins = ("\n"+responseBody.get("instructions").toString());
             _ins += ("\n\n" + "Ready in: " + responseBody.get("readyInMinutes").toString() + " min");
 
             JSONArray extendedIngredients = responseBody.getJSONArray("extendedIngredients");
@@ -250,9 +250,12 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
             for (int i = 0; i < extendedIngredients.length(); i++) {
                 JSONObject ingredient = extendedIngredients.getJSONObject(i);
                 String ingredientName = ingredient.getString("nameClean");
-                ingredientsStringBuilder.append(ingredientName);
-                if (i < extendedIngredients.length() - 1) {
-                    ingredientsStringBuilder.append(", ");
+                if (!ingredientsStringBuilder.toString().contains(ingredientName)) {
+                    ingredientsStringBuilder.append(ingredientName);
+
+                    if (i < extendedIngredients.length() - 1) {
+                        ingredientsStringBuilder.append(", ");
+                    }
                 }
             }
             _ins += ("\n\n" + "Extended Ingredients: " + ingredientsStringBuilder);
@@ -266,7 +269,7 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         // sample working id
-        String imageUrl = "https://api.spoonacular.com/recipes/" + "1082038" + "/ingredientWidget";
+        String imageUrl = "https://api.spoonacular.com/recipes/" + id + "/ingredientWidget.png";
         Request imageRequest = new Request.Builder()
                 .url(imageUrl)
                 .addHeader("x-api-key", API_TOKEN)
@@ -276,9 +279,8 @@ public class SpoonacularDataAccessObject implements RecipeSearchDataAccessInterf
         try {
             Response imageResponse = client.newCall(imageRequest).execute();
             assert imageResponse.body() != null;
-
-            byte[] imageData = imageResponse.body().bytes();
-            return new ImageIcon(imageData);
+            ImageIcon imageIcon = new ImageIcon(imageResponse.body().bytes());
+            return imageIcon;
 
         } catch (IOException e) {
             e.printStackTrace();
