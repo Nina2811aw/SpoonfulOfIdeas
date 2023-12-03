@@ -193,8 +193,9 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         clear_recipe.addActionListener(                // This creates an anonymous subclass of ActionListener and instantiates it.
                 new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
-                        RecipeSearchState state = new RecipeSearchState();
-                        recipeSearchViewModel.setState(state);
+                        //RecipeSearchState state = new RecipeSearchState();
+                        //recipeSearchViewModel.setState(state);
+                        recipeSearchViewModel.getState().deleteAllIngredients();
                         JOptionPane.showMessageDialog(RecipeSearchView.super.getComponent(0),"Cleared");
 
                     }
@@ -453,9 +454,10 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
             JOptionPane.showMessageDialog(this, state.getFoodJoke());
         }
         else if(evt.getSource().getClass().toString().equals("class interface_adapter.recipe_search.RecipeSearchViewModel")){
+            this.recipeSearchViewModel.getState().deleteAllIngredients();
             JOptionPane.showMessageDialog(this, "No Recipes Found, Try Broadening Your Search");
-            RecipeSearchState state = new RecipeSearchState();
-            recipeSearchViewModel.setState(state);
+            //RecipeSearchState state = new RecipeSearchState();
+            //recipeSearchViewModel.setState(state);
         }
 
     }
