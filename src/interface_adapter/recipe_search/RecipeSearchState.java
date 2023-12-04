@@ -80,6 +80,10 @@ public class RecipeSearchState {
         return newvar;
     }
 
+    public void deleteAllIngredients(){
+        this.ingredients = new ArrayList<>();
+    }
+
     public void addIngredients(String ingredients) {
         this.ingredients.add(ingredients);
     }
