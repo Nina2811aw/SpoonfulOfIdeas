@@ -454,8 +454,6 @@ public class RecipeSearchView extends JPanel implements ActionListener, Property
         }
         else if(evt.getSource().getClass().toString().equals("class interface_adapter.recipe_search.RecipeSearchViewModel")){
             JOptionPane.showMessageDialog(this, "No Recipes Found, Try Broadening Your Search");
-            RecipeSearchState state = new RecipeSearchState();
-            recipeSearchViewModel.setState(state);
         }
 
     }
